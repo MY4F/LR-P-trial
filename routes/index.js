@@ -6,7 +6,7 @@ const { ensureAuthenticated } = require('../config/auth');
 router.get('/', (req, res) => {
     res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index.html');
 });
-// dashboars
+// dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     let n = req.user.id;
     res.sendFile(`E:/Projects/Login System test/Trial 3/LoginRegister/views/${n}.html`);

@@ -20,10 +20,37 @@ router.get('/index3', (req, res) => {
     res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index3.html');
 });
 
+//Package page
+router.get('/index5', (req, res) => {
+    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index5.html');
+});
+
 //About page
 router.get('/index6', (req, res) => {
     res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index6.html');
 });
+
+//home page
+router.get('/homepageL', (req, res) => {
+    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/homepageL.html');
+});
+
+
+//The card page
+router.get('/thecardL', (req, res) => {
+    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/thecardL.html');
+});
+
+//Package page
+router.get('/thepackageL', (req, res) => {
+    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/thepackageL.html');
+});
+
+//About page
+router.get('/aboutL', (req, res) => {
+    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/aboutL.html');
+});
+
 
 //Mohamed el malatawy's page
 router.get('/index4', (req, res) => {
@@ -36,10 +63,6 @@ router.get('/609f30ba7a6f704088692810', (req, res) => {
 });
 
 
-//Package page
-router.get('/index5', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index5.html');
-});
 //register handle
 router.post('/register', (req, res) => {
   const { name, email, password, passwordConfirm } = req.body;
