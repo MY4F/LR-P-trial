@@ -347,6 +347,14 @@ footer{
   .img1-mobile{
     display: block;
   }
+  .ul-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+  }
   .img-con{
     font-size: 15px;
     text-align: center;
