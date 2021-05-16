@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     let n = req.user.id;
-    res.sendFile(`/app/views/views/${n}.html`);
+    res.sendFile(`/app/views/${n}.html`);
 
 });
 module.exports = router;
