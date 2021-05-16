@@ -4,7 +4,7 @@ const app = express();
 const { ensureAuthenticated } = require('../config/auth');
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile('/views/index.html');
+    res.sendFile('LR-P-trial/views/index.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
