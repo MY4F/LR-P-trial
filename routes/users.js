@@ -38,7 +38,7 @@ router.get('/homepageL', (req, res) => {
 
 //The card page
 router.get('/thecardL', (req, res) => {
-    res.sendFile('/app/views/views/thecardL.html');
+    res.sendFile('/app/views/thecardL.html');
 });
 
 //Package page
