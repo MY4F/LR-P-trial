@@ -1,0 +1,26 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iOS 14.0//EN
+N:El Malatawy;Mohamed Abdul-Fattah;;;
+FN:Mohamed Abdul-Fattah El Malatawy
+TEL;type=CELL;type=VOICE;type=pref:0111 1777072
+item1.TEL:0100 4639737
+item1.X-ABLabel:El zeytoun clinic 
+item2.TEL:0115 1793055
+item2.X-ABLabel:Life mall clinic
+item3.ADR;type=HOME;type=pref:;;19 شارع ابن الحكيم\nميدان حلميه الزيتون;Cai
+ ro;;;Egypt
+item3.X-ABLabel:Zeytoun clinic
+item3.X-ABADR:eg
+item4.ADR;type=HOME:;;لايف مول ٧٩مركز خدمات التجمع الخامس خلف سوبر ماركت سع
+ ودي;;;;Egypt
+item4.X-ABLabel:Life mall clinic
+item4.X-ABADR:eg
+item5.ADR;type=HOME:;;١٢٨ شارع النزهه\nميزان تريومف - مصر الجديده;;Cairo;;E
+ gypt
+item5.X-ABLabel:Nakhba clinic
+item5.X-ABADR:eg
+REV:2021-03-24T14:06:11Z
+X-IMAGETYPE:PHOTO
+X-IMAGEHASH:7bwGqd5cv2v1crgU/7S+EQ==
+END:VCARD

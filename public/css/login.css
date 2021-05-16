@@ -1,0 +1,275 @@
+html{
+  scroll-behavior: smooth;
+}
+body{
+  top: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F8FF ;
+  color:black;
+}
+.horizontal-space{
+  border: 0.02px solid white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.container{
+  position: sticky;
+  background-color: black;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: top 0.5s;
+}
+.sign{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sign>ul{
+  list-style: none;
+  text-align:right;
+}
+.sign>ul>li{
+  display: inline;
+  font-size: 1.2vw;
+  padding-bottom: 27px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 33px;
+  transition: 1s;
+}
+.sign>ul>li>a{
+  text-decoration: none;
+  color:white;
+}
+.sign>ul>li:hover{
+  background-color: #f2c136;
+}
+.nav-bar{
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nav-button{
+  display: none;
+}
+.header1>h1>a{
+  text-decoration: none;
+  color:white;
+  font-size: 30px;
+}
+.nav-bar>ul{
+  list-style: none;
+}
+.nav-bar>ul>.li-desktop{
+  display: inline;
+  font-size: 1.2vw;
+  padding-bottom: 27px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 33px;
+  transition: 1s;
+}
+.nav-bar>ul>li>a{
+  text-decoration: none;
+  color:white;
+}
+.nav-bar>ul>li:hover{
+  background-color: #f2c136;
+}
+.hide{
+  display: none;
+}
+.background{
+  background-color: #ffffff;
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  color :white;
+}
+.login-form{
+  margin-right: 120px;
+  font-size: 35px;
+  padding: 30px;
+  border-radius: 15px;
+  background: #77acf1;
+  width: 35%;
+  text-align: center;
+}
+.email, .name , .password , .passwordConfirm{
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 50px;
+}
+.form-email , .form-name , .form-password , .form-passwordConfirm{
+  color: #555555;
+  background: transparent;
+  padding:  0 25px 0 25px;
+  height: 55px;
+  border:0;
+  line-height: 1.2px;
+  border: 0.1px solid white;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0px;
+  transition: border-color 1s;
+  outline: 0;
+}
+.form-email:focus{
+  border-color: #132c33;
+}
+.form-password:focus{
+  border-color: #132c33;
+}
+.form-name:focus{
+  border-color:#132c33;
+}
+.form-passwordConfirm:focus{
+  border-color: #132c33;
+}
+.btn{
+  margin: 0px 20px 40px 20px;
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #333333;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.btn:hover{
+  color: white;
+  background-color:#99ff99;
+}
+.img>img{
+  width: 120%;
+}
+
+
+footer{
+  background-color: black;
+  width:100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.social-links{
+  margin: 40px;
+  text-align: center;
+}
+.other-links{
+  font-size: 14px;
+  width:100%;
+  text-align: center;
+}
+.social-links>a{
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+.other-links>a{
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  padding: 7px;
+}
+.rights{
+  color: white;
+  margin: 40px;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 750px) {
+  body{
+    top: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F8FF ;
+    color:black;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-bar{
+    width: 90%;
+  }
+  .nav-bar>ul{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-button{
+    display: inline;
+    font-size: 17px;
+    margin: auto;
+    cursor: pointer;
+  }
+  .header1{
+    width: 96.5%;
+  }
+  .background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form{
+    margin: auto;
+    width: 80%;
+  }
+  .email , .password , .passwordConfirm , .name{
+    margin :50px 0px;
+  }
+  .img>img{
+    display: none;
+  }
+  .nav-bar>ul>.li-desktop{
+    font-size: 20px;
+  }
+  .hide{
+    display: inline;
+    font-size: 20px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 33px;
+    transition: 1s;
+  }
+  .sign{
+    display: none;
+  }
+}

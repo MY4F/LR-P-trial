@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iOS 14.0//EN
+N:;Mohamed Yasser;;;
+FN:Mohamed Yasser
+ORG:CardTap;
+EMAIL;type=INTERNET;type=HOME;type=pref:mohamedyasseraf@gmail.com
+item1.ADR;type=HOME;type=pref:;;25\nMohamed Hassan El Gamal;Cairo;Manteqah 
+ El Sadsa;;Egypt
+item1.X-ABADR:eg
+BDAY;value=date:2000-10-14
+REV:2021-03-24T14:07:57Z
+X-IMAGETYPE:PHOTO
+X-IMAGEHASH:dZvThAaXqqhO4aMGtCGd7g==
+END:VCARD
