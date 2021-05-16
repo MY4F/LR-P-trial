@@ -4,7 +4,7 @@ const app = express();
 const { ensureAuthenticated } = require('../config/auth');
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile(__direname + '/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
