@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const { ensureAuthenticated } = require('../config/auth'); 
+const { ensureAuthenticated } = require('../config/auth');
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index.html');
+    res.sendFile('/views/index.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
