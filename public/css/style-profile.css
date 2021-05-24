@@ -152,38 +152,11 @@ body{
   margin-bottom: 10px;
   font-size: 20px;
 }
-.email{
+.oth{
   width: 100%;
   margin: 10px;
 }
-.email>a{
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-.website{
-  width: 100%;
-  margin: 10px;
-}
-.website>a{
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-.location{
-  width: 100%;
-  margin: 10px;
-}
-.location>a{
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-.call{
-  width: 100%;
-  margin: 10px;
-}
-.call>a{
+.oth>a{
   padding: 10px;
   text-decoration: none;
   color: black;
@@ -281,12 +254,17 @@ body{
     padding: 10px;
   }
   .bio{
-    text-align: center;
-    border-radius: 5px;
-    width: 74%;
-    padding: 10px;
-    color: black;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+  }
+  .bio-words{
+    margin: 10px;
+  }
+  .bio-edit{
+    margin: 10px;
   }
   .h-space{
     display: flex;
