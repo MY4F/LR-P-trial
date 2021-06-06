@@ -1,176 +1,8 @@
-html{
-  scroll-behavior: smooth;
-}
-body{
-  top: 0;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #F0F8FF ;
-  color:black;
-}
-.horizontal-space{
-  border: 0.02px solid white;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.container{
-  position: sticky;
-  background-color: black;
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  transition: top 0.5s;
-}
-.sign{
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.sign>ul{
-  list-style: none;
-  text-align:right;
-}
-.sign>ul>li{
-  display: inline;
-  font-size: 1.2vw;
-  padding-bottom: 27px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 33px;
-  transition: 1s;
-}
-.sign>ul>li>a{
-  text-decoration: none;
-  color:white;
-}
-.sign>ul>li:hover{
-  background-color: #f2c136;
-}
-.nav-bar{
-  width: 65%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.nav-button{
-  display: none;
-}
-.header1>h1>a{
-  text-decoration: none;
-  color:white;
-  font-size: 30px;
-}
-.nav-bar>ul{
-  list-style: none;
-}
-.nav-bar>ul>.li-desktop{
-  display: inline;
-  font-size: 1.2vw;
-  padding-bottom: 27px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 33px;
-  transition: 1s;
-}
-.nav-bar>ul>li>a{
-  text-decoration: none;
-  color:white;
-}
-.nav-bar>ul>li:hover{
-  background-color: #f2c136;
-}
-.hide{
-  display: none;
-}
-
-
-
-.desktop-container{
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 1fr 100px 1fr;
-  grid-template-areas:
-  "card bio"
-  "card sclinks"
-  "card otlinks";
-}
-.card-holder{
-  background-color: black;
-  color: white;
-  grid-area: card;
-}
-.card-holder>img{
-  width: 100%;
-}
-.second-part-name>h3{
-  margin: 10px;
-}
-.second-part-name>span{
-  margin: 10px;
-  color: #fd612f;
-}
-.h-space{
-  display: none;
-}
-.card-holder-button{
-  display: none;
-}
-.bio{
-  margin: auto;
-  padding: 20px;
-  grid-area: bio;
-}
-.client-social-links{
-  grid-area: sclinks;
-  margin: auto;
-}
-.client-social-links>a{
-  margin: 20px;
-  text-decoration: none;
-  color: black;
-  font-size: 40px;
-}
-.client-other-links{
-  grid-area: otlinks;
-}
-.img-mobile-ver{
-  display: none;
-}
-.client-other-links{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 20px;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-.oth{
-  width: 100%;
-  margin: 10px;
-}
-.oth>a{
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-
-
-
-
-
-@media screen and (max-width: 750px) {
-  html{
+html {
     scroll-behavior: smooth;
-  }
-  body{
+}
+
+body {
     top: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -178,233 +10,466 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F0F8FF ;
-    color:black;
-  }
-  .nav-bar{
-    display: flex;
-    flex-direction: row;
-  }
-  .header1{
-    width:96.5%;
-  }
-  .nav-bar>ul{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .header1>h1>a{
-    width: 10%;
-  }
-  .nav-button{
-    display: inline;
-    font-size: 17px;
-    margin: auto;
-    cursor: pointer;
-  }
-  .card-holder{
-    border-radius: 5px;
-    margin: 10px;
+    background-color: #F0F8FF;
+    color: black;
+}
+
+.horizontal-space {
+    border: 0.02px solid white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.container {
+    position: sticky;
     background-color: black;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: top 0.5s;
+}
+
+.sign {
+    width: 30%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: white;
-  }
-  .card-holder>img{
-    margin: auto ;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius:5px;
-    width: 63%;
-  }
-  .second-part-name{
+}
+
+    .sign > ul {
+        list-style: none;
+        text-align: right;
+    }
+
+        .sign > ul > li {
+            display: inline;
+            font-size: 1.2vw;
+            padding-bottom: 27px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 33px;
+            transition: 1s;
+        }
+
+            .sign > ul > li > a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .sign > ul > li:hover {
+                background-color: #f2c136;
+            }
+
+.nav-bar {
+    width: 65%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-  .second-part-name>h3{
-    font-size: 15px;
+}
+
+.nav-button {
+    display: none;
+}
+
+.header1 > h1 > a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.nav-bar > ul {
+    list-style: none;
+}
+
+    .nav-bar > ul > .li-desktop {
+        display: inline;
+        font-size: 1.2vw;
+        padding-bottom: 27px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 33px;
+        transition: 1s;
+    }
+
+    .nav-bar > ul > li > a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .nav-bar > ul > li:hover {
+        background-color: #f2c136;
+    }
+
+.hide {
+    display: none;
+}
+
+
+
+.desktop-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr 100px 1fr;
+    grid-template-areas: "card bio" "card sclinks" "card otlinks";
+}
+
+.card-holder {
+    background-color: black;
+    color: white;
+    grid-area: card;
+}
+
+    .card-holder > img {
+        width: 100%;
+    }
+
+.second-part-name > h3 {
     margin: 10px;
-  }
-  .second-part-name>span{
+}
+
+.second-part-name > span {
     margin: 10px;
     color: #fd612f;
-    font-size: 2.8vw;
-  }
-  .mohamed-malatawy>span{
-    font-size: 2.1vw;
-  }
-  .mohamed-malatawy{
-    text-align: right;
-  }
-  .card-holder-button{
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
+}
+
+.h-space {
+    display: none;
+}
+
+.card-holder-button {
+    display: none;
+}
+
+.bio {
     margin: auto;
-    background-color: #fd612f;
-    width: 79%;
-    transition: 1s;
-    padding: 10px;
-  }
-  .bio{
+    padding: 20px;
+    grid-area: bio;
+}
+
+.client-social-links {
+    grid-area: sclinks;
+    margin: auto;
+}
+
+    .client-social-links > a {
+        margin: 20px;
+        text-decoration: none;
+        color: black;
+        font-size: 40px;
+    }
+
+.client-other-links {
+    grid-area: otlinks;
+}
+
+.img-mobile-ver {
+    display: none;
+}
+
+.client-other-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.oth {
+    width: 100%;
+    margin: 10px;
+}
+
+    .oth > a {
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+
+
+@media screen and (max-width: 750px) {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        top: 0;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F0F8FF;
+        color: black;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header1 {
+        width: 96.5%;
+    }
+
+    .nav-bar > ul {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header1 > h1 > a {
+        width: 10%;
+    }
+
+    .nav-button {
+        display: inline;
+        font-size: 17px;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .card-holder {
+        border-radius: 5px;
+        margin: 10px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+        .card-holder > img {
+            margin: auto;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            width: 63%;
+        }
+
+    .second-part-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .second-part-name > h3 {
+            font-size: 15px;
+            margin: 10px;
+        }
+
+        .second-part-name > span {
+            margin: 10px;
+            color: #fd612f;
+            font-size: 2.8vw;
+        }
+
+    .mohamed-malatawy > span {
+        font-size: 2.1vw;
+    }
+
+    .mohamed-malatawy {
+        text-align: right;
+    }
+
+    .card-holder-button {
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        margin: auto;
+        background-color: #fd612f;
+        width: 79%;
+        transition: 1s;
+        padding: 10px;
+    }
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .bio-words {
+        margin: 10px;
+    }
+
+    .bio-edit {
+        margin: 10px;
+    }
+
+    .h-space {
+        display: flex;
+        margin: 20px;
+        border: 0.00001px solid black;
+        opacity: 0.2;
+    }
+
+    .client-social-links {
+        width: 80%;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+        .client-social-links > a {
+            margin: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 35px;
+        }
+
+    .client-other-links {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .email {
+        width: 120%;
+        margin: 10px;
+    }
+
+    .website {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .location {
+        border-radius: 5px;
+        width: 100%;
+        margin: 10px;
+    }
+
+        .location > i {
+        }
+
+    .email > a {
+        margin-left: 5px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .website > a {
+        margin-left: 5px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .location > a {
+        margin-left: 5px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .img-desktop-ver {
+        display: none;
+    }
+
+    .img-mobile-ver {
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-bar {
+        width: 90%;
+    }
+
+        .nav-bar > ul > .li-desktop {
+            font-size: 20px;
+        }
+
+    .hide {
+        display: inline;
+        font-size: 20px;
+        padding-bottom: 27px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 33px;
+        transition: 1s;
+    }
+
+    .sign {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: black;
+    width: 100%;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align:center;
-  }
-  .bio-words{
-    margin: 10px;
-  }
-  .bio-edit{
-    margin: 10px;
-  }
-  .h-space{
-    display: flex;
+    justify-content: space-around;
+}
+
+.social-links {
+    margin: 40px;
+    text-align: center;
+}
+
+.other-links {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.social-links > a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.other-links > a {
+    text-decoration: none;
+    color: white;
     margin: 20px;
-    border: 0.00001px solid black;
-    opacity: 0.2;
-  }
-  .client-social-links{
-    width: 80%;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .client-social-links>a{
-    margin:20px;
-    text-decoration: none;
-    color: black;
-    font-size: 35px;
-  }
-  .client-other-links{
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  .email{
-    width: 120%;
-    margin: 10px;
-  }
-  .website{
-    width: 100%;
-    margin: 10px;
-  }
-  .location{
-    border-radius: 5px;
-    width: 100%;
-    margin: 10px;
-  }
-  .location>i{
-
-  }
-  .email>a{
-    margin-left: 5px;
-    text-decoration: none;
-    color: black;
-  }
-  .website>a{
-    margin-left: 5px;
-    text-decoration: none;
-    color: black;
-  }
-  .location>a{
-    margin-left: 5px;
-    text-decoration: none;
-    color: black;
-  }
-  .img-desktop-ver{
-    display: none;
-  }
-  .img-mobile-ver{
-    display: block;
-  }
-  .container{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
-.nav-bar{
-   width: 90%;
- }
-.nav-bar>ul>.li-desktop{
-   font-size: 20px;
- }
- .hide{
-   display: inline;
-   font-size: 20px;
-   padding-bottom: 27px;
-   padding-left: 30px;
-   padding-right: 30px;
-   padding-top: 33px;
-   transition: 1s;
- }
- .sign{
-   display: none;
- }
-
+    padding: 7px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer{
-  background-color: black;
-  width:100%;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.social-links{
-  margin: 40px;
-  text-align: center;
-}
-.other-links{
-  font-size: 14px;
-  width:100%;
-  text-align: center;
-}
-.social-links>a{
-  padding: 15px;
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
-}
-.other-links>a{
-  text-decoration: none;
-  color: white;
-  margin: 20px;
-  padding: 7px;
-}
-.rights{
-  color: white;
-  margin: 40px;
-  text-align: center;
+.rights {
+    color: white;
+    margin: 40px;
+    text-align: center;
 }
