@@ -18,9 +18,9 @@ const linkInputScl = document.querySelector('.scl-input');
 const linkInputOth = document.querySelector('.oth-input');
 const linksContainer = document.querySelector('.client-social-links');
 const othLinksContainer = document.querySelector('.client-other-links');
-const ps =document.createElement('span');
-
-let num=0;
+const ps = document.createElement('span');
+const scTypeInput = document.querySelector('.scl-input2');
+const scTypeInput2 = document.querySelector('.oth-input3');
  bioedit = () =>{
   bioBtnEdit.style.display='none';
   bioBtnSave.style.display='block';
@@ -73,12 +73,13 @@ sclrem = () => {
   sclBtnDel.style.display='block';
 }
 scldel = () => {
-  const links = linksContainer.querySelectorAll('a');
-  linksContainer.removeChild(links[linkInputScl.value-1]);
+    const links = linksContainer.querySelectorAll('a');
+    scTypeInput.value = links[linkInputScl.value - 1].outerHTML;
+    linksContainer.removeChild(links[linkInputScl.value - 1]);
   sclBtnDel.style.display='none';
   linkInputScl.style.display='none';
   sclBtnEdit.style.display='block';
-  ps.style.display='none';
+    ps.style.display = 'none';
 }
 
 
@@ -110,7 +111,7 @@ othsave = () =>{
   else{
     newA.href=`${linkInputOth.value}`;
   }
-  newA.innerText=`${linkInputOth.value}`
+    linkInputOth.value=`${linkInputOth.value}`
   newA.target='_blank';
   othLinksContainer.appendChild(newD);
   newD.appendChild(newI);
@@ -131,7 +132,8 @@ othrem = () => {
 }
 othdel = () => {
   const links = othLinksContainer.querySelectorAll('div');
-  othLinksContainer.removeChild(links[linkInputOth.value-1]);
+    othLinksContainer.removeChild(links[linkInputOth.value - 1]);
+    scTypeInput2.value = links[linkInputOth.value - 1].outerHTML;
   othBtnDel.style.display='none';
   linkInputOth.style.display='none';
   othBtnEdit.style.display='block';
@@ -144,55 +146,64 @@ fb = () => {
   sclBtnSave.name='facebook'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'facebook';
 }
 ig = () => {
   sclBtnSave.name='instagram'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'instagram';
 }
 wp = () => {
   sclBtnSave.name='whatsapp'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'whatsapp';
 }
 tw = () => {
   sclBtnSave.name='twitter'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'twitter';
 }
 gh = () => {
   sclBtnSave.name='github'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'github';
 }
 li = () => {
   sclBtnSave.name='linkedin'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'linkedin';
 }
 be = () => {
   sclBtnSave.name='behance'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'behance';
 }
 sc = () => {
   sclBtnSave.name='snapchat'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'snapchat';
 }
 pin = () => {
   sclBtnSave.name='pinterest'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-  sclBtnSave.style.display='block';
+    sclBtnSave.style.display = 'block';
+    scTypeInput.value = 'pinterest';
 }
 
 
@@ -202,29 +213,38 @@ em = () => {
   othBtnSave.name='envelope'
   linkInputOth.style.display='flex';
   contentOth.style.display='none';
-  othBtnSave.style.display='block';
+    othBtnSave.style.display = 'block';
+    scTypeInput2.value = 'envelope';
 }
 wb = () => {
   othBtnSave.name='website'
   linkInputOth.style.display='flex';
   contentOth.style.display='none';
-  othBtnSave.style.display='block';
+    othBtnSave.style.display = 'block';
+    scTypeInput2.value = 'globe';
+
 }
 loc = () => {
   othBtnSave.name='map-marker-alt'
   linkInputOth.style.display='flex';
   contentOth.style.display='none';
-  othBtnSave.style.display='block';
+    othBtnSave.style.display = 'block';
+    scTypeInput2.value = 'map-marker-alt';
+
 }
 cl = () => {
   othBtnSave.name='phone'
   linkInputOth.style.display='flex';
   contentOth.style.display='none';
-  othBtnSave.style.display='block';
+    othBtnSave.style.display = 'block';
+    scTypeInput2.value = 'phone-alt';
+
 }
 pdf = () => {
   othBtnSave.name='file-pdf'
   linkInputOth.style.display='flex';
   contentOth.style.display='none';
-  othBtnSave.style.display='block';
+    othBtnSave.style.display = 'block';
+    scTypeInput2.value = 'file-pdf';
+
 }

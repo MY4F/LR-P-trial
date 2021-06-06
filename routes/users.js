@@ -4,69 +4,59 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 // User model
 const User = require('../models/User');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+
 
 // Login page
 router.get('/login', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/login.html');
+    res.sendFile('/app/views/login.html');
 });
 // Register page
 router.get('/register', (req, res) => {
-    console.log("asd");
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/register.html');
+    res.sendFile('/app/views/register.html');
 });
 
 //The card page
 router.get('/index3', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index3.html');
+    res.sendFile('/app/views/index3.html');
 });
 
 //Package page
 router.get('/index5', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index5.html');
+    res.sendFile('/app/views/index5.html');
 });
 
 //About page
 router.get('/index6', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index6.html');
+    res.sendFile('/app/views/index6.html');
 });
 
 //home page
 router.get('/homepageL', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/homepageL.html');
+    res.sendFile('/app/views/homepageL.html');
 });
 
 
 //The card page
 router.get('/thecardL', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/thecardL.html');
+    res.sendFile('/app/views/thecardL.html');
 });
 
 //Package page
 router.get('/thepackageL', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/thepackageL.html');
+    res.sendFile('/app/views/thepackageL.html');
 });
 
 //About page
 router.get('/aboutL', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/aboutL.html');
+    res.sendFile('/app/views/aboutL.html');
 });
 
 
 //Mohamed el malatawy's page
-router.get('/index4', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index4.html');
-});
-
-//Mohamed Yasser's page
-router.get('/MohamedYasser', (req, res) => {
-    User.findOne({ name: 'Mohamed Yasser' }).then(user => {
+router.get('/MohamedElMalatawy', (req, res) => {
+    User.findOne({ name: 'Mohamed Abdul-Fattah El Malatawy' }).then(user => {
         console.log(user)
-        //if (res.charCodeAt(0) === 0xFEFF) {
-            //res = res.substr(1);
-        //}
-        res.render('E:/Projects/Login System test/Trial 3/LoginRegister/views/MohamedYasser.ejs', {
+        res.render('/app/views/MohamedElMalatawy.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links
@@ -74,6 +64,17 @@ router.get('/MohamedYasser', (req, res) => {
     })
 });
 
+
+//Mohamed Yasser's page
+router.get('/MohamedYasser', (req, res) => {
+    User.findOne({ name: 'Mohamed Yasser' }).then(user => {
+        res.render('/app/views/MohamedYasser.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links
+        })
+    })
+});
 
 //register handle
 router.post('/register', (req, res) => {
@@ -115,7 +116,7 @@ router.post('/register', (req, res) => {
         const newUser = new User({
           name,
           email,
-          password,
+          password
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -140,7 +141,7 @@ router.post('/register', (req, res) => {
 });
 
 // Login handle
-router.post('/login', (req, res, next) => {
+router.post('/login', (req, res,next) => {
     passport.authenticate('local', {
         successRedirect: '/dashboard',
         failureRedirect: '/users/login',

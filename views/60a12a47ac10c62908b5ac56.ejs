@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style-profile.css">
+    <link rel="stylesheet" href="/css/style-profile-edit.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cfd0db899c.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>CT</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav-bar">
+          <div class="header1">
+            <h1> <a href="/">CardTap</a> </h1>
+          </div>
+          <ul>
+              <li class="li-desktop"> <a href="/users/thecardL">The Card</a> </li>
+              <li class="li-desktop"> <a href="/users/thepackageL">Packages</a> </li>
+              <li class="li-desktop"> <a href="/users/aboutL">About Us</a> </li>
+              <li class="hide"> <a href="/users/logout">Logout</a> </li>
+              <li class="hide"> <a href="/dashboard">Dashboard</a> </li>
+          </ul>
+          <span class="nav-button"> <i class="fas fa-bars" style="color:white;" ></i> </span>
+      </nav>
+      <div class="sign">
+          <ul>
+
+              <li class="hide"> <a href="/dashboard">Dashboard</a> </li>
+              <li class="log-desktop"> <a href="/users/logout">Logout</a> </li>
+          </ul>
+      </div>
+    </div>
+  <div class="desktop-container">
+    <div class="card-holder mohamed-malatawy">
+        <img class="img-desktop-ver" src="images/dr.jpg" alt="">
+        <img class="img-mobile-ver"src="images/dr2.jpg" alt="">
+      <div class="second-part-name mohamed-malatawy">
+        <h3>محمد عبد الفتاح الملطاوي</h3>
+        <span>استاذ الامراض الباطنه - طب عين شمس و استشاري الجهاز الهضمي و الكبد و المناظير</span>
+      </div>
+    </div>
+    <a class="card-holder-button" href="contacts/MohamedAbdul-FattahElMalatawy.vcf" download><i class="fas fa-id-card"></i> Contact Info.</a>
+    <div class="h-space"></div>
+    <div class="bio mohamed-malatawy">
+      <div class="bio-words>
+          <%= bio %>
+      </div>
+      <div class="bio-edit">
+          <form class="" action="/bioUpdate" method="POST">
+              <textarea name="bio" id="bio" rows="10" cols="45" class="bio-input"></textarea>
+              <button class="btn bio-btn-edit" type="button" name="submit" onclick="bioedit()">Edit</button>
+              <button class="btn bio-btn-save" type="submit" name="submit" onclick="biosave()">Save</button>
+          </form>
+      </div>
+    </div>
+    <div class="client-social">
+      <div class="client-social-links">
+              <%- icons %>
+      </div>
+      <div class="client-social-links-edit-btn">
+          <form class="" action="/iconsUpdate" method="POST">
+              <input class="scl-input" type="text" name="link" value="">
+              <input class="scl-input2" type="text" name="scType" value="">
+              <button class="btn scl-btn-edit" type="button" name="button" onclick="scledit()">Edit</button>
+              <button class="btn scl-btn-save" type="submit" name="button" onclick="sclsave()">Save</button>
+              <button class="btn scl-btn-add" type="button" name="button" onclick="scladd()">Add</button>
+              <button class="btn scl-btn-rem" type="button" name="button" onclick="sclrem()">Remove</button>
+              <button class="btn scl-btn-del" type="submit" name="button" onclick="scldel()">Delete</button>
+          </form>
+          <div class="dropdown-content-scl">
+              <button class="btn" type="button" name="facebook" onclick="fb()">Facebook</button>
+              <button class="btn" type="button" name="instagram" onclick="ig()">Instagram</button>
+              <button class="btn" type="button" name="twitter" onclick="tw()">Twitter</button>
+              <button class="btn" type="button" name="whatsapp" onclick="wa()">Whatsapp</button>
+              <button class="btn" type="button" name="linkedin" onclick="li()">LinkedIn</button>
+              <button class="btn" type="button" name="github" onclick="gh()">Github</button>
+              <button class="btn" type="button" name="behance" onclick="be()">Behance</button>
+              <button class="btn" type="button" name="snapchat" onclick="sc()">Snapchat</button>
+              <button class="btn" type="button" name="pinterest" onclick="pin()">Pinterist</button>
+          </div>
+      </div>
+    </div>
+    <div class="client-other-links">
+      <%- links %>
+    </div>
+    <div class="client-other-links-edit-btn">
+        <form class="" action="/linksUpdate" method="POST">
+            <input class="oth-input" type="text" name="link2" value="">
+            <input class="oth-input3" type="text" name="link3" value="">
+            <button class="btn oth-btn-edit" type="button" name="button" onclick="othedit()">Edit</button>
+            <button class="btn oth-btn-save" type="submit" name="button" onclick="othsave()">Save</button>
+            <button class="btn oth-btn-add" type="button" name="button" onclick="othadd()">Add</button>
+            <button class="btn oth-btn-rem" type="button" name="button" onclick="othrem()">Remove</button>
+            <button class="btn oth-btn-del" type="submit" name="button" onclick="othdel()">Delete</button>
+            <div class="dropdown-content-oth">
+                <button class="btn" type="button" name="envelope" onclick="em()">Email</button>
+                <button class="btn" type="button" name="website" onclick="wb()">Website</button>
+                <button class="btn" type="button" name="map-marker-alt" onclick="loc()">Location</button>
+                <button class="btn" type="button" name="phone" onclick="cl()">Phone Number</button>
+                <button class="btn" type="button" name="file-pdf" onclick="pdf()">PDF</button>
+            </div>
+        </form>
+     </div>
+  </div>
+    <footer>
+      <div class="social-links">
+        <a href="https://www.instagram.com/cardtap_/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/CardTap-346108156529686" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:mmalatawy6@gmail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+      </div>
+      <div class="other-links">
+
+          <a href="/users/index3">The Card</a>
+          <span class="horizontal-space"></span>
+          <a href="/users/index5">Packages</a>
+          <span class="horizontal-space"></span>
+          <a href="/users/index6">About Us</a>
+      </div>
+      <div class="rights">
+        © 2021 CardTap
+      </div>
+
+    </footer>
+
+
+    <script src="/js/js.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/profile-edit.js"></script>
+  </body>
+</html>

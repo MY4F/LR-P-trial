@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style-profile.css">
+    <link rel="stylesheet" href="/css/style-profile.css">
+    <link rel="stylesheet" href="/css/style-profile-edit.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -39,8 +40,8 @@
     </div>
   <div class="desktop-container">
     <div class="card-holder mohamed-malatawy">
-        <img class="img-desktop-ver" src="images/dr.jpg" alt="">
-        <img class="img-mobile-ver"src="images/dr2.jpg" alt="">
+        <img class="img-desktop-ver" src="/images/dr.jpg" alt="">
+        <img class="img-mobile-ver"src="/images/dr2.jpg" alt="">
       <div class="second-part-name mohamed-malatawy">
         <h3>محمد عبد الفتاح الملطاوي</h3>
         <span>استاذ الامراض الباطنه - طب عين شمس و استشاري الجهاز الهضمي و الكبد و المناظير</span>
@@ -49,41 +50,19 @@
     <a class="card-holder-button" href="contacts/MohamedAbdul-FattahElMalatawy.vcf" download><i class="fas fa-id-card"></i> Contact Info.</a>
     <div class="h-space"></div>
     <div class="bio mohamed-malatawy">
-      أستاذ الأمراض الباطنة - طب عين شمس -
- إستشاري الجهاز الهضمي و الكبد و المناظير
- دكتور كبد متخصص في كبد بالغين، جهاز هضمي ومناظير بالغين و باطنة عامة
+      <div class="bio-words">
+          <%= bio %>
+      </div>
     </div>
-    <div class="client-social-links">
-      <a href="https://wa.me/+201004639737" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
-      <a href="https://www.facebook.com/mmalatwy/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+    <div class="client-social">
+      <div class="client-social-links">
+              <%- icons %>
+      </div>
     </div>
     <div class="client-other-links">
-
-      <div class="website">
-        <i class="fas fa-globe"></i>
-        <a href="https://www.vezeeta.com/ar/dr/دكتور-محمد-عبد-الفتاح-الملطاوي-الكبد-والجهاز-الهضمي-2" target="_blank">vezeta.com/mohamedelmalatawy</a>
-      </div>
-      <div class="email">
-        <i class="far fa-envelope"></i>
-        <a href="mailto:mmalatawy6@gmail.com" target="_blank"> mmalatawy6@gmail.com</a>
-      </div>
-      <div class="location">
-        <i class="fas fa-map-marker-alt"></i>
-        <a href="https://goo.gl/maps/xhZ8rUEQ54aBeqmy6">Zeiytun clinic</a>
-      </div>
-      <div class="location">
-        <i class="fas fa-map-marker-alt"></i>
-        <a href="https://goo.gl/maps/XBm2ikT5zu57HsbZ9">Elite center clinic</a>
-      </div>
-      <div class="location">
-        <i class="fas fa-map-marker-alt"></i>
-        <a href="https://goo.gl/maps/J8aKVJEULmDJ92Lv6">Life mall clinic</a>
-      </div>
-      <div class="call">
-        <i class="fas fa-phone-alt"></i>
-        <a href="tel:+201151793055">+201151793055</a>
-      </div>
+      <%- links %>
     </div>
+
   </div>
     <footer>
       <div class="social-links">
@@ -106,7 +85,8 @@
     </footer>
 
 
-    <script src="js/js.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="/js/js.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/profile-edit.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@ let duplicate2 = ' ';
 let duplicte = '  ';
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile('E:/Projects/Login System test/Trial 3/LoginRegister/views/index.html');
+    res.sendFile('/app/views/index.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
@@ -17,7 +17,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render(`${n}.ejs`, {
         bio: req.user.bio,
         icons: req.user.icons,
-        links: newA2
+        links: req.user.links
     });
 
 });
@@ -31,17 +31,26 @@ router.post('/bioUpdate', (req, res) => {
     res.render(`${n}.ejs`, {
         icons: req.user.icons,
         bio: bioUpdate,
-        links: newA2
+        links: req.user.links
     });
 });
 router.post('/iconsUpdate', (req, res) => {
     scType = req.body.scType;
+    newA=req.user.icons
     if (req.body.link < 13) {
         newA = newA.replace(scType, ' ');
     }
     else {
-        let duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
-        if (!newA.includes(duplicate))
+        let duplicate = '';
+        if (scType === 'linkedin') {
+            duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>`;
+        }
+        else {
+            duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
+        }
+        if (scType === 'linkedin' && !newA.includes(duplicate))
+            newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>  `;
+        else if (!newA.includes(duplicate))
             newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
     }
     User.update({ icons: newA }, (error, res) => {
@@ -52,7 +61,7 @@ router.post('/iconsUpdate', (req, res) => {
     res.render(`${n}.ejs`, {
         icons: newA,
         bio: req.user.bio,
-        links: newA2
+        links: req.user.links
     });
 });
 
@@ -60,11 +69,13 @@ router.post('/iconsUpdate', (req, res) => {
 
 router.post('/linksUpdate', (req, res) => {
     scType = req.body.link3;
+    newA2 = req.user.links
+    console.log(scType);
     if (req.body.link2 < 13) {
         newA2 = newA2.replace(scType, ' ');
     }
     else {
-        let duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i><a href="${req.body.link2}">${req.body.link2}</a></div>`;
+        let duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>`;
         if (!newA2.includes(duplicate2))
             newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>  `;
     }
