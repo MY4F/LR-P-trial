@@ -50,15 +50,18 @@
     <a class="card-holder-button" href="contacts/MohamedAbdul-FattahElMalatawy.vcf" download><i class="fas fa-id-card"></i> Contact Info.</a>
     <div class="h-space"></div>
     <div class="bio mohamed-malatawy">
-      <div class="bio-words>
-          <%= bio %>
+      <div class="bio-input-edit">
+        <textarea name="name" rows="10" cols="45" class="bio-input"></textarea>
+      </div>
+      <div class="bio-words">
+                <%- bio %>
       </div>
       <div class="bio-edit">
-          <form class="" action="/bioUpdate" method="POST">
-              <textarea name="bio" id="bio" rows="10" cols="45" class="bio-input"></textarea>
-              <button class="btn bio-btn-edit" type="button" name="submit" onclick="bioedit()">Edit</button>
-              <button class="btn bio-btn-save" type="submit" name="submit" onclick="biosave()">Save</button>
-          </form>
+      <form class="" action="index.html" method="post">
+        <textarea name="name" rows="10" cols="45" class="bio-input"></textarea>
+          <button class="btn bio-btn-edit" type="button" name="button" onclick="bioedit()">Edit</button>
+          <button class="btn bio-btn-save" type="button" name="button" onclick="biosave()">Save</button>
+      </form>
       </div>
     </div>
     <div class="client-social">
