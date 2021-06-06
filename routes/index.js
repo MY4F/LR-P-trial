@@ -23,7 +23,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 });
 router.post('/bioUpdate', (req, res) => {
     const bioUpdate = req.body.bio;
-    User.update({ bio: bioUpdate }, (error, res) => {
+    req.user.update({ bio: bioUpdate }, (error, res) => {
         if (error) throw error;
 
     })
@@ -53,7 +53,7 @@ router.post('/iconsUpdate', (req, res) => {
         else if (!newA.includes(duplicate))
             newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
     }
-    User.update({ icons: newA }, (error, res) => {
+    req.user.update({ icons: newA }, (error, res) => {
         if (error) throw error;
 
     })
@@ -79,7 +79,7 @@ router.post('/linksUpdate', (req, res) => {
         if (!newA2.includes(duplicate2))
             newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>  `;
     }
-    User.update({ links: newA2 }, (error, res) => {
+    req.user.update({ links: newA2 }, (error, res) => {
         if (error) throw error;
 
     })
