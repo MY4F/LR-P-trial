@@ -67,16 +67,30 @@ router.post('/iconsUpdate', (req, res) => {
 
 
 
+
 router.post('/linksUpdate', (req, res) => {
     scType = req.body.link3;
     newA2 = req.user.links
-    console.log(scType);
     if (req.body.link2 < 13) {
         newA2 = newA2.replace(scType, ' ');
     }
     else {
         let duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>`;
-        if (!newA2.includes(duplicate2))
+        if(scType === 'envelope')
+            duplicate2=`<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="mailto:${req.body.link2}">${req.body.link2}</a></div>  `;
+        else if( scType === 'phone-alt')
+            duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="tel:+2${req.body.link2}">${req.body.linkName}</a></div>  `;
+        else if( scType==='map-marker-alt' || scType==='globe')
+            duplicate2=`<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.linkName}</a></div>  `;
+        if(scType ==='envelope' && !newA2.includes(duplicate2)){
+            newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="mailto:${req.body.link2}">${req.body.link2}</a></div>  `;
+        }
+        else if(scType === 'phone-alt' && !newA2.includes(duplicate2)){
+            newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="tel:+2${req.body.link2}">${req.body.linkName}</a></div>  `;
+        }
+        else if(scType === 'map-marker-alt' && !newA2.includes(duplicate2) || scType === 'globe' && !newA2.includes(duplicate2))
+            newA2+=`<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.linkName}</a></div>  `;
+        else if (!newA2.includes(duplicate2))
             newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>  `;
     }
     req.user.update({ links: newA2 }, (error, res) => {

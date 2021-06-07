@@ -67,13 +67,14 @@
             </div>
             <div class="client-social-links-edit-btn">
                 <form class="" action="/iconsUpdate" method="POST">
-                    <input class="scl-input" type="text" name="link" value="">
-                    <input class="scl-input2" type="text" name="scType" value="">
+                    <input class="scl-input" type="text" name="link" value="" size="25" placeholder="Enter link">
+                    <input class="scl-input2" type="text" name="scType" size="25" value="">
                     <button class="btn scl-btn-edit" type="button" name="button" onclick="scledit()">Edit</button>
                     <button class="btn scl-btn-save" type="submit" name="button" onclick="sclsave()">Save</button>
                     <button class="btn scl-btn-add" type="button" name="button" onclick="scladd()">Add</button>
                     <button class="btn scl-btn-rem" type="button" name="button" onclick="sclrem()">Remove</button>
                     <button class="btn scl-btn-del" type="submit" name="button" onclick="scldel()">Delete</button>
+                    <button class="btn scl-btn-cancel" type="button" name="button" onclick="sclcan()">Cancel</button>
                 </form>
                 <div class="dropdown-content-scl">
                     <button class="btn" type="button" name="facebook" onclick="fb()">Facebook</button>
@@ -93,13 +94,15 @@
         </div>
         <div class="client-other-links-edit-btn">
             <form class="" action="/linksUpdate" method="POST">
-                <input class="oth-input" type="text" name="link2" value="">
-                <input class="oth-input3" type="text" name="link3" value="">
+                <input class="oth-input" type="text" name="link2" size="25" value="" placeholder="">
+                <input class="oth-input3" type="text" name="link3" size="25" value="" placeholder="">
+                <input class="oth-input4" type="text" name="linkName" size="25" value="" placeholder="">
                 <button class="btn oth-btn-edit" type="button" name="button" onclick="othedit()">Edit</button>
                 <button class="btn oth-btn-save" type="submit" name="button" onclick="othsave()">Save</button>
                 <button class="btn oth-btn-add" type="button" name="button" onclick="othadd()">Add</button>
                 <button class="btn oth-btn-rem" type="button" name="button" onclick="othrem()">Remove</button>
                 <button class="btn oth-btn-del" type="submit" name="button" onclick="othdel()">Delete</button>
+                <button class="btn oth-btn-cancel" type="button" name="button" onclick="othcan()">Cancel</button>
                 <div class="dropdown-content-oth">
                     <button class="btn" type="button" name="envelope" onclick="em()">Email</button>
                     <button class="btn" type="button" name="website" onclick="wb()">Website</button>

@@ -48,7 +48,7 @@
 .oth-btn-add:hover .dropdown-content-oth{
   display: block;
 }
-.scl-input , .oth-input{
+.scl-input , .oth-input, .oth-input4, .scl-input2, .oth-input3{
   display: none;
   color: #555555;
   margin: 10px;
@@ -57,10 +57,10 @@
   transition: border-color 1s;
   outline: 0;
 }
-.scl-input:focus{
+.scl-input:focus,.oth-input:focus, .oth-input4:focus, .scl-input2:focus, .oth-input3:focus {
   border-color:#fd612f;
 }
-.scl-btn-rem, .scl-btn-del, .scl-btn-add, .scl-btn-save, .bio-btn-save, .oth-btn-rem, .oth-btn-del, .oth-btn-add, .oth-btn-save{
+.scl-btn-rem, .scl-btn-del, .scl-btn-add, .scl-btn-save,.scl-btn-cancel , .bio-btn-save, .oth-btn-rem, .oth-btn-del, .oth-btn-add, .oth-btn-save, .oth-btn-cancel{
   display: none;
 }
 .client-other-links-edit-btn{
@@ -69,6 +69,6 @@
   justify-content: center;
   align-items: center;
 }
-.scl-input2, .oth-input3{
+.scl-input2, .oth-input3, .oth-input4{
     display: none;
 }
