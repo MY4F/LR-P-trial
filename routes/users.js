@@ -8,7 +8,7 @@ const User = require('../models/User');
 
 // Login page
 router.get('/login', (req, res) => {
-    res.sendFile('/app/views/login.ejs');
+    res.render('/app/views/login.ejs');
 });
 // Register page
 router.get('/register', (req, res) => {
