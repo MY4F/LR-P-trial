@@ -40,6 +40,7 @@
       <form action="/users/login" method="POST" class="login-form">
          Login User
           <div class="email">
+            <%- include('partials/messages'); %>
               <label for="email" class="form-label">Email Address</label>
               <input type="email" class="form-email" id="email" name="email">
           </div>
