@@ -56,7 +56,7 @@ router.get('/aboutL', (req, res) => {
 router.get('/MohamedElMalatawy', (req, res) => {
     User.findOne({ name: 'محمد عبد الفتاح الملطاوي' }).then(user => {
         console.log(user)
-            res.render('/app/views/ClientProfiles.ejs', {
+            res.render('/app/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,
@@ -74,7 +74,7 @@ router.get('/MohamedElMalatawy', (req, res) => {
 router.get('/MohamedYasser', (req, res) => {
     User.findOne({ name: 'Mohamed Yasser Abdul-Fattah' }).then(user => {
         console.log(user.image1);
-        res.render('/app/views/ClientProfiles.ejs', {
+        res.render('/app/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,

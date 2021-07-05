@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     let n = req.user.id;
-    res.render(`ClientProfilesEdit.ejs`, {
+    res.render(`ClientProfileEdit.ejs`, {
         bio: req.user.bio,
         icons: req.user.icons,
         links: req.user.links,
