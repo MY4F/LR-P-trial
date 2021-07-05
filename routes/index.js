@@ -45,6 +45,7 @@ router.post('/bioUpdate', (req, res) => {
     });
 });
 router.post('/iconsUpdate', (req, res) => {
+    newA=req.user.icons;
     let n = req.user.id;
     scType = req.body.scType;
     if (req.body.link < 13) {
