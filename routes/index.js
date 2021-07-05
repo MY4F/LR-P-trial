@@ -49,16 +49,7 @@ router.post('/iconsUpdate', (req, res) => {
     let n = req.user.id;
     scType = req.body.scType;
     if (req.body.link < 13) {
-        try {
-            console.log(req.body.noIcons);
-            if (req.body.link <= 0 || req.body.link <= req.body.noIcons) {
-                newA = newA.replace(scType, ' ');
-            }
-        }
-        catch(err) {
-            console.log('enter valid number in boundary');
-        }
-
+      newA = newA.replace(scType, ' ');
     }
     else {
         let duplicate = '';
