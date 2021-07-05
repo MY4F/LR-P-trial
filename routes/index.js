@@ -9,12 +9,12 @@ let duplicate2 = ' ';
 let duplicte = '  ';
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile('/app/views/index.html');
+    res.sendFile('app/views/index.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     let n = req.user.id;
-    res.render(`ClientProfileEdit.ejs`, {
+    res.render(`ClientProfilesEdit.ejs`, {
         bio: req.user.bio,
         icons: req.user.icons,
         links: req.user.links,
@@ -28,23 +28,37 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 
 });
 router.post('/bioUpdate', (req, res) => {
-    const bioUpdate = req.body.bio;
+    let bioUpdate = req.body.bio;
+    console.log(req.user);
     req.user.update({ bio: bioUpdate }, (error, res) => {
         if (error) throw error;
-
     })
     let n = req.user.id;
-    res.render(`${n}.ejs`, {
+    res.render(`ClientProfilesEdit.ejs`, {
         icons: req.user.icons,
         bio: bioUpdate,
-        links: req.user.links
+        links: req.user.links,
+        job: req.user.job,
+        name: req.user.name,
+        vcf: req.user.vcf,
+        image1: req.user.image1,
+        image2: req.user.image2
     });
 });
 router.post('/iconsUpdate', (req, res) => {
+    let n = req.user.id;
     scType = req.body.scType;
-    newA=req.user.icons
     if (req.body.link < 13) {
-        newA = newA.replace(scType, ' ');
+        try {
+            console.log(req.body.noIcons);
+            if (req.body.link <= 0 || req.body.link <= req.body.noIcons) {
+                newA = newA.replace(scType, ' ');
+            }
+        }
+        catch(err) {
+            console.log('enter valid number in boundary');
+        }
+
     }
     else {
         let duplicate = '';
@@ -63,14 +77,17 @@ router.post('/iconsUpdate', (req, res) => {
         if (error) throw error;
 
     })
-    let n = req.user.id;
-    res.render(`${n}.ejs`, {
+    res.render(`ClientProfilesEdit.ejs`, {
         icons: newA,
         bio: req.user.bio,
-        links: req.user.links
+        links: req.user.links,
+        job: req.user.job,
+        name: req.user.name,
+        vcf: req.user.vcf,
+        image1: req.user.image1,
+        image2: req.user.image2
     });
 });
-
 
 
 
@@ -104,10 +121,15 @@ router.post('/linksUpdate', (req, res) => {
 
     })
     let n = req.user.id;
-    res.render(`${n}.ejs`, {
+    res.render(`ClientProfilesEdit.ejs`, {
         icons: req.user.icons,
         bio: req.user.bio,
-        links : newA2
+        links : newA2,
+        job: req.user.job,
+        name: req.user.name,
+        vcf: req.user.vcf,
+        image1: req.user.image1,
+        image2: req.user.image2
     });
 });
 
