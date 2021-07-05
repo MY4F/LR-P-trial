@@ -54,12 +54,17 @@ router.get('/aboutL', (req, res) => {
 
 //Mohamed el malatawy's page
 router.get('/MohamedElMalatawy', (req, res) => {
-    User.findOne({ name: 'Mohamed Abdul-Fattah El Malatawy' }).then(user => {
+    User.findOne({ name: 'محمد عبد الفتاح الملطاوي' }).then(user => {
         console.log(user)
-        res.render('/app/views/MohamedElMalatawy.ejs', {
+            res.render('/app/views/ClientProfiles.ejs', {
             bio: user.bio,
             icons: user.icons,
-            links: user.links
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2
         })
     })
 });
@@ -67,14 +72,21 @@ router.get('/MohamedElMalatawy', (req, res) => {
 
 //Mohamed Yasser's page
 router.get('/MohamedYasser', (req, res) => {
-    User.findOne({ name: 'Mohamed Yasser' }).then(user => {
-        res.render('/app/views/MohamedYasser.ejs', {
+    User.findOne({ name: 'Mohamed Yasser Abdul-Fattah' }).then(user => {
+        console.log(user.image1);
+        res.render('/app/views/ClientProfiles.ejs', {
             bio: user.bio,
             icons: user.icons,
-            links: user.links
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2
         })
     })
 });
+
 
 //register handle
 router.post('/register', (req, res) => {

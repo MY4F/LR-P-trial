@@ -28,6 +28,22 @@ const UserSchema = new mongoose.Schema({
     links: {
         type: String,
         default: false
+    },
+    image1:{
+        type: String,
+        default: false,
+    },
+    image2:{
+        type: String,
+        default: false,
+    },
+    job:{
+        type: String,
+        default: false,
+    },
+    vcf:{
+        type: String,
+        default: false,
     }
 });
 
