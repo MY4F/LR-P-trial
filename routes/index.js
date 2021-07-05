@@ -13,8 +13,7 @@ router.get('/', (req, res) => {
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    let n = req.user.id;
-    res.render(`ClientProfilesEdit.ejs`, {
+    res.render(`ClientProfileEdit.ejs`, {
         bio: req.user.bio,
         icons: req.user.icons,
         links: req.user.links,
@@ -34,7 +33,7 @@ router.post('/bioUpdate', (req, res) => {
         if (error) throw error;
     })
     let n = req.user.id;
-    res.render(`ClientProfilesEdit.ejs`, {
+    res.render(`ClientProfileEdit.ejs`, {
         icons: req.user.icons,
         bio: bioUpdate,
         links: req.user.links,
@@ -77,7 +76,7 @@ router.post('/iconsUpdate', (req, res) => {
         if (error) throw error;
 
     })
-    res.render(`ClientProfilesEdit.ejs`, {
+    res.render(`ClientProfileEdit.ejs`, {
         icons: newA,
         bio: req.user.bio,
         links: req.user.links,
@@ -121,7 +120,7 @@ router.post('/linksUpdate', (req, res) => {
 
     })
     let n = req.user.id;
-    res.render(`ClientProfilesEdit.ejs`, {
+    res.render(`ClientProfileEdit.ejs`, {
         icons: req.user.icons,
         bio: req.user.bio,
         links : newA2,
