@@ -9,7 +9,7 @@ let duplicate2 = ' ';
 let duplicte = '  ';
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile('app/views/index.html');
+    res.sendFile('/app/views/index.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
