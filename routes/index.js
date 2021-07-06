@@ -44,11 +44,12 @@ router.post('/bioUpdate', (req, res) => {
         image2: req.user.image2
     });
 });
+
 router.post('/iconsUpdate', (req, res) => {
     newA=req.user.icons;
     scType = req.body.scType;
     if (req.body.link==="") {
-        res.render(`ClientProfilesEdit.ejs`, {
+        res.render(`ClientProfileEdit.ejs`, {
             icons: newA,
             bio: req.user.bio,
             links: req.user.links,
@@ -61,12 +62,11 @@ router.post('/iconsUpdate', (req, res) => {
     }
     else if(req.body.link < 13){
         newA = newA.replace(scType, ' ');
-        console.log(newA);
         req.user.update({ icons: newA }, (error, res) => {
             if (error) throw error;
 
         })
-        res.render(`ClientProfilesEdit.ejs`, {
+        res.render(`ClientProfileEdit.ejs`, {
             icons: newA,
             bio: req.user.bio,
             links: req.user.links,
@@ -89,12 +89,11 @@ router.post('/iconsUpdate', (req, res) => {
             newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>  `;
         else if (!newA.includes(duplicate))
             newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
-        console.log(newA);
         req.user.update({ icons: newA }, (error, res) => {
             if (error) throw error;
 
         })
-        res.render(`ClientProfilesEdit.ejs`, {
+        res.render(`ClientProfileEdit.ejs`, {
             icons: newA,
             bio: req.user.bio,
             links: req.user.links,
