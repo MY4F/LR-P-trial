@@ -18,11 +18,13 @@ const contentScl =document.querySelector('.dropdown-content-scl');
 const contentOth =document.querySelector('.dropdown-content-oth');
 const linkInputScl = document.querySelector('.scl-input');
 const linkInputOth = document.querySelector('.oth-input');
+const noOfLinks = document.querySelector('.oth-input5');
 const linksContainer = document.querySelector('.client-social-links');
 const othLinksContainer = document.querySelector('.client-other-links');
 const ps = document.createElement('span');
 const scTypeInput = document.querySelector('.scl-input2');
 const scTypeInput2 = document.querySelector('.oth-input3');
+const noOfIcons = document.querySelector('.scl-input3');
 const linkName= document.querySelector('.oth-input4');
  bioedit = () =>{
   bioBtnEdit.style.display='none';
@@ -53,22 +55,16 @@ scladd = () =>{
   sclBtnCan.style.display='block';
 }
 sclsave = () =>{
-  const newA = document.createElement('a');
-  if(sclBtnSave.name==='linkedin'){
-    newA.innerHTML=`<i class="fab fa-${sclBtnSave.name}"></i>`
-  }
-  else{
-    newA.innerHTML=`<i class="fab fa-${sclBtnSave.name}-square"></i>`
-  }
-  newA.href=`${linkInputScl.value}`;
-  newA.target='_blank';
-  linksContainer.appendChild(newA);
   linkInputScl.style.display='none';
   sclBtnSave.style.display='none';
   sclBtnEdit.style.display='block';
 }
 sclrem = () => {
   ps.style.display='block';
+  ps.classList.add("alert");
+  ps.classList.add("alert-msg");
+  ps.classList.add("show");
+  ps.classList.add("fade");
   ps.innerText='Enter a number which indicates the order of the icon to delete. ex: to delete the first icon from the right type 1 then hit Delete.';
   ps.style.opacity='0.6';
   linksContainer.appendChild(ps);
@@ -79,13 +75,14 @@ sclrem = () => {
   linkInputScl.placeholder='Enter number of icon to delete';
 }
 scldel = () => {
-    const links = linksContainer.querySelectorAll('a');
-    scTypeInput.value = links[linkInputScl.value - 1].outerHTML;
-    linksContainer.removeChild(links[linkInputScl.value - 1]);
+  const links = linksContainer.querySelectorAll('a');
+  noOfIcons.value=links.length;
+  scTypeInput.value = links[linkInputScl.value - 1].outerHTML;
+  linksContainer.removeChild(links[linkInputScl.value - 1]);
   sclBtnDel.style.display='none';
   linkInputScl.style.display='none';
   sclBtnEdit.style.display='block';
-    ps.style.display = 'none';
+  ps.style.display = 'none';
 }
 sclcan = () => {
   sclBtnCan.style.display='none';
@@ -117,6 +114,10 @@ othsave = () =>{
 }
 othrem = () => {
   ps.style.display='block';
+  ps.classList.add("alert");
+  ps.classList.add("alert-msg");
+  ps.classList.add("show");
+  ps.classList.add("fade");
   ps.innerText='Enter a number which indicates the order of the icon to delete. ex: to delete the first icon type 1 then hit Delete.';
   ps.style.opacity='0.6';
   othLinksContainer.appendChild(ps);
@@ -127,8 +128,9 @@ othrem = () => {
 }
 othdel = () => {
   const links = othLinksContainer.querySelectorAll('div');
-    othLinksContainer.removeChild(links[linkInputOth.value - 1]);
-    scTypeInput2.value = links[linkInputOth.value - 1].outerHTML;
+  noOfLinks.value=links.length;
+  othLinksContainer.removeChild(links[linkInputOth.value - 1]);
+  scTypeInput2.value = links[linkInputOth.value - 1].outerHTML;
   othBtnDel.style.display='none';
   linkInputOth.style.display='none';
   othBtnEdit.style.display='block';

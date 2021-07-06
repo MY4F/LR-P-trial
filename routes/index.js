@@ -47,8 +47,10 @@ router.post('/bioUpdate', (req, res) => {
 
 router.post('/iconsUpdate', (req, res) => {
     newA=req.user.icons;
+    let errors = [];
     scType = req.body.scType;
     if (req.body.link==="") {
+        errors.push({msg : " Please enter an appropriate link! "});
         res.render(`ClientProfileEdit.ejs`, {
             icons: newA,
             bio: req.user.bio,
@@ -57,11 +59,15 @@ router.post('/iconsUpdate', (req, res) => {
             name: req.user.name,
             vcf: req.user.vcf,
             image1: req.user.image1,
-            image2: req.user.image2
+            image2: req.user.image2,
+            errors
         });
     }
     else if(req.body.link < 13){
         newA = newA.replace(scType, ' ');
+        if(parseInt(req.body.link)<0 ||parseInt(req.body.link)>req.body.noIcons){
+         errors.push({msg : "Enter a valid number!"});
+        }
         req.user.update({ icons: newA }, (error, res) => {
             if (error) throw error;
 
@@ -74,7 +80,8 @@ router.post('/iconsUpdate', (req, res) => {
             name: req.user.name,
             vcf: req.user.vcf,
             image1: req.user.image1,
-            image2: req.user.image2
+            image2: req.user.image2,
+            errors
         });
     }
     else  {
@@ -112,8 +119,27 @@ router.post('/iconsUpdate', (req, res) => {
 router.post('/linksUpdate', (req, res) => {
     scType = req.body.link3;
     newA2 = req.user.links
+    let errors2 = [];
     if (req.body.link2 < 13) {
+      if(parseInt(req.body.link2)<0 ||parseInt(req.body.link2)>req.body.noLinks){
+          errors2.push({msg : "Enter a valid number!"});
+      }
         newA2 = newA2.replace(scType, ' ');
+        req.user.update({ links: newA2 }, (error, res) => {
+            if (error) throw error;
+
+        })
+        res.render(`ClientProfileEdit.ejs`, {
+            icons: req.user.icons,
+            bio: req.user.bio,
+            links : newA2,
+            job: req.user.job,
+            name: req.user.name,
+            vcf: req.user.vcf,
+            image1: req.user.image1,
+            image2: req.user.image2,
+            errors2
+        });
     }
     else {
         let duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>`;
@@ -133,22 +159,22 @@ router.post('/linksUpdate', (req, res) => {
             newA2+=`<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.linkName}</a></div>  `;
         else if (!newA2.includes(duplicate2))
             newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>  `;
-    }
-    req.user.update({ links: newA2 }, (error, res) => {
-        if (error) throw error;
 
-    })
-    let n = req.user.id;
-    res.render(`ClientProfileEdit.ejs`, {
-        icons: req.user.icons,
-        bio: req.user.bio,
-        links : newA2,
-        job: req.user.job,
-        name: req.user.name,
-        vcf: req.user.vcf,
-        image1: req.user.image1,
-        image2: req.user.image2
-    });
+            req.user.update({ links: newA2 }, (error, res) => {
+                if (error) throw error;
+
+            })
+            res.render(`ClientProfileEdit.ejs`, {
+                icons: req.user.icons,
+                bio: req.user.bio,
+                links : newA2,
+                job: req.user.job,
+                name: req.user.name,
+                vcf: req.user.vcf,
+                image1: req.user.image1,
+                image2: req.user.image2
+            });
+    }
 });
 
 module.exports = router;

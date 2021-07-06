@@ -1,5 +1,5 @@
 .btn{
-  margin: 0px 20px 40px 20px;
+  margin: 25px auto;
   width: 140px;
   height: 45px;
   font-family: 'Roboto', sans-serif;
@@ -69,6 +69,6 @@
   justify-content: center;
   align-items: center;
 }
-.scl-input3 ,.scl-input2, .oth-input3, .oth-input4{
+.scl-input3 ,.scl-input2, .oth-input3, .oth-input4, .oth-input5{
     display: none;
 }
