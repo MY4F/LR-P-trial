@@ -1,17 +1,17 @@
 const navButtton = document.querySelector(".nav-button");
-const list=document.querySelector("ul");
+const list=document.querySelector(".nav-burger");
 const listItems= document.querySelectorAll('li');
 const desktopContainer=document.querySelector('.desktop-container');
 const bodyy=document.querySelector('body');
 navButtton.addEventListener('click',()=>{
-  if(list.style.display==='none' && window.innerWidth<751|| list.style.display==='' && window.innerWidth<751){
-    list.style.display='flex';
+  if(list.style.top==='-500px' && window.innerWidth<751|| list.style.top==='-500px'  && window.innerWidth<751 ){
+    list.style.top = '77px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
-    },1);
+    },0);
   }
   else{
-    list.style.display='';
+    list.style.top = "-500px";
   }
 });
 listItems[0].addEventListener('click',()=>{
