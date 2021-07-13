@@ -253,8 +253,8 @@ body {
         transition: background-color 2s;
     }
 
-    .header1 {
-        width: 96.5%;
+    .header1{
+      width: 93%;
     }
 
     .nav-burger{
