@@ -6,7 +6,7 @@ const bodyy=document.querySelector('body');
 const imgClick=document.querySelectorAll('.h3-click');
 navButtton.addEventListener('click',()=>{
   if(list.style.top==='-500px' && window.innerWidth<751|| list.style.top==='-500px'  && window.innerWidth<751 ){
-    list.style.top = '77px';
+    list.style.top = '76px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
     },0);
