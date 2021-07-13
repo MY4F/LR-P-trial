@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,32 +15,45 @@
     <title>CT</title>
   </head>
   <body>
-    <div class="container">
+  <div class="container">
       <nav class="nav-bar">
           <div class="header1">
-            <h1> <a href="/">CardTap</a> </h1>
+              <h1> <a href="/">CardTap</a> </h1>
           </div>
-          <ul>
-            <li class="li-desktop"> <a href="/users/index3">The Card</a> </li>
-            <li class="li-desktop"> <a href="/users/index5">Packages</a> </li>
-            <li class="li-desktop"> <a href="/users/index6">About Us</a> </li>
-            <li class="hide"> <a href="/users/login">Login</a> </li>
-            <li class="hide"> <a href="/users/register">Register</a> </li>
-          </ul>
           <span class="nav-button"> <i class="fas fa-bars" style="color:white;" ></i> </span>
+          <ul class="desk-burger">
+              <li class="li-desktop"> <a href="/users/index3">The Card</a> </li>
+              <li class="li-desktop"> <a href="/users/index5">Packages</a> </li>
+              <li class="li-desktop"> <a href="/users/index6">About Us</a> </li>
+              <li class="hide"> <a href="/users/login">Login</a> </li>
+              <li class="hide"> <a href="/users/register">Register</a> </li>
+          </ul>
       </nav>
       <div class="sign">
-        <ul>
+          <ul>
+              <li class="log-desktop"> <a href="/users/login">Login</a> </li>
+              <li class="reg-desktop"> <a href="/users/register">Register</a> </li>
+          </ul>
+      </div>
+  </div>
+  <ul class="nav-burger" style="top: -500px">
+      <li class="li-desktop"> <a href="/users/index3">The Card</a> </li>
+      <li class="li-desktop"> <a href="/users/index5">Packages</a> </li>
+      <li class="li-desktop"> <a href="/users/index6">About Us</a> </li>
+      <li class="hide"> <a href="/users/login">Login</a> </li>
+      <li class="hide"> <a href="/users/register">Register</a> </li>
+  </ul>
+  <div class="sign-mob">
+      <ul>
           <li class="log-desktop"> <a href="/users/login">Login</a> </li>
           <li class="reg-desktop"> <a href="/users/register">Register</a> </li>
-        </ul>
-      </div>
-    </div>
+      </ul>
+  </div>
     <div class="background">
       <form action="/users/login" method="POST" class="login-form">
          Login User
           <div class="email">
-            <%- include('partials/messages'); %>
+              <%- include('partials/messages'); %>
               <label for="email" class="form-label">Email Address</label>
               <input type="email" class="form-email" id="email" name="email">
           </div>

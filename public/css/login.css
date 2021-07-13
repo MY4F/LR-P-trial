@@ -68,10 +68,10 @@ body{
   color:white;
   font-size: 30px;
 }
-.nav-bar>ul{
+.desk-burger{
   list-style: none;
 }
-.nav-bar>ul>.li-desktop{
+.desk-burger>.li-desktop{
   display: inline;
   font-size: 1.2vw;
   padding-bottom: 27px;
@@ -80,11 +80,11 @@ body{
   padding-top: 33px;
   transition: 1s;
 }
-.nav-bar>ul>li>a{
+.desk-burger>li>a{
   text-decoration: none;
   color:white;
 }
-.nav-bar>ul>li:hover{
+.desk-burger>li:hover{
   background-color: #f2c136;
 }
 .hide{
@@ -228,7 +228,9 @@ footer{
   margin: 40px;
   text-align: center;
 }
-
+.nav-burger, .sign-mob{
+  display: none;
+}
 
 @media screen and (max-width: 750px) {
   body{
@@ -249,13 +251,24 @@ footer{
     align-items: center;
   }
   .nav-bar{
+    justify-content: flex-start;
+    flex-wrap: wrap;
     width: 90%;
+    transition: background-color 2s;
   }
-  .nav-bar>ul{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .nav-burger{
+    display:flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: black;
+    flex-wrap: wrap;
+    text-align: center;
+    transition: all 1s;
+  }
+  .nav-burger>li{
+    width: 100%;
   }
   .nav-button{
     display: inline;
@@ -282,8 +295,28 @@ footer{
   .img>img{
     display: none;
   }
-  .nav-bar>ul>.li-desktop{
+  .nav-burger{
+    padding: 0;
+    margin: 0 auto;
+  }
+  .desk-burger{
+    display: none;
+  }
+  .nav-burger>.li-desktop{
+    display: inline;
     font-size: 20px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 33px;
+    transition: 1s;
+  }
+  .nav-burger>li>a{
+    text-decoration: none;
+    color:white;
+  }
+  .nav-burger>li:hover{
+    background-color: #f2c136;
   }
   .hide{
     display: inline;

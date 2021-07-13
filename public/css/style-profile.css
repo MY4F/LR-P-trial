@@ -98,9 +98,6 @@ body {
 .fade:not(.show) {
     opacity: 0;
 }
-.errors{
-
-}
 .nav-bar {
     width: 65%;
     display: flex;
@@ -119,33 +116,29 @@ body {
     font-size: 30px;
 }
 
-.nav-bar > ul {
+.desk-burger{
     list-style: none;
 }
-
-    .nav-bar > ul > .li-desktop {
-        display: inline;
-        font-size: 1.2vw;
-        padding-bottom: 27px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 33px;
-        transition: 1s;
-    }
-
-    .nav-bar > ul > li > a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .nav-bar > ul > li:hover {
-        background-color: #f2c136;
-    }
+.desk-burger>.li-desktop{
+    display: inline;
+    font-size: 1.2vw;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 33px;
+    transition: 1s;
+}
+.desk-burger>li>a{
+    text-decoration: none;
+    color:white;
+}
+.desk-burger>li:hover{
+    background-color: #f2c136;
+}
 
 .hide {
     display: none;
 }
-
 
 
 .desktop-container {
@@ -161,9 +154,9 @@ body {
     grid-area: card;
 }
 
-    .card-holder > img {
-        width: 100%;
-    }
+.card-holder > img {
+    width: 100%;
+}
 
 .second-part-name > h3 {
     margin: 10px;
@@ -193,12 +186,12 @@ body {
     margin: auto;
 }
 
-    .client-social-links > a {
-        margin: 20px;
-        text-decoration: none;
-        color: black;
-        font-size: 40px;
-    }
+.client-social-links > a {
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+}
 
 .client-other-links {
     grid-area: otlinks;
@@ -222,12 +215,14 @@ body {
     margin: 10px;
 }
 
-    .oth > a {
-        padding: 10px;
-        text-decoration: none;
-        color: black;
-    }
-
+.oth > a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+.nav-burger, .sign-mob{
+    display: none;
+}
 
 
 
@@ -248,21 +243,33 @@ body {
         background-color: #F0F8FF;
         color: black;
     }
-
-    .nav-bar {
-        display: flex;
-        flex-direction: row;
+    .desk-burger{
+        display: none;
+    }
+    .nav-bar{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 90%;
+        transition: background-color 2s;
     }
 
     .header1 {
         width: 96.5%;
     }
 
-    .nav-bar > ul {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .nav-burger{
+        display:flex;
+        position: fixed;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: black;
+        flex-wrap: wrap;
+        text-align: center;
+        transition: all 1s;
+    }
+    .nav-burger>li{
+        width: 100%;
     }
 
     .header1 > h1 > a {
@@ -287,12 +294,12 @@ body {
         color: white;
     }
 
-        .card-holder > img {
-            margin: auto;
-            border-bottom-left-radius: 5px;
-            border-top-left-radius: 5px;
-            width: 63%;
-        }
+    .card-holder > img {
+        margin: auto;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        width: 63%;
+    }
 
     .second-part-name {
         display: flex;
@@ -301,16 +308,16 @@ body {
         align-items: center;
     }
 
-        .second-part-name > h3 {
-            font-size: 15px;
-            margin: 10px;
-        }
+    .second-part-name > h3 {
+        font-size: 15px;
+        margin: 10px;
+    }
 
-        .second-part-name > span {
-            margin: 10px;
-            color: #fd612f;
-            font-size: 2.8vw;
-        }
+    .second-part-name > span {
+        margin: 10px;
+        color: #fd612f;
+        font-size: 2.8vw;
+    }
 
     .mohamed-malatawy > span {
         font-size: 2.1vw;
@@ -367,12 +374,12 @@ body {
         flex-wrap: wrap;
     }
 
-        .client-social-links > a {
-            margin: 20px;
-            text-decoration: none;
-            color: black;
-            font-size: 35px;
-        }
+    .client-social-links > a {
+        margin: 20px;
+        text-decoration: none;
+        color: black;
+        font-size: 35px;
+    }
 
     .client-other-links {
         width: 90%;
@@ -400,8 +407,8 @@ body {
         margin: 10px;
     }
 
-        .location > i {
-        }
+    .location > i {
+    }
 
     .email > a {
         margin-left: 5px;
@@ -436,14 +443,26 @@ body {
         align-items: center;
     }
 
-    .nav-bar {
-        width: 90%;
+    .nav-burger{
+        padding: 0;
+        margin: 0 auto;
     }
-
-        .nav-bar > ul > .li-desktop {
-            font-size: 20px;
-        }
-
+    .nav-burger>.li-desktop{
+        display: inline;
+        font-size: 20px;
+        padding-bottom: 27px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 33px;
+        transition: 1s;
+    }
+    .nav-burger>li>a{
+        text-decoration: none;
+        color:white;
+    }
+    .nav-burger>li:hover{
+        background-color: #f2c136;
+    }
     .hide {
         display: inline;
         font-size: 20px;

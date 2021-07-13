@@ -1,22 +1,21 @@
 const navButtton = document.querySelector(".nav-button");
-const list=document.querySelector("ul");
+const list=document.querySelector(".nav-burger");
 const listItems= document.querySelectorAll('li');
 const desktopContainer=document.querySelector('.desktop-container');
 const bodyy=document.querySelector('body');
-const imgClick=document.querySelectorAll('.h3-click');
 navButtton.addEventListener('click',()=>{
-  if(list.style.display==='none' && window.innerWidth<751|| list.style.display===''  && window.innerWidth<751 ){
-    list.style.display='flex';
+  if(list.style.top==='-500px' && window.innerWidth<751|| list.style.top==='-500px'  && window.innerWidth<751 ){
+    list.style.top = '77px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
-    },1);
+    },0);
   }
   else{
-    list.style.display='';
+    list.style.top = "-500px";
   }
 });
 listItems[0].addEventListener('click',()=>{
-  if(list.style.display==='none'  && window.innerWidth<751|| list.style.display===''  && window.innerWidth<751){
+  if(list.style.display==='none' && window.innerWidth<751|| list.style.display==='' && window.innerWidth<751){
     list.style.display='flex';
   }
   else{
@@ -34,25 +33,25 @@ listItems[1].addEventListener('click',()=>{
 });
 
 listItems[2].addEventListener('click',()=>{
-  if(list.style.display==='none'  && window.innerWidth<751|| list.style.display===''  && window.innerWidth<751){
+  if(list.style.display==='none' && window.innerWidth<751|| list.style.display==='' && window.innerWidth<751){
     list.style.display='flex';
   }
   else{
     list.style.display='';
   }
 });
-imgClick[0].addEventListener('click',()=>{
-  window.scrollTo(0,734);
+window.addEventListener('resize',()=>{
+  if(window.innerWidth<751){
+    desktopContainer.classList.remove("desktop-container");
+
+  }
+  else{
+    desktopContainer.classList.add("desktop-container");
+  }
 });
 if(window.innerWidth<751){
-  imgClick[1].addEventListener('click',()=>{
-    window.scrollTo(0,670);
-  });
+  desktopContainer.classList.remove("desktop-container");
 }
-window.addEventListener('resize',()=>{
-if(window.innerWidth<751){
-  imgClick[1].addEventListener('click',()=>{
-    window.scrollTo(0,670);
-  });
+else {
+    desktopContainer.classList.add("desktop-container");
 }
-})

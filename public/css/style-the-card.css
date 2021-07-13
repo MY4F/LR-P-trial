@@ -79,10 +79,10 @@ body{
   color:white;
   font-size: 30px;
 }
-.nav-bar>ul{
+.desk-burger{
   list-style: none;
 }
-.nav-bar>ul>.li-desktop{
+.desk-burger>.li-desktop{
   display: inline;
   font-size: 1.2vw;
   padding-bottom: 27px;
@@ -91,11 +91,11 @@ body{
   padding-top: 33px;
   transition: 1s;
 }
-.nav-bar>ul>li>a{
+.desk-burger>li>a{
   text-decoration: none;
   color:white;
 }
-.nav-bar>ul>li:hover{
+.desk-burger>li:hover{
   background-color: #f2c136;
 }
 .hide{
@@ -201,7 +201,9 @@ body{
   margin: 35px;
   width: 15%;
 }
-
+.nav-burger, .sign-mob{
+  display: none;
+}
 
 
 
@@ -266,11 +268,25 @@ footer{
     background-color: #F0F8FF ;
     color:black;
   }
-  .nav-bar>ul{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .nav-bar{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 90%;
+    transition: background-color 2s;
+  }
+  .nav-burger{
+    display:flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: black;
+    flex-wrap: wrap;
+    text-align: center;
+    transition: all 1s;
+  }
+  .nav-burger>li{
+    width: 100%;
   }
   .nav-button{
     display: inline;
@@ -337,23 +353,11 @@ footer{
   .img2>img{
     width: 50%;
   }
-  .ul-text>ul{
-    list-style: none;
-    text-align: center;
-  }
   .img1-desktop{
     display: none;
   }
   .img1-mobile{
     display: block;
-  }
-  .ul-text{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0;
   }
   .img-con{
     font-size: 15px;
@@ -384,11 +388,28 @@ footer{
     justify-content: center;
     align-items: center;
   }
-.nav-bar{
-    width: 90%;
+  .nav-burger{
+    padding: 0;
+    margin: 0 auto;
   }
-.nav-bar>ul>.li-desktop{
+  .desk-burger{
+    display: none;
+  }
+  .nav-burger>.li-desktop{
+    display: inline;
     font-size: 20px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 33px;
+    transition: 1s;
+  }
+  .nav-burger>li>a{
+    text-decoration: none;
+    color:white;
+  }
+  .nav-burger>li:hover{
+    background-color: #f2c136;
   }
   .hide{
     display: inline;
