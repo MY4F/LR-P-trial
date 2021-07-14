@@ -87,6 +87,23 @@ router.get('/MohamedYasser', (req, res) => {
     })
 });
 
+//Mostafa Mutaz's page
+router.get('/MostafaMutaz', (req, res) => {
+    User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
+        console.log(user)
+            res.render('/app/views/ClientProfile.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2
+        })
+    })
+});
+
 
 //register handle
 router.post('/register', (req, res) => {
