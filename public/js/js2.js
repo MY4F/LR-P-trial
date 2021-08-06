@@ -5,14 +5,14 @@ const desktopContainer=document.querySelector('.desktop-container');
 const bodyy=document.querySelector('body');
 const imgClick=document.querySelectorAll('.h3-click');
 navButtton.addEventListener('click',()=>{
-  if(list.style.top==='-500px' && window.innerWidth<751|| list.style.top==='-500px'  && window.innerWidth<751 ){
-    list.style.top = '76px';
+  if(list.style.top==='-510px' && window.innerWidth<751|| list.style.top==='-510px'  && window.innerWidth<751 ){
+    list.style.top = '77px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
     },0);
   }
   else{
-    list.style.top = "-500px";
+    list.style.top = "-510px";
   }
 });
 listItems[0].addEventListener('click',()=>{

@@ -59,35 +59,43 @@ sclsave = () =>{
   sclBtnSave.style.display='none';
   sclBtnEdit.style.display='block';
 }
-sclrem = () => {
-  ps.style.display='block';
-  ps.classList.add("alert");
-  ps.classList.add("alert-msg");
-  ps.classList.add("show");
-  ps.classList.add("fade");
-  ps.innerText='Enter a number which indicates the order of the icon to delete. ex: to delete the first icon from the right type 1 then hit Delete.';
-  ps.style.opacity='0.6';
-  linksContainer.appendChild(ps);
-  linkInputScl.style.display='block';
-  sclBtnAdd.style.display='none';
-  sclBtnRem.style.display='none';
-  sclBtnDel.style.display='block';
-  linkInputScl.placeholder='Enter number of icon to delete';
-}
-scldel = () => {
-  const links = linksContainer.querySelectorAll('a');
+const links = linksContainer.querySelectorAll('a');
+iconDel= (x) =>{
+  scTypeInput.value = linksContainer.children[x].outerHTML;
   noOfIcons.value=links.length;
-  scTypeInput.value = links[linkInputScl.value - 1].outerHTML;
-  linksContainer.removeChild(links[linkInputScl.value - 1]);
   sclBtnDel.style.display='none';
   linkInputScl.style.display='none';
   sclBtnEdit.style.display='block';
-  ps.style.display = 'none';
+}
+for(let i = 1 ;i<links.length*2;i+=2){
+  const removeButton = document.createElement("button");
+  linksContainer.insertBefore(removeButton,linksContainer.children[i]);
+  removeButton.style.display="none";
+  removeButton.innerHTML="<i class=\"fas fa-trash-alt\"></i>";
+  removeButton.classList.toggle('iconDelete');
+  removeButton.setAttribute('onclick',`iconDel(${i-1})`);
+  removeButton.setAttribute('all','unset');
+  removeButton.setAttribute('type','submit');
+  removeButton.setAttribute('form','form-mid-id');
+}
+sclrem = () => {
+  const removeButton = document.querySelectorAll('.iconDelete');
+  for(let i = 0 ;i<links.length;i++){
+    removeButton[i].style.display="";
+  }
+  sclBtnAdd.style.display='none';
+  sclBtnRem.style.display='none';
+  sclBtnCan.style.display='block';
 }
 sclcan = () => {
+  const removeButton = document.querySelectorAll('.iconDelete');
+  for(let i = 0 ;i<links.length;i++){
+    removeButton[i].style.display="none";
+  }
   sclBtnCan.style.display='none';
   contentScl.style.display='none';
   sclBtnEdit.style.display='block';
+  linkInputScl.style.display='none';
 }
 
 
@@ -112,34 +120,42 @@ othsave = () =>{
   othBtnSave.style.display='none';
   othBtnEdit.style.display='block';
 }
-othrem = () => {
-  ps.style.display='block';
-  ps.classList.add("alert");
-  ps.classList.add("alert-msg");
-  ps.classList.add("show");
-  ps.classList.add("fade");
-  ps.innerText='Enter a number which indicates the order of the icon to delete. ex: to delete the first icon type 1 then hit Delete.';
-  ps.style.opacity='0.6';
-  othLinksContainer.appendChild(ps);
-  linkInputOth.style.display='block';
-  othBtnAdd.style.display='none';
-  othBtnRem.style.display='none';
-  othBtnDel.style.display='block';
-}
-othdel = () => {
-  const links = othLinksContainer.querySelectorAll('div');
+const links2 = othLinksContainer.querySelectorAll('div');
+linkDel= (x) =>{
+  scTypeInput2.value = othLinksContainer.children[x].outerHTML;
   noOfLinks.value=links.length;
-  othLinksContainer.removeChild(links[linkInputOth.value - 1]);
-  scTypeInput2.value = links[linkInputOth.value - 1].outerHTML;
-  othBtnDel.style.display='none';
   linkInputOth.style.display='none';
   othBtnEdit.style.display='block';
-  ps.style.display='none';
+}
+for(let i = 1 ;i<links2.length*2;i+=2){
+  const removeButton = document.createElement("button");
+  othLinksContainer.insertBefore(removeButton,othLinksContainer.children[i]);
+  removeButton.style.display="none";
+  removeButton.innerHTML="<i class=\"fas fa-trash-alt\"></i>";
+  removeButton.classList.toggle('linkDelete');
+  removeButton.setAttribute('onclick',`linkDel(${i-1})`);
+  removeButton.setAttribute('all','unset');
+  removeButton.setAttribute('type','submit');
+  removeButton.setAttribute('form','form-link-mid-id');
+}
+othrem = () => {
+  const removeButton = document.querySelectorAll('.linkDelete');
+  for(let i = 0 ;i<links2.length;i++){
+    removeButton[i].style.display="";
+  }
+  othBtnAdd.style.display='none';
+  othBtnRem.style.display='none';
+  othBtnCan.style.display='block';
 }
 othcan = () => {
+  const removeButton = document.querySelectorAll('.linkDelete');
+  for(let i = 0 ;i<links2.length;i++){
+    removeButton[i].style.display="none";
+  }
   othBtnCan.style.display='none';
   contentOth.style.display='none';
   othBtnEdit.style.display='block';
+  linkInputOth.style.display='none';
 }
 
 
@@ -273,7 +289,8 @@ pdf = () => {
   othBtnSave.name='file-pdf'
   linkInputOth.style.display='flex';
   contentOth.style.display='none';
-    othBtnSave.style.display = 'block';
-    scTypeInput2.value = 'file-pdf';
-
+  othBtnSave.style.display = 'block';
+  scTypeInput2.value = 'file-pdf';
 }
+
+// Remove icons first trial

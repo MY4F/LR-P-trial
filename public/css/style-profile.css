@@ -20,18 +20,19 @@ body {
     padding-bottom: 8px;
 }
 
-.container {
+.container{
     position: sticky;
     background-color: black;
     top: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     transition: top 0.5s;
 }
 
 .sign {
-    width: 30%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -147,11 +148,14 @@ body {
     grid-template-rows: 1fr 100px 1fr;
     grid-template-areas: "card bio" "card sclinks" "card otlinks";
 }
-
 .card-holder {
     background-color: black;
     color: white;
     grid-area: card;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-holder > img {
@@ -223,7 +227,9 @@ body {
 .nav-burger, .sign-mob{
     display: none;
 }
-
+.active{
+    background-color: #f2c136;
+}
 
 
 
@@ -253,11 +259,12 @@ body {
         transition: background-color 2s;
     }
 
-    .header1{
-      width: 93%;
+    .header1 {
+        width: 96.5%;
     }
 
     .nav-burger{
+        width: 100%;
         display:flex;
         position: fixed;
         flex-direction: row;
@@ -434,8 +441,63 @@ body {
 
     .img-mobile-ver {
         display: block;
+        transition: 1s;
+    }
+    .centered{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .file {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .file > input[type='file'] {
+        display: none
+    }
+    .file > label {
+        font-size: 1rem;
+        cursor: pointer;
+        outline: 0;
+        user-select: none;
+        border-style: solid;
+        border-color: rgba(111,111,111,0.0001);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 25px;
+        border-width: 1px;
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(0, 0%, 29%);
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hey{
+        transition: 1s;
+    }
+    .hey:hover{
+        background: rgba(253,97,47,0.25);
+        color: rgb(253,97,47);
+    }
+    .file > label > i {
+        padding-right: 5px;
     }
 
+    .label {
+        background-color: White;
+        color: black;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
     .container {
         display: flex;
         flex-direction: column;
@@ -479,9 +541,21 @@ body {
 }
 
 
+.linkDelete{
+    all: unset;
+    cursor: pointer;
+    transition: 1s;
+    margin: 10px auto;
 
-
-
+}
+.iconDelete{
+    all: unset;
+    cursor: pointer;
+    transition: 1s;
+}
+.iconDelete:hover , .linkDelete:hover{
+    color: red;
+}
 
 
 
