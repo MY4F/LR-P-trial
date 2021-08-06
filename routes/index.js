@@ -179,7 +179,7 @@ router.post('/linksUpdate', (req, res) => {
 
 
 // Image upload
-const multer = require('multer');
+/*const multer = require('multer');
 const fileStorageEngine = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,__dirname+'/public/images')
@@ -198,7 +198,7 @@ router.post('/single',upload.single("image"),(req,res)=>{
     res.redirect('/dashboard');
 })
 
-
+*/
 
 
 
