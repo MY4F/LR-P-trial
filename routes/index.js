@@ -182,7 +182,7 @@ router.post('/linksUpdate', (req, res) => {
 const multer = require('multer');
 const fileStorageEngine = multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'./app/public/images')
+        cb(null,'/app/public/images')
     },
     filename:(req,file,cb)=>{
         cb(null,file.originalname);
