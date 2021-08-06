@@ -179,7 +179,8 @@ router.post('/linksUpdate', (req, res) => {
 
 
 // Image upload
-
+const multer = require('multer');
+const  upload = multer({storage : fileStorageEngine});
 
 
 
