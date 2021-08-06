@@ -180,15 +180,6 @@ router.post('/linksUpdate', (req, res) => {
 
 // Image upload
 
-router.post('/single',upload.single("image"),(req,res)=>{
-    req.user.update({ image1: req.file.filename }, (error, res) => {
-        if (error) throw error;
-
-    })
-    res.redirect('/dashboard');
-})
-
-
 
 
 
