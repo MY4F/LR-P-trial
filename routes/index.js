@@ -182,20 +182,22 @@ router.post('/linksUpdate', (req, res) => {
 const multer = require('multer');
 const fileStorageEngine = multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,path.resolve(__dirname, 'public/images'))
+        cb(null,__dirname+'/public/images')
     },
     filename:(req,file,cb)=>{
         cb(null,file.originalname);
     }
 })
 const  upload = multer({storage : fileStorageEngine});
-router.post('/single',upload.single("image"),(req,res)=>{
+router.post('/single',upload.single("image"),(req,res,next)=>{
     req.user.update({ image1: req.file.filename }, (error, res) => {
         if (error) throw error;
 
     })
     res.redirect('/dashboard');
 })
+
+
 
 
 
