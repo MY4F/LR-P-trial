@@ -123,6 +123,7 @@ const links2 = othLinksContainer.querySelectorAll('div');
 linkDel= (x) =>{
   scTypeInput2.value = othLinksContainer.children[x].outerHTML;
   noOfLinks.value=links.length;
+  linkInputOth.style.display='none';
   othBtnEdit.style.display='block';
 }
 for(let i = 1 ;i<links2.length*2;i+=2){
