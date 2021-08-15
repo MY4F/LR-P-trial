@@ -91,17 +91,7 @@ router.post('/linksUpdate', (req, res) => {
             if (error) throw error;
 
         })
-        res.render(`ClientProfilesEdit.ejs`, {
-            icons: req.user.icons,
-            bio: req.user.bio,
-            links : newA2,
-            job: req.user.job,
-            name: req.user.name,
-            vcf: req.user.vcf,
-            image1: req.user.image1,
-            image2: req.user.image2,
-            errors2
-        });
+        res.redirect('/dashboard');
     }
     else {
         let duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>`;
