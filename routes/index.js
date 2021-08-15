@@ -44,17 +44,7 @@ router.post('/iconsUpdate', (req, res) => {
           if (error) throw error;
 
       })
-      res.render(`ClientProfilesEdit.ejs`, {
-          icons: newA,
-          bio: req.user.bio,
-          links: req.user.links,
-          job: req.user.job,
-          name: req.user.name,
-          vcf: req.user.vcf,
-          image1: req.user.image1,
-          image2: req.user.image2,
-          errors
-      });
+
   }
   else  {
       let duplicate = '';
