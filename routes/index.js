@@ -33,8 +33,16 @@ router.post('/bioUpdate', (req, res) => {
         if (error) throw error;
     })
     let n = req.user.id;
-    res.redirect('/dashboard');
-
+    res.render(`ClientProfileEdit.ejs`, {
+        icons: req.user.icons,
+        bio: bioUpdate,
+        links: req.user.links,
+        job: req.user.job,
+        name: req.user.name,
+        vcf: req.user.vcf,
+        image1: req.user.image1,
+        image2: req.user.image2
+    });
 });
 
 router.post('/iconsUpdate', (req, res) => {
@@ -92,7 +100,16 @@ router.post('/iconsUpdate', (req, res) => {
             if (error) throw error;
 
         })
-        res.redirect('/dashboard');
+        res.render(`ClientProfileEdit.ejs`, {
+            icons: newA,
+            bio: req.user.bio,
+            links: req.user.links,
+            job: req.user.job,
+            name: req.user.name,
+            vcf: req.user.vcf,
+            image1: req.user.image1,
+            image2: req.user.image2
+        });
     }
 });
 
@@ -147,8 +164,16 @@ router.post('/linksUpdate', (req, res) => {
                 if (error) throw error;
 
             })
-            res.redirect('/dashboard');
-
+            res.render(`ClientProfileEdit.ejs`, {
+                icons: req.user.icons,
+                bio: req.user.bio,
+                links : newA2,
+                job: req.user.job,
+                name: req.user.name,
+                vcf: req.user.vcf,
+                image1: req.user.image1,
+                image2: req.user.image2
+            });
     }
 });
 
