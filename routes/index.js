@@ -47,53 +47,62 @@ router.post('/bioUpdate', (req, res) => {
 
 router.post('/iconsUpdate', (req, res) => {
   newA=req.user.icons;
-  let errors = [];
-  scType = req.body.scType;
-  if (req.body.link==="") {
-      newA = newA.replace(scType, ' ');
-      req.user.update({ icons: newA }, (error, res) => {
-          if (error) throw error;
-          else
-            res.redirect('/dashboard');
-      })
-  }
-  else  {
-      let duplicate = '';
-      if (scType === 'linkedin') {
-          duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>`;
-      }
-      else {
-          duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
-      }
-      if (scType === 'linkedin' && !newA.includes(duplicate))
-          newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>  `;
-      else if (!newA.includes(duplicate))
-          newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
-      req.user.update({ icons: newA }, (error, res) => {
-          if (error) throw error;
+   let errors = [];
+   scType = req.body.scType;
+   if (req.body.link==="") {
+       newA = newA.replace(scType, ' ');
+       req.user.update({ icons: newA }, (error, res) => {
+           if (error) throw error;
 
-      })
-      res.redirect('/dashboard');
-  }
+       })
+       res.render(`ClientProfilesEdit.ejs`, {
+           icons: newA,
+           bio: req.user.bio,
+           links: req.user.links,
+           job: req.user.job,
+           name: req.user.name,
+           vcf: req.user.vcf,
+           image1: req.user.image1,
+           image2: req.user.image2,
+           errors
+       });
+   }
+   else  {
+       let duplicate = '';
+       if (scType === 'linkedin') {
+           duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>`;
+       }
+       else {
+           duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
+       }
+       if (scType === 'linkedin' && !newA.includes(duplicate))
+           newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>  `;
+       else if (!newA.includes(duplicate))
+           newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
+       req.user.update({ icons: newA }, (error, res) => {
+           if (error) throw error;
+
+       })
+       res.redirect('/dashboard');
+   }
 });
 
 
 
 
 router.post('/linksUpdate', (req, res) => {
+  let errors2 = [];
     scType = req.body.link3;
     newA2 = req.user.links
-    let errors2 = [];
-    if (req.body.link2 < 13) {
-      if(parseInt(req.body.link2)<0 ||parseInt(req.body.link2)>req.body.noLinks){
-          errors2.push({msg : "Enter a valid number!"});
-      }
+    if (req.body.link2 ==="") {
+        console.log(scType);
         newA2 = newA2.replace(scType, ' ');
+        console.log(newA2);
         req.user.update({ links: newA2 }, (error, res) => {
             if (error) throw error;
 
         })
-        res.render(`ClientProfileEdit.ejs`, {
+        res.render(`ClientProfilesEdit.ejs`, {
             icons: req.user.icons,
             bio: req.user.bio,
             links : newA2,
@@ -124,20 +133,11 @@ router.post('/linksUpdate', (req, res) => {
         else if (!newA2.includes(duplicate2))
             newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>  `;
 
-            req.user.update({ links: newA2 }, (error, res) => {
-                if (error) throw error;
+        req.user.update({ links: newA2 }, (error, res) => {
+            if (error) throw error;
 
-            })
-            res.render(`ClientProfileEdit.ejs`, {
-                icons: req.user.icons,
-                bio: req.user.bio,
-                links : newA2,
-                job: req.user.job,
-                name: req.user.name,
-                vcf: req.user.vcf,
-                image1: req.user.image1,
-                image2: req.user.image2
-            });
+        })
+        res.redirect('/dashboard');
     }
 });
 
