@@ -42,9 +42,9 @@ router.post('/iconsUpdate', (req, res) => {
       newA = newA.replace(scType, ' ');
       req.user.update({ icons: newA }, (error, res) => {
           if (error) throw error;
-
+          else
+            res.redirect('/dashboard');
       })
-
   }
   else  {
       let duplicate = '';
