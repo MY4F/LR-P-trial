@@ -53,3 +53,23 @@ app.use('/users', require('./routes/users'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log("Server running on port 5000"));
+
+
+const multer = require('multer');
+const fileStorageEngine = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,'./public/images')
+    },
+    filename:(req,file,cb)=>{
+        cb(null,file.originalname);
+    }
+})
+
+const  upload = multer({storage : fileStorageEngine});
+app.post('/single',upload.single("image"),(req,res,next)=>{
+    req.user.update({ image1: req.file.filename }, (error, res) => {
+        if (error) throw error;
+
+    })
+    res.redirect('/dashboard');
+})
