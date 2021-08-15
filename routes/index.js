@@ -27,11 +27,22 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 
 });
 router.post('/bioUpdate', (req, res) => {
-  let bioUpdate = req.body.bio;
-   req.user.update({ bio: bioUpdate }, (error, res) => {
-       if (error) throw error;
-   })
-   res.redirect('/dashboard');
+    let bioUpdate = req.body.bio;
+    console.log(req.user);
+    req.user.update({ bio: bioUpdate }, (error, res) => {
+        if (error) throw error;
+    })
+    let n = req.user.id;
+    res.render(`ClientProfileEdit.ejs`, {
+        icons: req.user.icons,
+        bio: bioUpdate,
+        links: req.user.links,
+        job: req.user.job,
+        name: req.user.name,
+        vcf: req.user.vcf,
+        image1: req.user.image1,
+        image2: req.user.image2
+    });
 });
 
 router.post('/iconsUpdate', (req, res) => {
@@ -129,6 +140,26 @@ router.post('/linksUpdate', (req, res) => {
             });
     }
 });
+
+
+// Image upload
+const multer = require('multer');
+const fileStorageEngine = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,'/app/public/images')
+    },
+    filename:(req,file,cb)=>{
+        cb(null,file.originalname);
+    }
+})
+const  upload = multer({storage : fileStorageEngine});
+router.post('/single',upload.single("image"),(req,res,next)=>{
+    req.user.update({ image1: req.file.filename }, (error, res) => {
+        if (error) throw error;
+
+    })
+    res.redirect('/dashboard');
+})
 
 
 
