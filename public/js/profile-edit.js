@@ -63,7 +63,6 @@ const links = linksContainer.querySelectorAll('a');
 iconDel= (x) =>{
   scTypeInput.value = linksContainer.children[x].outerHTML;
   noOfIcons.value=links.length;
-  linkInputScl.style.display='none';
   sclBtnEdit.style.display='block';
 }
 for(let i = 1 ;i<links.length*2;i+=2){
