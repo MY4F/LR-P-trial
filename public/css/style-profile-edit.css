@@ -1,5 +1,5 @@
 .btn{
-  margin: 25px auto;
+  margin: 25px;
   width: 140px;
   height: 45px;
   font-family: 'Roboto', sans-serif;
@@ -17,8 +17,8 @@
   outline: none;
 }
 .btn:hover{
-  color: white;
-  background-color:#fd612f;
+  color: rgb(253,97,47);
+  background: rgba(253,97,47,0.25);
 }
 .bio-input{
   display: none;
