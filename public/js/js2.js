@@ -5,10 +5,14 @@ const desktopContainer=document.querySelector('.desktop-container');
 const bodyy=document.querySelector('body');
 const imgClick=document.querySelectorAll('.h3-click');
 const homeImg = document.querySelectorAll('.img1');
+const homeText= document.querySelectorAll('.text1');
 setTimeout(()=>{
   homeImg[0].style.position='unset';
   homeImg[1].style.position='unset';
   homeImg[2].style.position='unset';
+  homeText[0].style.position='unset';
+  homeText[1].style.position='unset';
+  homeText[2].style.position='unset';
 },3000);
 navButtton.addEventListener('click',()=>{
   if(list.style.top==='-510px' && window.innerWidth<751|| list.style.top==='-510px'  && window.innerWidth<751 ){
