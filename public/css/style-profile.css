@@ -146,7 +146,7 @@ body {
 .desktop-container {
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 500px 200px 100px;
+    grid-template-rows: 500px 1fr 100px;
     grid-template-areas: "card bio" "card sclinks" "card otlinks";
 }
 .card-holder {
