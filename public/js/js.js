@@ -5,7 +5,7 @@ const desktopContainer=document.querySelector('.desktop-container');
 const bodyy=document.querySelector('body');
 navButtton.addEventListener('click',()=>{
   if(list.style.top==='-510px' && window.innerWidth<751|| list.style.top==='-510px'  && window.innerWidth<751 ){
-    list.style.top = '77px';
+    list.style.top = '68px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
     },0);
