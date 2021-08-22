@@ -6,6 +6,11 @@ const passport = require('passport');
 const User = require('../models/User');
 
 
+router.get('/index', (req, res) => {
+  res.render('/app/views/index.html');
+});
+
+
 // Login page
 router.get('/login', (req, res) => {
     res.render('/app/views/login.ejs');
