@@ -7,7 +7,7 @@ const User = require('../models/User');
 
 
 router.get('/index', (req, res) => {
-  res.render('/app/views/index.html');
+    res.sendFile('/app/views/index.html');
 });
 
 
