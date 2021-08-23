@@ -134,7 +134,7 @@ const fileStorageEngine = multer.diskStorage({
 })
 const  upload = multer({storage : fileStorageEngine});
 router.post('/single',upload.single("image"),(req,res,next)=>{
-    req.user.update({ image1: req.file.filename }, (error, res) => {
+    req.user.update({ image1: req.file.filename,image2: req.file.filename }, (error, res) => {
         if (error) throw error;
 
     })
