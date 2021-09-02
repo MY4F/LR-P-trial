@@ -4,56 +4,58 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 // User model
 const User = require('../models/User');
+let dir = __dirname.replace('routes','');
 
 
 router.get('/index', (req, res) => {
-    res.sendFile('/app/views/index.html');
+  console.log(__dirname);
+    res.sendFile(dir + '/views/index.html');
 });
 
 
 // Login page
 router.get('/login', (req, res) => {
-    res.render('/app/views/login.ejs');
+    res.render(dir +'/views/login.ejs');
 });
 // Register page
 router.get('/register', (req, res) => {
-    res.sendFile('/app/views/register.html');
+    res.sendFile(dir +'/views/register.html');
 });
 
 //The card page
 router.get('/index3', (req, res) => {
-    res.sendFile('/app/views/index3.html');
+    res.sendFile(dir +'/views/index3.html');
 });
 
 //Package page
 router.get('/index5', (req, res) => {
-    res.sendFile('/app/views/index5.html');
+    res.sendFile(dir +'/views/index5.html');
 });
 
 //About page
 router.get('/index6', (req, res) => {
-    res.sendFile('/app/views/index6.html');
+    res.sendFile(dir +'/views/index6.html');
 });
 
 //home page
 router.get('/homepageL', (req, res) => {
-    res.sendFile('/app/views/homepageL.html');
+    res.sendFile(dir +'/views/homepageL.html');
 });
 
 
 //The card page
 router.get('/thecardL', (req, res) => {
-    res.sendFile('/app/views/thecardL.html');
+    res.sendFile(dir +'/views/thecardL.html');
 });
 
 //Package page
 router.get('/thepackageL', (req, res) => {
-    res.sendFile('/app/views/thepackageL.html');
+    res.sendFile(dir +'/views/thepackageL.html');
 });
 
 //About page
 router.get('/aboutL', (req, res) => {
-    res.sendFile('/app/views/aboutL.html');
+    res.sendFile(dir +'/views/aboutL.html');
 });
 
 
@@ -61,7 +63,7 @@ router.get('/aboutL', (req, res) => {
 router.get('/MohamedElMalatawy', (req, res) => {
     User.findOne({ name: 'محمد عبد الفتاح الملطاوي' }).then(user => {
         console.log(user)
-            res.render('/app/views/ClientProfile.ejs', {
+            res.render(dir +'/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,
@@ -79,7 +81,7 @@ router.get('/MohamedElMalatawy', (req, res) => {
 router.get('/MohamedYasser', (req, res) => {
     User.findOne({ name: 'Mohamed Yasser Abdul-Fattah' }).then(user => {
         console.log(user.image1);
-        res.render('/app/views/ClientProfile.ejs', {
+        res.render(dir +'/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,
@@ -96,7 +98,7 @@ router.get('/MohamedYasser', (req, res) => {
 router.get('/MostafaMutaz', (req, res) => {
     User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
         console.log(user)
-            res.render('/app/views/ClientProfile.ejs', {
+            res.render(dir +'/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,
