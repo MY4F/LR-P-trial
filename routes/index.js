@@ -49,23 +49,28 @@ router.post('/iconsUpdate', (req, res) => {
        res.redirect('/dashboard');
    }
    else  {
-       let duplicate = '';
-       if (scType === 'linkedin') {
-           duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>`;
-       }
-       else {
-           duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
-       }
-       if (scType === 'linkedin' && !newA.includes(duplicate))
-           newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>  `;
-       else if (!newA.includes(duplicate))
-           newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
-       req.user.update({ icons: newA }, (error, res) => {
-           if (error) throw error;
+         let duplicate = '';
+         if (scType === 'linkedin') {
+             duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>`;
+         }
+         else{
+             duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
+         }
+         if (scType === 'linkedin' && !newA.includes(duplicate)) {
+             newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}" aria-hidden="true"></i></a>  `;
+         }
+         else if (!newA.includes(duplicate)) {
+             if(scType==='whatsapp')
+                 newA += `<a href="//wa.me/+2${req.body.link}/?text=Hello My Greetings" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>`;
+             else
+                 newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square" aria-hidden="true"></i></a>  `;
+         }
+             req.user.update({ icons: newA }, (error, res) => {
+             if (error) throw error;
 
-       })
-       res.redirect('/dashboard');
-   }
+         })
+         res.redirect('/dashboard');
+     }
 });
 
 
