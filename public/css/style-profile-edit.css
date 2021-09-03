@@ -60,6 +60,9 @@
 .scl-input:focus,.oth-input:focus, .oth-input4:focus, .scl-input2:focus, .oth-input3:focus {
   border-color:#fd612f;
 }
+.btn-center{
+  margin: 20px auto;
+}
 .scl-btn-rem, .scl-btn-del, .scl-btn-add, .scl-btn-save,.scl-btn-cancel , .bio-btn-save, .oth-btn-rem, .oth-btn-del, .oth-btn-add, .oth-btn-save, .oth-btn-cancel{
   display: none;
 }
