@@ -146,7 +146,7 @@ body {
 .desktop-container {
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 500px 1fr 100px;
+    grid-template-rows: 500px 1fr 1fr;
     grid-template-areas: "card bio" "card sclinks" "card otlinks";
 }
 .card-holder {
@@ -181,6 +181,10 @@ body {
 }
 
 .bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     padding: 20px;
     grid-area: bio;
@@ -265,10 +269,10 @@ body {
     justify-content: center;
     align-items: center;
 }
-.hey{
+.upload-btn{
     transition: 1s;
 }
-.hey:hover{
+.upload-btn:hover{
     background: rgba(253,97,47,0.25);
     color: rgb(253,97,47);
 }
@@ -286,6 +290,18 @@ body {
 }
 .centered{
     background-color: black;
+}
+.bio-name{
+    text-align: center;
+    width: 50%;
+    font-weight: bolder;
+    margin: 60px auto;
+    font-size: 30px;
+    border: 3px solid black;
+    padding: 30px;
+}
+.bio-words{
+    text-align: center;
 }
 @media screen and (max-width: 750px) {
     html {
@@ -414,6 +430,7 @@ body {
 
     .bio-words {
         margin: 10px;
+        text-align: center;
     }
 
     .bio-edit {
@@ -513,7 +530,7 @@ body {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: 20px auto;
     }
     .file > input[type='file'] {
         display: none
@@ -538,10 +555,10 @@ body {
         justify-content: center;
         align-items: center;
     }
-    .hey{
+    .upload-btn{
         transition: 1s;
     }
-    .hey:hover{
+    .upload-btn:hover{
         background: rgba(253,97,47,0.25);
         color: rgb(253,97,47);
     }

@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
     <link rel="stylesheet" href="/css/style-profile.css">
     <link rel="stylesheet" href="/css/style-profile-edit.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -57,29 +56,29 @@
     </div>
     <form class="centered" action="/single" method="POST" enctype="multipart/form-data">
         <div class='file file--upload'>
-            <label class="hey"for='input-file'>
+            <label class="upload-btn" for='input-file'>
                 <i class="far fa-images"></i>Upload Image
             </label>
-            <input id='input-file' type='file' name="image" />
-            <button class="btn" type="submit">Submit</button>
+            <input id='input-file' onchange="this.form.submit()" type='file' name="image" />
         </div>
     </form>
     <a class="card-holder-button" href="contacts/<%= vcf %>" download><i class="fas fa-id-card"></i> Contact Info.</a>
     <div class="h-space"></div>
     <div class="bio">
-
+        <div class="bio-name">My Bio.</div>
         <div class="bio-words">
             <%= bio %>
         </div>
         <div class="bio-edit">
             <form class="" action="/bioUpdate" method="POST">
                 <textarea name="bio" id="bio" rows="10" cols="45" class="bio-input"></textarea>
-                <button class="btn bio-btn-edit" type="button" name="submit" onclick="bioedit()">Edit</button>
+                <button class="btn bio-btn-edit" type="button" name="submit" onclick="bioedit()">Edit Bio</button>
                 <button class="btn bio-btn-save" type="submit" name="submit" onclick="biosave()">Save</button>
             </form>
         </div>
     </div>
     <div class="client-social">
+        <div class="bio-name">My Social Referrals</div>
         <div class="client-social-links">
             <%- icons %>
         </div>
@@ -89,7 +88,7 @@
                 <input class="scl-input2" type="text" name="scType" size="25" value="">
                 <input class="scl-input3" type="text" name="noIcons" size="25" value="">
                 <%- include('partials/messages'); %>
-                <button class="btn scl-btn-edit" type="button" name="button" onclick="scledit()">Edit</button>
+                <button class="btn scl-btn-edit" type="button" name="button" onclick="scledit()">Edit Referrals</button>
                 <button class="btn scl-btn-save" type="submit" name="button" onclick="sclsave()">Save</button>
                 <button class="btn scl-btn-add" type="button" name="button" onclick="scladd()">Add</button>
                 <button class="btn scl-btn-rem" type="button" name="button" onclick="sclrem()">Remove</button>
@@ -118,7 +117,7 @@
             <input class="oth-input4" type="text" name="linkName" size="25" value="" placeholder="">
             <input class="oth-input5" type="text" name="noLinks" size="25" value="" placeholder="">
             <%- include('partials/messagesErrors'); %>
-            <button class="btn oth-btn-edit" type="button" name="button" onclick="othedit()">Edit</button>
+            <button class="btn oth-btn-edit" type="button" name="button" onclick="othedit()">Edit Referrals</button>
             <button class="btn oth-btn-save" type="submit" name="button" onclick="othsave()">Save</button>
             <button class="btn oth-btn-add" type="button" name="button" onclick="othadd()">Add</button>
             <button class="btn oth-btn-rem" type="button" name="button" onclick="othrem()">Remove</button>
