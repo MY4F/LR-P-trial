@@ -5,7 +5,7 @@ const passport = require('passport');
 // User model
 const User = require('../models/User');
 let dir = __dirname.replace('routes','');
-
+const { ensureAuthenticated } = require('../config/auth');
 
 router.get('/index', (req, res) => {
   console.log(__dirname);
@@ -38,23 +38,23 @@ router.get('/index6', (req, res) => {
 });
 
 //home page
-router.get('/homepageL', (req, res) => {
+router.get('/homepageL',ensureAuthenticated, (req, res) => {
     res.sendFile(dir +'/views/homepageL.html');
 });
 
 
 //The card page
-router.get('/thecardL', (req, res) => {
+router.get('/thecardL',ensureAuthenticated, (req, res) => {
     res.sendFile(dir +'/views/thecardL.html');
 });
 
 //Package page
-router.get('/thepackageL', (req, res) => {
+router.get('/thepackageL',ensureAuthenticated, (req, res) => {
     res.sendFile(dir +'/views/thepackageL.html');
 });
 
 //About page
-router.get('/aboutL', (req, res) => {
+router.get('/aboutL',ensureAuthenticated, (req, res) => {
     res.sendFile(dir +'/views/aboutL.html');
 });
 
