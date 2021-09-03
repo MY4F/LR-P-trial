@@ -293,14 +293,17 @@ body {
 }
 .bio-name{
     text-align: center;
-    width: 50%;
+    width: 60%;
     font-weight: bolder;
-    margin: 60px auto;
-    font-size: 30px;
+    margin:auto;
+    margin-bottom: 30px;
+    font-size: 25px;
     border: 3px solid black;
-    padding: 30px;
+    padding: 15px;
 }
 .bio-words{
+    font-size: 20px;
+    margin: 10px;
     text-align: center;
 }
 @media screen and (max-width: 750px) {
@@ -468,7 +471,8 @@ body {
         flex-wrap: wrap;
         margin-left: 10px;
         margin-bottom: 10px;
-        font-size: 16px;
+        font-size: 20px;
+        margin-top: 20px;
     }
 
     .email {
