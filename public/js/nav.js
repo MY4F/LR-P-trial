@@ -8,11 +8,11 @@ window.onscroll = function() {
     document.querySelector('.container').style.top = "0";
   } else if(list.style.display==='flex'  && window.innerWidth<751){
     document.querySelector('.container').style.top = "-800px";
-    list.style.top = "-550px";
+    list.style.top = "-560px";
   }
   else{
     document.querySelector('.container').style.top = "-160px";
-    list.style.top = "-550px";
+    list.style.top = "-560px";
   }
   prevScrollpos = currentScrollPos;
 }
