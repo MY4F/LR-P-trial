@@ -11,7 +11,7 @@ window.onscroll = function() {
     list.style.top = "-550px";
   }
   else{
-    document.querySelector('.container').style.top = "-150px";
+    document.querySelector('.container').style.top = "-160px";
     list.style.top = "-550px";
   }
   prevScrollpos = currentScrollPos;
