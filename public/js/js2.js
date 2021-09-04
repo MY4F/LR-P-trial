@@ -15,14 +15,14 @@ setTimeout(()=>{
   homeText[2].style.position='unset';
 },3000);
 navButtton.addEventListener('click',()=>{
-  if(list.style.top==='-510px' && window.innerWidth<751|| list.style.top==='-510px'  && window.innerWidth<751 ){
+  if(list.style.top==='-550px' && window.innerWidth<751|| list.style.top==='-550px'  && window.innerWidth<751 ){
     list.style.top = '68px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
     },0);
   }
   else{
-    list.style.top = "-510px";
+    list.style.top = "-550px";
   }
 });
 listItems[0].addEventListener('click',()=>{

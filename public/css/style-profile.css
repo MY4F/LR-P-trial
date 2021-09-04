@@ -430,7 +430,6 @@ body {
         align-items: center;
         text-align: center;
     }
-
     .bio-words {
         margin: 10px;
         text-align: center;
@@ -592,15 +591,17 @@ body {
     .nav-burger>.li-desktop{
         display: inline;
         font-size: 20px;
-        padding-bottom: 27px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 33px;
         transition: 1s;
     }
     .nav-burger>li>a{
         text-decoration: none;
         color:white;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 27px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 33px;
     }
     .nav-burger>li:hover{
         background-color: #f2c136;
