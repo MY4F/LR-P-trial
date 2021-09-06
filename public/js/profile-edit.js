@@ -63,6 +63,7 @@ const links = linksContainer.querySelectorAll('a');
 iconDel= (x) =>{
   scTypeInput.value = linksContainer.children[x].outerHTML;
   noOfIcons.value=links.length;
+  linkInputScl.style.display='none';
   sclBtnEdit.style.display='block';
 }
 for(let i = 1 ;i<links.length*2;i+=2){
@@ -91,6 +92,7 @@ sclcan = () => {
     removeButton[i].style.display="none";
   }
   sclBtnCan.style.display='none';
+  sclBtnSave.style.display='none';
   contentScl.style.display='none';
   sclBtnEdit.style.display='block';
   linkInputScl.style.display='none';
@@ -150,7 +152,10 @@ othcan = () => {
   for(let i = 0 ;i<links2.length;i++){
     removeButton[i].style.display="none";
   }
+  othBtnSave.style.display='none';
   othBtnCan.style.display='none';
+  linkInputOth.style.display='none';
+  linkName.style.display='none';
   contentOth.style.display='none';
   othBtnEdit.style.display='block';
   linkInputOth.style.display='none';
@@ -159,7 +164,6 @@ othcan = () => {
 
 
 fb = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='facebook'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -167,7 +171,6 @@ fb = () => {
     scTypeInput.value = 'facebook';
 }
 ig = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='instagram'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -175,15 +178,14 @@ ig = () => {
     scTypeInput.value = 'instagram';
 }
 wp = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='whatsapp'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
     sclBtnSave.style.display = 'block';
     scTypeInput.value = 'whatsapp';
+
 }
 tw = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='twitter'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -191,7 +193,6 @@ tw = () => {
     scTypeInput.value = 'twitter';
 }
 gh = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='github'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -199,7 +200,6 @@ gh = () => {
     scTypeInput.value = 'github';
 }
 li = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='linkedin'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -207,7 +207,6 @@ li = () => {
     scTypeInput.value = 'linkedin';
 }
 be = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='behance'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -215,7 +214,6 @@ be = () => {
     scTypeInput.value = 'behance';
 }
 sc = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='snapchat'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -223,7 +221,6 @@ sc = () => {
     scTypeInput.value = 'snapchat';
 }
 pin = () => {
-  sclBtnCan.style.display='none';
   sclBtnSave.name='pinterest'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
@@ -235,7 +232,6 @@ pin = () => {
 
 
 em = () => {
-  othBtnCan.style.display='none';
   othBtnSave.name='envelope'
   linkInputOth.placeholder='Enter your E-mail'
   linkInputOth.style.display='flex';
@@ -244,7 +240,6 @@ em = () => {
     scTypeInput2.value = 'envelope';
 }
 wb = () => {
-  othBtnCan.style.display='none';
   linkInputOth.placeholder='Enter your website link'
   linkName.placeholder='Enter website name';
   linkName.style.display='flex';
@@ -256,7 +251,6 @@ wb = () => {
 
 }
 loc = () => {
-  othBtnCan.style.display='none';
   linkInputOth.placeholder='Enter your location link'
   linkName.placeholder='Enter Location name';
   linkName.style.display='flex';
@@ -268,7 +262,6 @@ loc = () => {
 
 }
 cl = () => {
-  othBtnCan.style.display='none';
   linkInputOth.placeholder='Enter your number'
   linkName.placeholder='Enter a name for the number';
   othBtnSave.name='phone'
@@ -280,7 +273,6 @@ cl = () => {
 
 }
 pdf = () => {
-  othBtnCan.style.display='none';
   linkInputOth.placeholder='Enter your PDF link'
   linkName.style.display='flex';
   linkName.placeholder='Enter PDF name';
