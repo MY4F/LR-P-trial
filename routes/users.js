@@ -12,7 +12,6 @@ router.get('/index', (req, res) => {
     res.sendFile(dir + '/views/index.html');
 });
 
-
 // Login page
 router.get('/login', (req, res) => {
     res.render(dir +'/views/login.ejs');

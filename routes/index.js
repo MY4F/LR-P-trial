@@ -119,22 +119,19 @@ router.post('/linksUpdate', (req, res) => {
 
 
 // Image upload
-const multer = require('multer');
-const fileStorageEngine = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,'/app/public/images')
-    },
-    filename:(req,file,cb)=>{
-        cb(null,file.originalname);
-    }
-})
-const  upload = multer({storage : fileStorageEngine});
-router.post('/single',upload.single("image"),(req,res,next)=>{
-    req.user.update({ image1: req.file.filename,image2: req.file.filename }, (error, res) => {
-        if (error) throw error;
+const cloudinary = require("../utils/cloudinary");
+const upload = require("../utils/multer");
 
-    })
-    res.redirect('/dashboard');
+router.post('/single',upload.single("image"),async (req,res)=>{
+    try {
+        const result = await cloudinary.uploader.upload(req.file.path);
+        await cloudinary.uploader.destroy(req.user.public_id);
+        req.user.update({ image1:result.secure_url,image2: result.secure_url,public_id:result.public_id }, (error, res) => {
+            if (error) throw error;
+        })
+        res.redirect('/dashboard');
+    }
+    catch(err){ throw err;}
 })
 
 

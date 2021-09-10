@@ -10,7 +10,7 @@ const db = require('./config/keys').MongoURI;
 const hostname = '0.0.0.0';
 //passport config
 require('./config/passport')(passport);
-
+const dotenv=require('dotenv').config();
 // Connect to mongo
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() =>  console.log("mongo db connected "))
@@ -18,6 +18,15 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 //ejs
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+
+// cloudinary image db
+const cloudinary= require('cloudinary').v2;
+
+cloudinary.config({
+    cloud_name:require('./config/keys').CLOUDINARY_CLOUD_NAME,
+    api_key:require('./config/keys').CLOUNDINARY_API_KEY,
+    api_secret:require('./config/keys').CLOUDINARY_API_SECRET
+})
 
 //Bodyparser
 app.use(express.urlencoded({ extended: false }));

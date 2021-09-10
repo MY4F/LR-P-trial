@@ -44,6 +44,17 @@ const UserSchema = new mongoose.Schema({
     vcf:{
         type: String,
         default: false,
+    },
+    name2: String,
+    desc:String,
+    img:
+        {
+            data: Buffer,
+            contentType: String
+        },
+    public_id :{
+        type:String,
+        default:false,
     }
 });
 
