@@ -7,6 +7,8 @@ let newA = ' ';
 let newA2 = ' ';
 let duplicate2 = ' ';
 let duplicte = '  ';
+let errors=[];
+let errors2=[];
 //welcome page
 router.get('/', (req, res) => {
     res.sendFile('/app/views/index.html');
@@ -21,74 +23,83 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
         name: req.user.name,
         vcf: req.user.vcf,
         image1: req.user.image1,
-        image2: req.user.image2
+        image2: req.user.image2,
+        errors,
+        errors2
 
     });
 
 });
 router.post('/bioUpdate', (req, res) => {
     let bioUpdate = req.body.bio;
-    console.log(req.user);
     req.user.update({ bio: bioUpdate }, (error, res) => {
         if (error) throw error;
     })
-    let n = req.user.id;
     res.redirect('/dashboard');
 });
 
+
 router.post('/iconsUpdate', (req, res) => {
-  newA=req.user.icons;
-   let errors = [];
-   scType = req.body.scType;
-   if (req.body.link==="") {
-       newA = newA.replace(scType, ' ');
-       req.user.update({ icons: newA }, (error, res) => {
-           if (error) throw error;
+    errors=[];
+    newA=req.user.icons;
+    scType = req.body.scType;
+    console.log(scType);
+    if(req.body.link==="" && scType.length<20 ){
+        errors.push({msg:'Please enter an appropriate link.'});
+        res.redirect('/dashboard');
+    }
+    else if (req.body.link==="") {
+        newA = newA.replace(scType, ' ');
+        req.user.update({ icons: newA }, (error, res) => {
+            if (error) throw error;
+        })
+        res.redirect('/dashboard');
+    }
+    else  {
+        let duplicate = '';
+        if (scType === 'linkedin') {
+            duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType} fa-2x" aria-hidden="true"></i></a>`;
+        }
+        else{
+            duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>`;
+        }
+        if (scType === 'linkedin' && !newA.includes(duplicate)) {
+            newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType} fa-2x" aria-hidden="true"></i></a>  `;
+        }
+        else if (!newA.includes(duplicate)) {
+            if(scType==='whatsapp')
+                newA += `<a href="//wa.me/+2${req.body.link}/?text=Hello My Greetings" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>`;
+            else
+                newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>  `;
 
-       })
-       res.redirect('/dashboard');
-   }
-   else  {
-         let duplicate = '';
-         if (scType === 'linkedin') {
-             duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType} fa-2x" aria-hidden="true"></i></a>`;
-         }
-         else{
-             duplicate = `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>`;
-         }
-         if (scType === 'linkedin' && !newA.includes(duplicate)) {
-             newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType} fa-2x" aria-hidden="true"></i></a>  `;
-         }
-         else if (!newA.includes(duplicate)) {
-             if(scType==='whatsapp')
-                 newA += `<a href="//wa.me/+2${req.body.link}/?text=Hello My Greetings" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>`;
-             else
-                 newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>  `;
-         }
-             req.user.update({ icons: newA }, (error, res) => {
-             if (error) throw error;
+        }
+        else{
+            errors.push({msg:'You have entered duplicated link, please enter an appropriate link.'});
+        }
+        req.user.update({ icons: newA }, (error, res) => {
+            if (error) throw error;
+        })
+        res.redirect('/dashboard');
 
-         })
-         res.redirect('/dashboard');
-     }
+    }
 });
 
 
-
-
 router.post('/linksUpdate', (req, res) => {
-  let errors2 = [];
+    errors2 = [];
     scType = req.body.link3;
     newA2 = req.user.links
-    if (req.body.link2 ==="") {
-        console.log(scType);
+    if(req.body.link2 ==="" && scType.length<20){
+        errors2.push({msg:'Please enter an appropriate link.'});
+        res.redirect('/dashboard');
+    }
+    else if (req.body.link2 ==="") {
         newA2 = newA2.replace(scType, ' ');
-        console.log(newA2);
         req.user.update({ links: newA2 }, (error, res) => {
             if (error) throw error;
 
         })
-       res.redirect('/dashboard');
+        res.redirect('/dashboard');
     }
     else {
         let duplicate2 = `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>`;
@@ -117,7 +128,6 @@ router.post('/linksUpdate', (req, res) => {
     }
 });
 
-
 // Image upload
 const cloudinary = require("../utils/cloudinary");
 const upload = require("../utils/multer");
@@ -133,7 +143,6 @@ router.post('/single',upload.single("image"),async (req,res)=>{
     }
     catch(err){ throw err;}
 })
-
 
 
 
