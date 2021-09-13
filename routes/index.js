@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render(`ClientProfileEdit.ejs`, {
-        bio: req.user.bio,
+      bio: req.user.bio,
         icons: req.user.icons,
         links: req.user.links,
         job: req.user.job,
@@ -30,14 +30,16 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
         image1: req.user.image1,
         image2: req.user.image2,
         contact_link:req.user.contact_link,
-         firstName:req.user.firstName,
-         lastName:req.user.lastName,
-         organization:req.user.organization,
-         workPhone:req.user.workPhone,
-         email2:req.user.email2,
-         title:req.user.title,
-         errors,
-         errors2
+        firstName:req.user.firstName,
+        lastName:req.user.lastName,
+        organization:req.user.organization,
+        workPhone:req.user.workPhone,
+        email2:req.user.email2,
+        title:req.user.title,
+        address1:req.user.address1,
+        address2:req.user.address2,
+        errors,
+        errors2
 
     });
 
@@ -48,27 +50,35 @@ router.post('/contactUpdate',async (req,res)=>{
        const vCard = vCardJS();
        vCard.firstName = req.body.firstName;
        vCard.lastName = req.body.lastName;
-       vCard.organization = req.body.organization;
-       vCard.workPhone = req.body.workPhone;
+       vCard.organization = req.body.org;
+       vCard.workPhone = req.body.work;
        vCard.email = req.body.email;
        vCard.title = req.body.title;
+       vCard.homeAddress.street = req.body.address1;
+       vCard.workAddress.street = req.body.address2;
        res.set('Content-Type', 'text/vcard; name="enesser.vcf"');
        vCard.saveToFile('./con.vcf');
        const result = await cloudinary.uploader.upload('./con.vcf',
            { resource_type: "raw" },
            function(error, result) {console.log(result, error); });
        fs.unlinkSync('./con.vcf');
-       await cloudinary.uploader.destroy(req.user.public_id_con, { resource_type: "raw" },
-           function(error, result) {console.log(result, error); });
+       if(req.user.public_id_con.length>0) {
+           await cloudinary.uploader.destroy(req.user.public_id_con, {resource_type: "raw"},
+               function (error, result) {
+                   console.log(result, error);
+               });
+       }
        req.user.update({
            firstName: req.body.firstName,
            lastName: req.body.lastName,
-           organization: req.body.organization,
-           workPhone: req.body.workPhone,
+           organization: req.body.org,
+           workPhone: req.body.work,
            email2: req.body.email,
            title: req.body.title,
            public_id_con:result.public_id,
-           contact_link:result.url
+           contact_link:result.url,
+           address1:req.body.address1,
+           address2:req.body.address2
        }, (error, res) => {
            if (error) throw error;
        })
