@@ -62,14 +62,21 @@ router.get('/aboutL',ensureAuthenticated, (req, res) => {
 router.get('/MohamedElMalatawy', (req, res) => {
     User.findOne({ name: 'محمد عبد الفتاح الملطاوي' }).then(user => {
             res.render(dir +'/views/ClientProfile.ejs', {
-            bio: user.bio,
-            icons: user.icons,
-            links: user.links,
-            job: user.job,
-            name: user.name,
-            vcf:user.vcf,
-            image1: user.image1,
-            image2: user.image2
+              bio: req.user.bio,
+                  icons: req.user.icons,
+                  links: req.user.links,
+                  job: req.user.job,
+                  name: req.user.name,
+                  vcf: req.user.vcf,
+                  image1: req.user.image1,
+                  image2: req.user.image2,
+                  contact_link:req.user.contact_link,
+                  firstName:req.user.firstName,
+                  lastName:req.user.lastName,
+                  organization:req.user.organization,
+                  workPhone:req.user.workPhone,
+                  email2:req.user.email2,
+                  title:req.user.title
         })
     })
 });
@@ -79,14 +86,21 @@ router.get('/MohamedElMalatawy', (req, res) => {
 router.get('/MohamedYasser', (req, res) => {
     User.findOne({ name: 'Mohamed Yasser Abdul-Fattah' }).then(user => {
         res.render(dir +'/views/ClientProfile.ejs', {
-            bio: user.bio,
-            icons: user.icons,
-            links: user.links,
-            job: user.job,
-            name: user.name,
-            vcf:user.vcf,
-            image1: user.image1,
-            image2: user.image2
+          bio: req.user.bio,
+                icons: req.user.icons,
+                links: req.user.links,
+                job: req.user.job,
+                name: req.user.name,
+                vcf: req.user.vcf,
+                image1: req.user.image1,
+                image2: req.user.image2,
+                contact_link:req.user.contact_link,
+                firstName:req.user.firstName,
+                lastName:req.user.lastName,
+                organization:req.user.organization,
+                workPhone:req.user.workPhone,
+                email2:req.user.email2,
+                title:req.user.title
         })
     })
 });
@@ -95,14 +109,21 @@ router.get('/MohamedYasser', (req, res) => {
 router.get('/MostafaMutaz', (req, res) => {
     User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
             res.render(dir +'/views/ClientProfile.ejs', {
-            bio: user.bio,
-            icons: user.icons,
-            links: user.links,
-            job: user.job,
-            name: user.name,
-            vcf:user.vcf,
-            image1: user.image1,
-            image2: user.image2
+              bio: req.user.bio,
+                  icons: req.user.icons,
+                  links: req.user.links,
+                  job: req.user.job,
+                  name: req.user.name,
+                  vcf: req.user.vcf,
+                  image1: req.user.image1,
+                  image2: req.user.image2,
+                  contact_link:req.user.contact_link,
+                  firstName:req.user.firstName,
+                  lastName:req.user.lastName,
+                  organization:req.user.organization,
+                  workPhone:req.user.workPhone,
+                  email2:req.user.email2,
+                  title:req.user.title
         })
     })
 });
@@ -111,14 +132,21 @@ router.get('/MostafaMutaz', (req, res) => {
 router.get('/HussainAyman', (req, res) => {
     User.findOne({ name: 'Hussain Ayman' }).then(user => {
             res.render(dir +'/views/ClientProfile.ejs', {
-            bio: user.bio,
-            icons: user.icons,
-            links: user.links,
-            job: user.job,
-            name: user.name,
-            vcf:user.vcf,
-            image1: user.image1,
-            image2: user.image2
+              bio: req.user.bio,
+                    icons: req.user.icons,
+                    links: req.user.links,
+                    job: req.user.job,
+                    name: req.user.name,
+                    vcf: req.user.vcf,
+                    image1: req.user.image1,
+                    image2: req.user.image2,
+                    contact_link:req.user.contact_link,
+                    firstName:req.user.firstName,
+                    lastName:req.user.lastName,
+                    organization:req.user.organization,
+                    workPhone:req.user.workPhone,
+                    email2:req.user.email2,
+                    title:req.user.title
         })
     })
 });
