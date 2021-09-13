@@ -55,6 +55,38 @@ const UserSchema = new mongoose.Schema({
     public_id :{
         type:String,
         default:false,
+    },
+    firstName: {
+        type: String,
+        required: false
+    },
+    lastName: {
+        type: String,
+        required: false
+    },
+    organization: {
+        type: String,
+        required: false
+    },
+    workPhone: {
+        type: String,
+        required: false
+    },
+    email2: {
+        type: String,
+        required: false
+    },
+    title: {
+        type: String,
+        required: false
+    },
+    public_id_con: {
+        type: String,
+        required: false
+    },
+    contact_link: {
+        type: String,
+        required: false
     }
 });
 

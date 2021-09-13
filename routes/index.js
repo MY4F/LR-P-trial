@@ -3,6 +3,11 @@ const router = express.Router();
 const app = express();
 const { ensureAuthenticated } = require('../config/auth');
 const User = require('../models/User');
+const vCardJS = require('vcards-js');
+const save = require('save-file');
+const cloudinary = require("../utils/cloudinary");
+const upload = require("../utils/multer");
+const fs = require('fs');
 let newA = ' ';
 let newA2 = ' ';
 let duplicate2 = ' ';
@@ -24,12 +29,55 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
         vcf: req.user.vcf,
         image1: req.user.image1,
         image2: req.user.image2,
-        errors,
-        errors2
+        contact_link:req.user.contact_link,
+         firstName:req.user.firstName,
+         lastName:req.user.lastName,
+         organization:req.user.organization,
+         workPhone:req.user.workPhone,
+         email2:req.user.email2,
+         title:req.user.title,
+         errors,
+         errors2
 
     });
 
 });
+
+router.post('/contactUpdate',async (req,res)=>{
+   try {
+       const vCard = vCardJS();
+       vCard.firstName = req.body.firstName;
+       vCard.lastName = req.body.lastName;
+       vCard.organization = req.body.organization;
+       vCard.workPhone = req.body.workPhone;
+       vCard.email = req.body.email;
+       vCard.title = req.body.title;
+       res.set('Content-Type', 'text/vcard; name="enesser.vcf"');
+       vCard.saveToFile('./con.vcf');
+       const result = await cloudinary.uploader.upload('./con.vcf',
+           { resource_type: "raw" },
+           function(error, result) {console.log(result, error); });
+       fs.unlinkSync('./con.vcf');
+       await cloudinary.uploader.destroy(req.user.public_id_con, { resource_type: "raw" },
+           function(error, result) {console.log(result, error); });
+       req.user.update({
+           firstName: req.body.firstName,
+           lastName: req.body.lastName,
+           organization: req.body.organization,
+           workPhone: req.body.workPhone,
+           email2: req.body.email,
+           title: req.body.title,
+           public_id_con:result.public_id,
+           contact_link:result.url
+       }, (error, res) => {
+           if (error) throw error;
+       })
+       res.redirect('/dashboard');
+   }
+   catch(err){ throw err;}
+});
+
+
 router.post('/bioUpdate', (req, res) => {
     let bioUpdate = req.body.bio;
     req.user.update({ bio: bioUpdate }, (error, res) => {
@@ -129,8 +177,6 @@ router.post('/linksUpdate', (req, res) => {
 });
 
 // Image upload
-const cloudinary = require("../utils/cloudinary");
-const upload = require("../utils/multer");
 
 router.post('/single',upload.single("image"),async (req,res)=>{
     try {

@@ -62,7 +62,38 @@
             <input id='input-file' onchange="this.form.submit()" type='file' name="image" />
         </div>
     </form>
-    <a class="card-holder-button" href="contacts/<%= vcf %>" download><i class="fas fa-id-card fa-lg"></i> Contact Info.</a>
+    <a class="card-holder-button" href="<%= contact_link %>" download><i class="fas fa-id-card fa-lg"></i> Contact Info.</a>
+    <div class="contact-edit">
+        <button class="btn contact-btn-edit" type="button" name="submit" onclick="contactEdit()">Edit My Info.</button>
+        <form action="/contactUpdate" method="POST" class="login-form">
+            <div class="name">
+                <label for="firstName " class="form-label">First Name :</label>
+                <input type="text" class="form-name" id="firstName" name="firstName" value="<%= firstName %>">
+            </div>
+            <div class="name">
+                <label for="email" class="form-label">Last Name :</label>
+                <input type="text" class="form-name" id="lastName" name="lastName" value="<%= lastName %>">
+            </div>
+            <div class="name">
+                <label for="organization" class="form-label">Organization :</label>
+                <input type="text" class="form-name" id="organization " name="organization " value="<%= organization %>">
+            </div>
+            <div class="name">
+                <label for="workPhone " class="form-label">Work Phone :</label>
+                <input type="text" class="form-name" id="workPhone" name="workPhone" value="workPhone">
+            </div>
+            <div class="email">
+                <label for="email" class="form-label">Email :</label>
+                <input type="email" class="form-email" id="email" name="email" value="<%= email2 %>">
+            </div>
+            <div class="name">
+                <label for="title" class="form-label">Title :</label>
+                <input type="text" class="form-name" id="title" name="title" value="<%= title %>">
+            </div>
+            <button class="btn contact-btn-cancel" type="button" name="button" onclick="contactCan()">Cancel</button>
+            <button class="btn contact-btn-save" type="submit" name="button" onclick="">Save</button>
+        </form>
+    </div>
     <div class="h-space"></div>
     <div class="bio">
         <div class="bio-name">My Bio.</div>

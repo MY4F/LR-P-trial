@@ -75,3 +75,40 @@
 .scl-input3 ,.scl-input2, .oth-input3, .oth-input4, .oth-input5{
     display: none;
 }
+
+.login-form{
+  display: none;
+  padding: 2px;
+  font-size: 35px;
+  border-radius: 15px;
+  text-align: center;
+}
+.email, .name , .password , .passwordConfirm{
+  font-size: 18px;
+  text-align: left;
+  margin: 20px;
+}
+.form-email , .form-name , .form-password , .form-passwordConfirm{
+  color: #555555;
+  background: transparent;
+  padding:  0 15px 0 15px;
+  height: 35px;
+  line-height: 1.2px;
+  border: 0.1px solid #bfe9ff;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0px;
+  transition: border-color 1s;
+  outline: 0;
+}
+.form-email:focus{
+  border-color: #000000;
+}
+.form-name:focus{
+  border-color:#000000;
+}
+.contact-edit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

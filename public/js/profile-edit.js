@@ -26,6 +26,11 @@ const scTypeInput = document.querySelector('.scl-input2');
 const scTypeInput2 = document.querySelector('.oth-input3');
 const noOfIcons = document.querySelector('.scl-input3');
 const linkName= document.querySelector('.oth-input4');
+// contacts buttons
+const conEdit = document.querySelector('.contact-btn-edit');
+const conCancel = document.querySelector('.contact-btn-cancel');
+const conForm = document.querySelector('.login-form');
+
  bioedit = () =>{
   bioBtnEdit.style.display='none';
   bioBtnSave.style.display='block';
@@ -283,4 +288,13 @@ pdf = () => {
   scTypeInput2.value = 'file-pdf';
 }
 
-// Remove icons first trial
+contactEdit = () =>{
+  conForm.style.display='block';
+  conEdit.style.display='none';
+}
+
+contactCan = () =>{
+  conForm.style.display='none';
+  conEdit.style.display='block';
+  conCancel.style.display='none';
+}

@@ -27,7 +27,9 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "strip-bom": "^5.0.0"
+    "save-file": "^2.3.1",
+    "strip-bom": "^5.0.0",
+    "vcards-js": "^2.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
