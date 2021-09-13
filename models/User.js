@@ -87,6 +87,14 @@ const UserSchema = new mongoose.Schema({
     contact_link: {
         type: String,
         required: false
+    },
+    address1: {
+        type: String,
+        required: false
+    },
+    address2: {
+        type: String,
+        required: false
     }
 });
 
