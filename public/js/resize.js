@@ -53,5 +53,5 @@ if(window.innerWidth<751){
     desktopContainer.classList.remove("desktop-container");
 }
 else {
-    desktopContainer.classList.add("desktop-container-user");
+    desktopContainer.classList.add("desktop-container");
 }
