@@ -1,7 +1,7 @@
 const navButtton = document.querySelector(".nav-button");
 const list=document.querySelector(".nav-burger");
 const listItems= document.querySelectorAll('li');
-const desktopContainer=document.querySelector('.desktop-container');
+const desktopContainer=document.querySelector('.desktop-container-user');
 const bodyy=document.querySelector('body');
 navButtton.addEventListener('click',()=>{
   if(list.style.top==='-560px' && window.innerWidth<751|| list.style.top==='-560px'  && window.innerWidth<751 ){
@@ -42,16 +42,16 @@ listItems[2].addEventListener('click',()=>{
 });
 window.addEventListener('resize',()=>{
   if(window.innerWidth<751){
-    desktopContainer.classList.remove("desktop-container");
+    desktopContainer.classList.remove("desktop-container-user");
 
   }
   else{
-    desktopContainer.classList.add("desktop-container");
+    desktopContainer.classList.add("desktop-container-user");
   }
 });
 if(window.innerWidth<751){
-  desktopContainer.classList.remove("desktop-container");
+  desktopContainer.classList.remove("desktop-container-user");
 }
 else {
-    desktopContainer.classList.add("desktop-container");
+    desktopContainer.classList.add("desktop-container-user");
 }

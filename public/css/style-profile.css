@@ -67,6 +67,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 40px;
 }
 .alert {
     position: relative;
@@ -141,13 +142,17 @@ body {
 .hide {
     display: none;
 }
-
-
+.desktop-container-user {
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "card bio bio" "card sclinks sclinks" "card ot ot";
+}
 .desktop-container {
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 500px 1fr 1fr;
-    grid-template-areas: "card bio" "card sclinks" "card otlinks";
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows: 550px 1fr 1fr;
+    grid-template-areas: "card info info" "card sclinks bio" "card ot ot";
 }
 .card-holder {
     background-color: black;
@@ -192,6 +197,7 @@ body {
 
 .client-social-links {
     margin: auto;
+    text-align: center;
 }
 
 .client-social-links > a {
@@ -288,9 +294,6 @@ body {
     cursor: pointer;
     margin-top: 1rem;
 }
-.centered{
-    background-color: black;
-}
 .bio-name{
     text-align: center;
     width: 60%;
@@ -305,6 +308,87 @@ body {
     font-size: 20px;
     margin: 10px;
     text-align: center;
+}
+.contact-edit{
+    grid-area: info;
+}
+.client-ot{
+    grid-area: ot;
+}
+.login-form{
+    margin: auto 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2px;
+    font-size: 35px;
+    border-radius: 15px;
+    text-align: center;
+}
+.name{
+    width: 50%;
+    font-size: 18px;
+    text-align: left;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.form-email , .form-name , .form-password , .form-passwordConfirm{
+    color: #000000;
+    background: transparent;
+    padding:  0 15px 0 15px;
+    height: 35px;
+    line-height: 1.2px;
+    border: 0.1px solid black;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0px;
+    transition: border-color 1s;
+    outline: 0;
+}
+.form-email:focus{
+    border-color: #fd612f;
+}
+.form-name:focus{
+    border-color:#fd612f;
+}
+.contact-btn-save{
+    margin: 10px auto;
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #333333;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 1s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.contact-edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-btn-cancel, .contact-btn-edit{
+    display: none;
+}
+.centered-desktop{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+    background-color:black;
+}
+.centered{
+    display: none;
 }
 @media screen and (max-width: 750px) {
     html {
@@ -519,8 +603,10 @@ body {
         display: block;
         transition: 1s;
     }
+    .centered-desktop{
+        display: none;
+    }
     .centered{
-        grid-area: centered;
         display: flex;
         flex-direction: row;
         justify-content:center;
@@ -627,10 +713,11 @@ body {
         border-radius: 15px;
         text-align: center;
     }
-    .email2, .name , .password , .passwordConfirm{
+    .name , .password , .passwordConfirm{
         font-size: 18px;
         text-align: left;
         margin: 20px;
+        color: black;
     }
     .form-email , .form-name , .form-password , .form-passwordConfirm{
         color: #555555;
@@ -655,6 +742,16 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: transparent;
+    }
+    .contact-btn-edit{
+        display: block;
+    }
+    .info-name{
+        display: none;
+    }
+    .name{
+        width: 100%;
     }
 }
 
