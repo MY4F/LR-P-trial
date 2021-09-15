@@ -289,6 +289,7 @@ pdf = () => {
 }
 
 contactEdit = () =>{
+  conCancel.style.display='inline-block';
   conForm.style.display='block';
   conEdit.style.display='none';
 }
