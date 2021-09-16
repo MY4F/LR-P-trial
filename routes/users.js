@@ -59,6 +59,10 @@ router.get('/aboutL',ensureAuthenticated, (req, res) => {
     res.sendFile(dir +'/views/aboutL.html');
 });
 
+//Forget password page
+router.get('/forget', (req, res) => {
+    res.render(dir + '/views/forget.ejs');
+});
 
 //Mohamed el malatawy's page
 router.get('/MohamedElMalatawy', (req, res) => {
