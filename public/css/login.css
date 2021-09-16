@@ -143,6 +143,16 @@ body{
 .form-passwordConfirm:focus{
   border-color: #132c33;
 }
+.forget-pass{
+  text-decoration: none;
+  display: block;
+  font-size: 17px;
+  color: white;
+  transition: 0.5s;
+}
+.forget-pass:hover{
+  color: black;
+}
 .btn{
   margin: 0px 20px 40px 20px;
   width: 140px;
@@ -279,7 +289,7 @@ footer{
     cursor: pointer;
   }
   .header1{
-    width: 94.5%;
+    width: 95.5%;
   }
   .background{
     display: flex;

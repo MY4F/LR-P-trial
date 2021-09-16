@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 // User model
 const User = require('../models/User');
 let dir = __dirname.replace('routes','');
@@ -238,5 +240,102 @@ router.get('/logout', (req, res) => {
     req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login');
 });
+
+//Forget password handle
+let mail = nodemailer.createTransport({
+    service:'gmail',
+    auth:{
+        user:process.env.GMAIL_USER,
+        pass:process.env.GMAIL_PASS
+    }
+});
+router.post('/forget',(req,res,next)=>{
+    let errors=[];
+   User.findOne({email:req.body.email}).then(user=>{
+       if(!user){
+           errors.push({ msg: `Email doesn't exist` })
+           res.render(dir + '/views/forget.ejs',{errors});
+       }
+       else{
+           const secret = process.env.JWT_SECRET + user.password;
+           const payload = {
+             email:user.email,
+               id:user.id
+           };
+           const token = jwt.sign(payload,secret,{expiresIn: '15m'});
+           const link = `http://localhost:5000/users/reset-password/${user.id}/${token}`;
+           let mailOptions = {
+               from:'cardtap406@gmail.com',
+               to:`${user.email}`,
+               subject:'Password reset link.',
+               text:link
+           }
+           mail.sendMail(mailOptions,(error,info)=>{
+               if(error){
+                   console.log(error);
+               }
+           });
+           req.flash('success_msg', 'Email has been sent.');
+           res.redirect('/users/forget');
+       }
+   })
+});
+router.get('/reset-password/:id/:token',(req,res,next)=>{
+   const {id, token} = req.params;
+   let errors = [];
+   User.findOne({id:req.params[0]}).then(user=>{
+       if(!user){
+           errors.push({msg:'Expired or bad request.'})
+           res.render(dir+ 'views/forget.ejs',{errors});
+       }
+       else{
+           const secret = process.env.JWT_SECRET + user.password;
+           try {
+               const payload = jwt.verify(token,secret);
+               res.render(dir+ 'views/reset-password.ejs');
+           }catch(error){
+               res.send(error.message);
+           }
+       }
+   })
+});
+router.post('/reset-password/:id/:token',(req,res,next)=>{
+    const {id, token} = req.params;
+    const {password , passwordConfirm} = req.body;
+    let errors=[];
+    User.findOne({id:req.params[0]}).then(user=>{
+        if(!user){
+            errors.push({msg:'Expired or bad request.'})
+            res.render(dir+ 'views/forget.ejs',{errors});
+        }
+        else{
+            const secret = process.env.JWT_SECRET + user.password;
+            try {
+                const payload = jwt.verify(token,secret);
+                if(password!==passwordConfirm){
+                    errors.push({msg:'Passwords doesn\'t match.'})
+                    res.render(dir+'views/reset-password.ejs',{errors});
+                }
+                else {
+                    bcrypt.genSalt(10, (err, salt) => {
+                        bcrypt.hash(password, salt, (err, hash) => {
+                            if (err) throw err;
+                            user.update({password: hash}, (error, res) => {
+                                if (error) throw error;
+                            })
+                        })
+                    });
+                    req.flash(
+                        'success_msg',
+                        'Password has been changed successfully.'
+                    );
+                    res.redirect('/users/login');
+                }
+            }catch(error){
+                res.send(error.message);
+            }
+        }
+    })
+})
 
 module.exports = router;
