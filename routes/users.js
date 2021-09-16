@@ -267,7 +267,7 @@ router.post('/forget',(req,res,next)=>{
                id:user.id
            };
            const token = jwt.sign(payload,secret,{expiresIn: '15m'});
-           const link = `http://localhost:5000/users/reset-password/${user.id}/${token}`;
+           const link = `http://www.card-tap.com/users/reset-password/${user.id}/${token}`;
            let mailOptions = {
                from:'cardtap406@gmail.com',
                to:`${user.email}`,
