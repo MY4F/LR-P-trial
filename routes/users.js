@@ -89,6 +89,22 @@ router.post('/packEmails',(req,res)=>{
 })
 
 
+//Help center
+router.post('/helpEmails',(req,res)=>{
+    let mailOptions = {
+        from:'cardtap406@gmail.com',
+        to:'momoteka6089@gmail.com',
+        subject:'CardTap Help Center',
+        text:`Sir name: ${req.body.name}, Phone number: ${req.body.number} , Message: ${req.body.message}`
+    }
+    mail.sendMail(mailOptions,(error,info)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+    res.redirect('/users/index6');
+})
+
 //Mohamed el malatawy's page
 router.get('/MohamedElMalatawy', (req, res) => {
     User.findOne({ name: 'محمد عبد الفتاح الملطاوي' }).then(user => {
