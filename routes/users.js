@@ -287,7 +287,7 @@ router.post('/forget',(req,res,next)=>{
 router.get('/reset-password/:id/:token',(req,res,next)=>{
    const {id, token} = req.params;
    let errors = [];
-   User.findOne({id:req.params[0]}).then(user=>{
+   User.findOne({_id:id}).then(user=>{
        if(!user){
            errors.push({msg:'Expired or bad request.'})
            res.render(dir+ 'views/forget.ejs',{errors});
@@ -307,7 +307,7 @@ router.post('/reset-password/:id/:token',(req,res,next)=>{
     const {id, token} = req.params;
     const {password , passwordConfirm} = req.body;
     let errors=[];
-    User.findOne({id:req.params[0]}).then(user=>{
+    User.findOne({_id:id}).then(user=>{
         if(!user){
             errors.push({msg:'Expired or bad request.'})
             res.render(dir+ 'views/forget.ejs',{errors});
