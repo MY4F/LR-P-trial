@@ -9,6 +9,14 @@ const User = require('../models/User');
 let dir = __dirname.replace('routes','');
 const { ensureAuthenticated } = require('../config/auth');
 
+let mail = nodemailer.createTransport({
+    service:'gmail',
+    auth:{
+        user:process.env.GMAIL_USER,
+        pass:process.env.GMAIL_PASS
+    }
+});
+
 router.get('/index', (req, res) => {
   console.log(__dirname);
     res.sendFile(dir + '/views/index.html');
@@ -63,6 +71,23 @@ router.get('/aboutL',ensureAuthenticated, (req, res) => {
 router.get('/forget', (req, res) => {
     res.render(dir + '/views/forget.ejs');
 });
+
+//orders emails
+router.post('/packEmails',(req,res)=>{
+    let mailOptions = {
+        from:'cardtap406@gmail.com',
+        to:req.body.email,
+        subject:'Order',
+        text:`Sir name: ${req.body.name}, type of order :${req.body.message}, Phone number: ${req.body.number}`
+    }
+    mail.sendMail(mailOptions,(error,info)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+    res.redirect('/users/index5');
+})
+
 
 //Mohamed el malatawy's page
 router.get('/MohamedElMalatawy', (req, res) => {
@@ -246,13 +271,6 @@ router.get('/logout', (req, res) => {
 });
 
 //Forget password handle
-let mail = nodemailer.createTransport({
-    service:'gmail',
-    auth:{
-        user:process.env.GMAIL_USER,
-        pass:process.env.GMAIL_PASS
-    }
-});
 router.post('/forget',(req,res,next)=>{
     let errors=[];
    User.findOne({email:req.body.email}).then(user=>{
