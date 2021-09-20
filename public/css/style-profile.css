@@ -383,8 +383,8 @@ body {
         background-color:#e24646;
         transition: 1s;
         padding: 10px;
-        bottom: 10px;
-        right: 10px;
+        bottom: 20px;
+        right: 20px;
     }
     .card-holder-button{
         display: block;
