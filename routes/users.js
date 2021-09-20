@@ -133,7 +133,7 @@ router.get('/MohamedElMalatawy', (req, res) => {
 
 //Mohamed Yasser's page
 router.get('/MohamedYasser', (req, res) => {
-    User.findOne({ name: 'Mohamed Yasser Abdul-Fattah' }).then(user => {
+    User.findOne({ name: 'Mohamed Yasser' }).then(user => {
         res.render(dir +'/views/ClientProfile.ejs', {
           bio: user.bio,
              icons: user.icons,
