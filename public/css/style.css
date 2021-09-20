@@ -1,92 +1,7 @@
-html{
-  scroll-behavior: smooth;
-}
-body{
-  top: 0;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #F0F8FF ;
-  color:black;
-}
 .horizontal-space{
   border: 0.02px solid white;
   padding-top: 8px;
   padding-bottom: 8px;
-}
-.container{
-  position: sticky;
-  background-color: black;
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: top 0.5s;
-}
-.sign{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.sign>ul{
-  list-style: none;
-  text-align:right;
-}
-.sign>ul>li{
-  display: inline;
-  font-size: 1.2vw;
-  padding-bottom: 27px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 33px;
-  transition: 1s;
-}
-.sign>ul>li>a{
-  text-decoration: none;
-  color:white;
-}
-.sign>ul>li:hover{
-  background-color: #f2c136;
-}
-.nav-bar{
-  width: 65%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.nav-button{
-  display: none;
-}
-.header1>h1>a{
-  text-decoration: none;
-  color:white;
-  font-size: 30px;
-}
-.desk-burger{
-  list-style: none;
-}
-.desk-burger>.li-desktop{
-  display: inline;
-  font-size: 1.2vw;
-  padding-bottom: 27px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 33px;
-  transition: 1s;
-}
-.desk-burger>li>a{
-  text-decoration: none;
-  color:white;
-}
-.desk-burger>li:hover{
-  background-color: #f2c136;
 }
 .hide{
   display: none;
@@ -116,7 +31,7 @@ li{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #003366;
   color: white;
 }
 .spacer-bot{
@@ -159,7 +74,7 @@ li{
   font-size: 3vw;
   font-weight: normal;
   font-family: 'Montserrat', sans-serif;
-  color: #f2c136;
+  color: #e24646;
 }
 .block1>.text1{
   margin:auto 0;
@@ -202,49 +117,8 @@ li{
 .block1>.img1>img{
   width: 100%;
 }
-footer{
-  background-color: black;
-  width:100%;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.social-links{
-  margin: 40px;
-  text-align: center;
-}
-.other-links{
-  font-size: 14px;
-  width:100%;
-  text-align: center;
-}
-.social-links>a{
-  padding: 15px;
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
-}
-.other-links>a{
-  text-decoration: none;
-  color: white;
-  margin: 20px;
-  padding: 7px;
-}
-.rights{
-  color: white;
-  margin: 40px;
-  text-align: center;
-}
 .header-img-mobile{
   display: none;
-}
-.nav-burger, .sign-mob{
-  display: none;
-}
-.active{
-  background-color: #f2c136;
-  color: black;
 }
 @media screen and (max-width: 750px) {
   body{
@@ -257,42 +131,6 @@ footer{
     align-items: center;
     background-color: #F0F8FF ;
     color:black;
-  }
-  .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .nav-bar{
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 90%;
-    transition: background-color 2s;
-  }
-  .nav-burger{
-    width: 100%;
-    display:flex;
-    position: fixed;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: black;
-    flex-wrap: wrap;
-    text-align: center;
-    transition: all 1s;
-  }
-  .nav-burger>li{
-    width: 100%;
-  }
-  .nav-button{
-    display: inline;
-    font-size: 17px;
-    margin: auto;
-    cursor: pointer;
-  }
-  .header1{
-    width: 94.5%;
   }
   .header-img-desktop{
     display: none;
@@ -333,7 +171,7 @@ footer{
     text-align: center;
     font-size: 10vw;
     font-weight: normal;
-    color: #f2c136;
+    color: #e24646;
   }
   .block1>.text1{
     width: 100%;
@@ -360,33 +198,5 @@ footer{
     padding-right: 30px;
     padding-top: 33px;
     transition: 1s;
-  }
-  .sign{
-    display: none;
-  }
-  .nav-burger{
-    padding: 0;
-    margin: 0 auto;
-  }
-  .desk-burger{
-    display: none;
-  }
-  .nav-burger>.li-desktop{
-    display: inline;
-    font-size: 20px;
-    transition: 1s;
-  }
-  .nav-burger>li>a{
-    text-decoration: none;
-    color:white;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 27px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 33px;
-  }
-  .nav-burger>li:hover{
-    background-color: #f2c136;
   }
 }

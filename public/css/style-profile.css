@@ -1,7 +1,6 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     top: 0;
     margin: 0;
@@ -13,53 +12,10 @@ body {
     background-color: #F0F8FF;
     color: black;
 }
-
 .horizontal-space {
     border: 0.02px solid white;
     padding-top: 8px;
     padding-bottom: 8px;
-}
-
-.container{
-    position: sticky;
-    background-color: black;
-    top: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: top 0.5s;
-}
-
-.sign {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.sign > ul {
-    list-style: none;
-    text-align: right;
-}
-
-.sign > ul > li {
-    display: inline;
-    font-size: 1.2vw;
-    padding-bottom: 27px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 33px;
-    transition: 1s;
-}
-
-.sign > ul > li > a {
-    text-decoration: none;
-    color: white;
-}
-
-.sign > ul > li:hover {
-    background-color: #f2c136;
 }
 .client-social{
     grid-area: sclinks;
@@ -101,44 +57,6 @@ body {
 .fade:not(.show) {
     opacity: 0;
 }
-.nav-bar {
-    width: 65%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-button {
-    display: none;
-}
-
-.header1 > h1 > a {
-    text-decoration: none;
-    color: white;
-    font-size: 30px;
-}
-
-.desk-burger{
-    list-style: none;
-}
-.desk-burger>.li-desktop{
-    display: inline;
-    font-size: 1.2vw;
-    padding-bottom: 27px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 33px;
-    transition: 1s;
-}
-.desk-burger>li>a{
-    text-decoration: none;
-    color:white;
-}
-.desk-burger>li:hover{
-    background-color: #f2c136;
-}
-
 .hide {
     display: none;
 }
@@ -155,7 +73,7 @@ body {
     grid-template-areas: "card info info" "card sclinks bio" "card ot ot";
 }
 .card-holder {
-    background-color: black;
+    background-color: #003366;
     color: white;
     grid-area: card;
     display: flex;
@@ -182,6 +100,9 @@ body {
 }
 
 .card-holder-button {
+    display: none;
+}
+.card-holder-button-prof {
     display: none;
 }
 
@@ -234,11 +155,8 @@ body {
     text-decoration: none;
     color: black;
 }
-.nav-burger, .sign-mob{
-    display: none;
-}
 .active{
-    background-color: #f2c136;
+    background-color: #e24646;
 }
 .bio-edit{
     display: flex;
@@ -279,7 +197,7 @@ body {
     transition: 1s;
 }
 .upload-btn:hover{
-    background: rgba(253,97,47,0.25);
+    background: #f9f4e6;
     color: rgb(253,97,47);
 }
 .file > label > i {
@@ -385,7 +303,6 @@ body {
     justify-content:center;
     align-items: center;
     cursor: pointer;
-    background-color:black;
 }
 .centered{
     display: none;
@@ -408,65 +325,26 @@ body {
         background-color: #F0F8FF;
         color: black;
     }
-    .desk-burger{
-        display: none;
-    }
-    .nav-bar{
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        width: 90%;
-        transition: background-color 2s;
-    }
-
-    .header1 {
-        width: 95.5%;
-    }
-
-    .nav-burger{
-        width: 100%;
-        display:flex;
-        position: fixed;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        background-color: black;
-        flex-wrap: wrap;
-        text-align: center;
-        transition: all 1s;
-    }
-    .nav-burger>li{
-        width: 100%;
-    }
-
-    .header1 > h1 > a {
-        width: 10%;
-    }
-
-    .nav-button {
-        display: inline;
-        font-size: 17px;
-        margin: auto;
-        cursor: pointer;
-    }
-
     .card-holder {
-        border-radius: 5px;
-        margin: 10px;
-        background-color: black;
+        background-color: #f9f4e6;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         color: white;
     }
 
-    .card-holder > img {
-        margin: auto;
-        border-bottom-left-radius: 5px;
-        border-top-left-radius: 5px;
-        width: 63%;
+    .card-holder-2 {
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius:50%;
     }
-
+    .card-holder-2 > img {
+        width: 100%;
+        height: auto;
+    }
     .second-part-name {
         display: flex;
         flex-direction: column;
@@ -475,14 +353,17 @@ body {
     }
 
     .second-part-name > h3 {
-        font-size: 15px;
-        margin: 10px;
+        font-family: walkwayBlack;
+        color: #003366;
+        font-size: 25px;
+
     }
 
     .second-part-name > span {
-        margin: 10px;
-        color: #fd612f;
-        font-size: 2.8vw;
+        font-family: walkwayBold;
+        color: #2c456f;
+        font-size: 4vw;
+        margin: 0px 0px 10px 0px;
     }
 
     .mohamed-malatawy > span {
@@ -493,20 +374,32 @@ body {
         text-align: right;
     }
 
-    .card-holder-button {
+    .card-holder-button-prof {
+        position: fixed;
         display: block;
         border-radius: 5px;
-        margin-bottom: 10px;
-        text-align: center;
         text-decoration: none;
         color: white;
-        margin: auto;
-        background-color: #fd612f;
-        width: 79%;
+        background-color:#e24646;
         transition: 1s;
         padding: 10px;
+        bottom: 10px;
+        right: 10px;
     }
-
+    .card-holder-button{
+        display: block;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        width: 75%;
+        margin: auto;
+        color: white;
+        background-color:#e24646;
+        transition: 1s;
+        padding: 10px;
+        bottom: 10px;
+        right: 10px;
+    }
     .bio {
         display: flex;
         flex-direction: column;
@@ -663,35 +556,6 @@ body {
         cursor: pointer;
         margin-top: 1rem;
     }
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-burger{
-        padding: 0;
-        margin: 0 auto;
-    }
-    .nav-burger>.li-desktop{
-        display: inline;
-        font-size: 20px;
-        transition: 1s;
-    }
-    .nav-burger>li>a{
-        text-decoration: none;
-        color:white;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 27px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 33px;
-    }
-    .nav-burger>li:hover{
-        background-color: #f2c136;
-    }
     .hide {
         display: inline;
         font-size: 20px;
@@ -700,10 +564,6 @@ body {
         padding-right: 30px;
         padding-top: 33px;
         transition: 1s;
-    }
-
-    .sign {
-        display: none;
     }
     .login-form{
         width: min-content;
@@ -770,53 +630,4 @@ body {
 }
 .iconDelete:hover , .linkDelete:hover{
     color: red;
-}
-
-
-
-
-
-
-
-
-
-
-footer {
-    background-color: black;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.social-links {
-    margin: 40px;
-    text-align: center;
-}
-
-.other-links {
-    font-size: 14px;
-    width: 100%;
-    text-align: center;
-}
-
-.social-links > a {
-    padding: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 30px;
-}
-
-.other-links > a {
-    text-decoration: none;
-    color: white;
-    margin: 20px;
-    padding: 7px;
-}
-
-.rights {
-    color: white;
-    margin: 40px;
-    text-align: center;
 }
