@@ -20,7 +20,13 @@ router.get('/', (req, res) => {
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    res.render(`ClientProfileEdit.ejs`, {
+  let profile='';
+   if(req.user.card_type==='premium')
+       profile='ClientProfilesEditPre.ejs';
+   else
+       profile='ClientProfilesEdit.ejs';
+
+    res.render(profile, {
       bio: req.user.bio,
         icons: req.user.icons,
         links: req.user.links,

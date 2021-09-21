@@ -134,7 +134,7 @@ router.get('/MohamedElMalatawy', (req, res) => {
 //Mohamed Yasser's page
 router.get('/MohamedYasser', (req, res) => {
     User.findOne({ name: 'Mohamed Yasser' }).then(user => {
-        res.render(dir +'/views/ClientProfile.ejs', {
+        res.render(dir +'/views/ClientProfilePre.ejs', {
           bio: user.bio,
              icons: user.icons,
              links: user.links,
@@ -159,7 +159,7 @@ router.get('/MohamedYasser', (req, res) => {
 //Mostafa Mutaz's page
 router.get('/MostafaMutaz', (req, res) => {
     User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
-            res.render(dir +'/views/ClientProfile.ejs', {
+            res.render(dir +'/views/ClientProfilePre.ejs', {
               bio: user.bio,
               icons: user.icons,
               links: user.links,

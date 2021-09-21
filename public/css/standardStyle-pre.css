@@ -1,0 +1,230 @@
+@font-face {
+    font-family: walkwayBold;
+    src: url('../fonts/Walkway Bold.ttf');
+}
+@font-face {
+    font-family: walkwayBlack;
+    src: url('../fonts/Walkway Black.ttf');
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    top: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F8FF ;
+    color:black;
+}
+.container{
+    position: sticky;
+    background-color: #0e1527;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.5s;
+}
+.nav-button {
+    display: none;
+}
+.nav-image{
+    margin: 23px 10px 10px 10px;
+    width: 17%;
+}
+.nav-bar{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sign {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sign > ul {
+    list-style: none;
+    text-align: right;
+}
+.sign > ul > li {
+    display: inline;
+    font-size: 1.2vw;
+    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 33px;
+    transition: 1s;
+}
+.sign > ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+.sign > ul > li:hover {
+    background-color: #e24646;
+}
+.desk-burger{
+    list-style: none;
+}
+.desk-burger>.li-desktop{
+    display: inline;
+    font-size: 1.2vw;
+    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 33px;
+    transition: 1s;
+}
+.desk-burger>li>a{
+    text-decoration: none;
+    color:white;
+}
+.desk-burger>li:hover{
+    background-color: #e24646;
+}
+.active{
+    background-color: #e24646;
+}
+.nav-burger, .sign-mob{
+    display: none;
+}
+.header1{
+    width: 20%;
+}
+@media screen and (max-width: 750px){
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        top: 0;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F0F8FF ;
+        color:black;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-bar{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 90%;
+        transition: background-color 2s;
+    }
+    .sign {
+        display: none;
+    }
+    .nav-button {
+        display: inline;
+        font-size: 17px;
+        margin: auto;
+        cursor: pointer;
+    }
+    .desk-burger{
+        display: none;
+    }
+    .desk-burger{
+        display: none;
+    }
+    .nav-burger{
+        width: 100%;
+        display:flex;
+        position: fixed;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #0e1527;
+        flex-wrap: wrap;
+        text-align: center;
+        transition: all 1s;
+    }
+    .nav-burger>li{
+        width: 100%;
+    }
+    .nav-burger{
+        padding: 0;
+        margin: 0 auto;
+    }
+    .nav-burger>.li-desktop{
+        display: inline;
+        font-size: 20px;
+        transition: 1s;
+    }
+    .nav-burger>li>a{
+        text-decoration: none;
+        color:#d4b982;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 27px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 33px;
+    }
+    .nav-burger>li:hover{
+        background-color: #e24646;
+    }
+    .nav-image{
+        margin: 23px 10px 10px 10px;
+        width: 7%;
+    }
+    .header1 {
+        width: 95.5%;
+    }
+}
+
+
+footer {
+    color: #d4b982;
+    background-color: #0e1527;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.social-links {
+    margin: 40px;
+    text-align: center;
+}
+
+.other-links {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.social-links > a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.other-links > a {
+    text-decoration: none;
+    color: #f9f4e6;
+    margin: 20px;
+    padding: 7px;
+}
+
+.rights {
+    color: #f9f4e6;
+    margin: 40px;
+    text-align: center;
+}
