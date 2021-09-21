@@ -95,6 +95,10 @@ const UserSchema = new mongoose.Schema({
     address2: {
         type: String,
         required: false
+    },
+    card_type: {
+        type: String,
+        required: false
     }
 });
 
