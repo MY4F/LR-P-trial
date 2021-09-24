@@ -48,7 +48,7 @@
 .oth-btn-add:hover .dropdown-content-oth{
   display: block;
 }
-.scl-input , .oth-input, .oth-input4, .scl-input2, .oth-input3{
+.scl-input , .oth-input, .oth-input4, .scl-input2, .oth-input3, .pdf-input{
   display: none;
   color: #555555;
   margin: 10px;
@@ -57,7 +57,7 @@
   transition: border-color 1s;
   outline: 0;
 }
-.scl-input:focus,.oth-input:focus, .oth-input4:focus, .scl-input2:focus, .oth-input3:focus {
+.scl-input:focus,.oth-input:focus, .oth-input4:focus, .scl-input2:focus, .oth-input3:focus, .pdf-input:focus {
   border-color:#fd612f;
 }
 .btn-center{
@@ -74,4 +74,7 @@
 }
 .scl-input3 ,.scl-input2, .oth-input3, .oth-input4, .oth-input5{
     display: none;
+}
+.pdf-upload{
+  display: none;
 }
