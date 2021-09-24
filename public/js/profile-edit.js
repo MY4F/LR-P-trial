@@ -2,6 +2,7 @@ const bioBtnEdit = document.querySelector('.bio-btn-edit');
 const bioBtnSave = document.querySelector('.bio-btn-save');
 const bioBox = document.querySelector('.bio-words');
 const bioInput = document.querySelector('.bio-input');
+const bioCan= document.querySelector('.bio-btn-cancel');
 const sclBtnEdit = document.querySelector('.scl-btn-edit');
 const sclBtnSave = document.querySelector('.scl-btn-save');
 const sclBtnAdd = document.querySelector('.scl-btn-add');
@@ -34,20 +35,29 @@ const conCancel = document.querySelector('.contact-btn-cancel');
 const conForm = document.querySelector('.login-form');
 
  bioedit = () =>{
-  bioBtnEdit.style.display='none';
-  bioBtnSave.style.display='block';
-  bioInput.style.display='block';
-  bioBox.style.display='none';
-  bioInput.innerText=bioBox.innerText
+   bioCan.style.display='block';
+   bioBtnEdit.style.display='none';
+   bioBtnSave.style.display='block';
+   bioInput.style.display='block';
+   bioBox.style.display='none';
+   bioInput.innerText=bioBox.innerText
 };
 biosave = () => {
-    bioBox.innerText = bioInput.value;
-    console.log(bioBox);
+  bioBox.innerText = bioInput.value;
   bioBox.style.display='flex';
   bioInput.style.display='none';
   bioBtnEdit.style.display='block';
   bioBtnSave.style.display='none';
 }
+biocan = () => {
+  bioCan.style.display='none';
+  bioInput.style.display='none';
+  bioBox.style.display='flex';
+  bioBtnEdit.style.display='block';
+  bioBtnSave.style.display='none';
+}
+
+
 scledit = () => {
   sclBtnEdit.style.display='none';
   sclBtnSave.style.display='none';
