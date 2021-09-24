@@ -498,12 +498,12 @@ body {
     .img-mobile-ver {
         display: block;
         transition: 1s;
-        border: 1px solid #d4b982;
     }
     .centered-desktop{
         display: none;
     }
     .centered{
+        margin: 20px;
         display: flex;
         flex-direction: row;
         justify-content:center;
