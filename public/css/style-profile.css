@@ -164,16 +164,16 @@ body {
     justify-content: center;
     align-items: center;
 }
-.file {
+.file2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 }
-.file > input[type='file'] {
+.file2 > input[type='file'] {
     display: none
 }
-.file > label {
+.file2 > label {
     font-size: 1rem;
     cursor: pointer;
     outline: 0;
@@ -200,7 +200,7 @@ body {
     background: #f9f4e6;
     color: rgb(253,97,47);
 }
-.file > label > i {
+.file2 > label > i {
     padding-right: 5px;
 }
 
@@ -307,6 +307,36 @@ body {
 .centered{
     display: none;
 }
+.file2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.file2 > input[type='file'] {
+    display: none
+}
+.file2 > label {
+    font-size: 1rem;
+    cursor: pointer;
+    outline: 0;
+    user-select: none;
+    border-style: solid;
+    border-color: rgba(111,111,111,0.0001);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    border-width: 1px;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 29%);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media screen and (max-width: 750px) {
     html {
         scroll-behavior: smooth;
@@ -356,14 +386,16 @@ body {
         font-family: walkwayBlack;
         color: #003366;
         font-size: 25px;
+        letter-spacing: 2px;
 
     }
 
     .second-part-name > span {
         font-family: walkwayBold;
         color: #2c456f;
-        font-size: 4vw;
+        font-size: 3.2vw;
         margin: 0px 0px 10px 0px;
+        letter-spacing: 2px;
     }
 
     .mohamed-malatawy > span {
@@ -507,17 +539,17 @@ body {
         cursor: pointer;
         background-color:#F0F8FF;
     }
-    .file {
+    .file2 {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         margin: 20px auto;
     }
-    .file > input[type='file'] {
+    .file2 > input[type='file'] {
         display: none
     }
-    .file > label {
+    .file2 > label {
         font-size: 1rem;
         cursor: pointer;
         outline: 0;
@@ -544,7 +576,7 @@ body {
         background: rgba(253,97,47,0.25);
         color: rgb(253,97,47);
     }
-    .file > label > i {
+    .file2 > label > i {
         padding-right: 5px;
     }
 

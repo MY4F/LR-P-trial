@@ -26,6 +26,8 @@ const scTypeInput = document.querySelector('.scl-input2');
 const scTypeInput2 = document.querySelector('.oth-input3');
 const noOfIcons = document.querySelector('.scl-input3');
 const linkName= document.querySelector('.oth-input4');
+const pdfbutt = document.querySelector('.pdf-upload');
+const pdfInput= document.querySelector('.pdf-input');
 // contacts buttons
 const conEdit = document.querySelector('.contact-btn-edit');
 const conCancel = document.querySelector('.contact-btn-cancel');
@@ -128,6 +130,7 @@ othsave = () =>{
 const links2 = othLinksContainer.querySelectorAll('div');
 linkDel= (x) =>{
   scTypeInput2.value = othLinksContainer.children[x].outerHTML;
+  linkName.value = othLinksContainer.children[x].children[1].title;
   noOfLinks.value=links.length;
   linkInputOth.style.display='none';
   othBtnEdit.style.display='block';
@@ -157,6 +160,7 @@ othcan = () => {
   for(let i = 0 ;i<links2.length;i++){
     removeButton[i].style.display="none";
   }
+  pdfbutt.style.display='none';
   othBtnSave.style.display='none';
   othBtnCan.style.display='none';
   linkInputOth.style.display='none';
@@ -278,13 +282,12 @@ cl = () => {
 
 }
 pdf = () => {
-  linkInputOth.placeholder='Enter your PDF link'
-  linkName.style.display='flex';
+  pdfInput.style.display='block';
+  pdfbutt.style.display='flex';
   linkName.placeholder='Enter PDF name';
   othBtnSave.name='file-pdf'
-  linkInputOth.style.display='flex';
   contentOth.style.display='none';
-  othBtnSave.style.display = 'block';
+  othBtnSave.style.display = 'none';
   scTypeInput2.value = 'file-pdf';
 }
 

@@ -57,7 +57,7 @@
             <span><%= job %></span>
         </div>
         <form class="centered-desktop" action="/single" method="POST" enctype="multipart/form-data">
-            <div class='file file--upload'>
+            <div class='file2 file--upload'>
                 <label class="upload-btn" for='input-file'>
                     <i class="far fa-images"></i>Upload Image
                 </label>
@@ -66,7 +66,7 @@
         </form>
     </div>
     <form class="centered" action="/single" method="POST" enctype="multipart/form-data">
-        <div class='file file--upload'>
+        <div class='file2 file--upload'>
             <label class="upload-btn" for='input-file'>
                 <i class="far fa-images"></i>Upload Image
             </label>
@@ -180,6 +180,15 @@
                 <button class="btn" type="button" name="map-marker-alt" onclick="loc()">Location</button>
                 <button class="btn" type="button" name="phone" onclick="cl()">Phone Number</button>
                 <button class="btn" type="button" name="file-pdf" onclick="pdf()">PDF</button>
+            </div>
+        </form>
+        <form class="pdf-upload" action="/pdf" method="POST" enctype="multipart/form-data">
+            <div class='file2'>
+                <input class="pdf-input" type="text" name="pdfName" size="25" value="" placeholder="Enter your file name.">
+                <label class="upload-btn" for='input-file2'>
+                    <i class="fas fa-file-pdf"></i>Upload File
+                </label>
+                <input id='input-file2' onchange="this.form.submit()" type='file' name="pdf" />
             </div>
         </form>
     </div>

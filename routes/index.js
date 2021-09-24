@@ -149,16 +149,17 @@ router.post('/iconsUpdate', (req, res) => {
 });
 
 
-router.post('/linksUpdate', (req, res) => {
+router.post('/linksUpdate', async(req, res) => {
     errors2 = [];
     scType = req.body.link3;
-    newA2 = req.user.links
+    newA2 = req.user.links;
     if(req.body.link2 ==="" && scType.length<20){
         errors2.push({msg:'Please enter an appropriate link.'});
         res.redirect('/dashboard');
     }
     else if (req.body.link2 ==="") {
         newA2 = newA2.replace(scType, ' ');
+        await cloudinary.uploader.destroy(req.body.linkName);
         req.user.update({ links: newA2 }, (error, res) => {
             if (error) throw error;
 
@@ -181,19 +182,29 @@ router.post('/linksUpdate', (req, res) => {
         }
         else if(scType === 'map-marker-alt' && !newA2.includes(duplicate2) || scType === 'globe' && !newA2.includes(duplicate2))
             newA2+=`<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.linkName}</a></div>  `;
-        else if (!newA2.includes(duplicate2))
-            newA2 += `<div class="oth"> <i class="fas fa-${req.body.link3}" aria-hidden="true"></i> <a href="${req.body.link2}">${req.body.link2}</a></div>  `;
-
         req.user.update({ links: newA2 }, (error, res) => {
             if (error) throw error;
-
         })
         res.redirect('/dashboard');
     }
 });
 
-// Image upload
+//file upload
+router.post('/pdf',upload.single("pdf"),async (req,res)=>{
+    newA2 = req.user.links;
+    try {
+        const result = await cloudinary.uploader.upload(req.file.path);
+        newA2 += `<div class="oth"> <i class="fas fa-file-pdf" aria-hidden="true"></i> <a title="${result.public_id}" href="${result.secure_url}" download="">${req.body.pdfName}</a></div>  `;
+    }
+    catch(err){ throw err;}
+    req.user.update({ links: newA2 }, (error, res) => {
+        if (error) throw error;
+    })
+    res.redirect('/dashboard');
+})
 
+
+// Image upload
 router.post('/single',upload.single("image"),async (req,res)=>{
     try {
         const result = await cloudinary.uploader.upload(req.file.path);
