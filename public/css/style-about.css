@@ -83,14 +83,11 @@ textarea{
   padding: 12px 20px;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid #f2c136;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom: 2px solid #e24646;
 }
 input{
   width: 55%;
   height: 30px;
-  border-radius: 5px;
   background-color:white;
   margin: 15px;
   outline: none;
@@ -134,7 +131,7 @@ button{
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
-  transition:  1s;
+  transition:  0.3s;
   border-bottom-right-radius:22px;
   border-bottom-left-radius:22px;
   font-size: 20px;
@@ -238,6 +235,6 @@ button:after{
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 33px;
-    transition: 1s;
+    transition: 0.3s;
   }
 }

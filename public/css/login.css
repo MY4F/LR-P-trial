@@ -17,8 +17,9 @@
   font-size: 35px;
   padding: 30px;
   border-radius: 15px;
-  background: #77acf1;
+  background: #f9f4e6;
   width: 35%;
+  color: #003366;
   text-align: center;
 }
 .email, .name , .password , .passwordConfirm{
@@ -33,12 +34,11 @@
   background: transparent;
   padding:  0 25px 0 25px;
   height: 55px;
-  border:0;
   line-height: 1.2px;
-  border: 0.1px solid white;
+  border: 0.1px solid #003366;
   border-radius: 5px;
   margin: 10px 10px 10px 0px;
-  transition: border-color 1s;
+  transition: border-color 0.3s;
   outline: 0;
 }
 .form-email:focus{
@@ -57,11 +57,7 @@
   text-decoration: none;
   display: block;
   font-size: 17px;
-  color: white;
-  transition: 0.5s;
-}
-.forget-pass:hover{
-  color: black;
+  color: #003366;
 }
 .btn{
   margin: 0px 20px 40px 20px;
@@ -77,13 +73,13 @@
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 1s ease 0s;
+  transition: background-color 0.3s ease,color 0.3s ease;
   cursor: pointer;
   outline: none;
 }
 .btn:hover{
   color: white;
-  background-color:#99ff99;
+  background-color:#e24646;
 }
 .img>img{
   width: 120%;
@@ -141,6 +137,6 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 33px;
-    transition: 1s;
+    transition: 0.3s;
   }
 }

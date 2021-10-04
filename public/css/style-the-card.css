@@ -48,6 +48,11 @@
 .spacer-bot{
   margin-top: -5px;
 }
+.block1-img{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
 .block1{
   width: 100%;
   display: flex;
@@ -79,17 +84,21 @@
   width: 100%;
 }
 .ul-text{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: 50%;
+  /*flex-wrap: wrap;*/
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  /*flex-direction: row;*/
   align-items: center;
-  margin: 35px;
+  justify-content: center;
+  column-gap: 2rem;
+  row-gap: -1rem;
+  padding-right: 4rem;
+  padding-block: 1rem
 }
 .img-con{
-  margin: 15px;
   text-align: center;
-  width: 20%;
+  width: 100%;
 }
 .img-con2{
   margin: 15px;
@@ -108,16 +117,14 @@
   border-left: 0.1px solid black;
 }
 .img2{
-  width:100%;
+  width:50%;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .img2>img{
-  margin: 35px;
-  width: 15%;
+  margin: 35px 120px 35px 35px;
+  width: 30%;
 }
 .nav-burger, .sign-mob{
   display: none;
@@ -131,7 +138,48 @@
 .active{
   background-color: #f2c136;
 }
-
+.HIW{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.HIW>div{
+  margin: 50px;
+  width: 40%;
+}
+.HIW>div>h2{
+  font-size: 30px;
+}
+.HIW>img{
+  width: 50%;
+}
+.call-to-action{
+  text-decoration: none;
+  background-color: #e24647;
+  border-radius: 15px;
+  padding: 10px;
+  color: #f9f4e6;
+  transition: background-color 1s;
+  margin: 30px;
+}
+.call-to-action:hover{
+  background-color: black;
+}
+.swipe{
+  width: 12%;
+}
+.tap{
+  width: 9%;
+}
+.connect{
+  width: 9%;
+}
+.vid1{
+  margin: 50px;
+  width: 43.2%;
+  height: 240px;
+}
 @media screen and (max-width: 750px) {
   .spacer>p{
     font-size: 20px;
@@ -170,6 +218,14 @@
     align-items: center;
     margin: 50px;
   }
+  .block1-img{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+  }
   .block1>h3{
     width: 100%;
     text-align: center;
@@ -200,6 +256,7 @@
     align-items: center;
   }
   .img2>img{
+    margin: 35px;
     width: 50%;
   }
   .img1-desktop{
@@ -225,9 +282,9 @@
     }
   }
   .img-con{
+    margin: 15px;
     font-size: 15px;
     text-align: center;
-    width: 100%;
   }
   .img-con1{
     font-size: 15px;
@@ -270,5 +327,28 @@
     padding-right: 30px;
     padding-top: 33px;
     transition: 1s;
+  }
+  .HIW{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+  }
+  .HIW>div>h2{
+    text-align: center;
+  }
+  .HIW>img{
+    display: none;
+  }
+  .swipe{
+    width: 25%;
+  }
+  .tap{
+    width: 20%;
+  }
+  .connect{
+    width: 17%;
   }
 }

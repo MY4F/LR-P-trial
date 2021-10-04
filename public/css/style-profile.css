@@ -73,7 +73,7 @@ body {
     grid-template-areas: "card info info" "card sclinks bio" "card ot ot";
 }
 .card-holder {
-    background-color: #003366;
+    background-color: #f9f4e6;
     color: white;
     grid-area: card;
     display: flex;
@@ -87,7 +87,9 @@ body {
 }
 
 .second-part-name > h3 {
+    font-size: 25px;
     margin: 10px;
+    color: #003366;
 }
 
 .second-part-name > span {
@@ -393,7 +395,7 @@ body {
     .second-part-name > span {
         font-family: walkwayBold;
         color: #2c456f;
-        font-size: 3.2vw;
+        font-size: 17px;
         margin: 0px 0px 10px 0px;
         letter-spacing: 2px;
     }
@@ -523,7 +525,6 @@ body {
     .img-desktop-ver {
         display: none;
     }
-
     .img-mobile-ver {
         display: block;
         transition: 1s;
@@ -538,7 +539,6 @@ body {
         justify-content:center;
         align-items: center;
         cursor: pointer;
-        background-color:#F0F8FF;
     }
     .file2 {
         display: flex;

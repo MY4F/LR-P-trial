@@ -9,10 +9,8 @@ const homeText= document.querySelectorAll('.text1');
 setTimeout(()=>{
   homeImg[0].style.position='unset';
   homeImg[1].style.position='unset';
-  homeImg[2].style.position='unset';
   homeText[0].style.position='unset';
   homeText[1].style.position='unset';
-  homeText[2].style.position='unset';
 },3000);
 navButtton.addEventListener('click',()=>{
   if(list.style.top==='-560px' && window.innerWidth<751|| list.style.top==='-560px'  && window.innerWidth<751 ){
@@ -60,9 +58,9 @@ if(window.innerWidth<751){
   });
 }
 window.addEventListener('resize',()=>{
-if(window.innerWidth<751){
-  imgClick[1].addEventListener('click',()=>{
-    window.scrollTo(0,670);
-  });
-}
+  if(window.innerWidth<751){
+    imgClick[1].addEventListener('click',()=>{
+      window.scrollTo(0,670);
+    });
+  }
 })
