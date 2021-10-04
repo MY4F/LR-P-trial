@@ -22,9 +22,9 @@ router.get('/', (req, res) => {
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
   let profile='';
    if(req.user.card_type==='premium')
-       profile='ClientProfilesEditPre.ejs';
+       profile='ClientProfileEditPre.ejs';
    else
-       profile='ClientProfilesEdit.ejs';
+       profile='ClientProfileEdit.ejs';
 
     res.render(profile, {
       bio: req.user.bio,
