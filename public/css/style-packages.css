@@ -441,6 +441,7 @@ input[type=email]{
     top:-20px;
   }
   .standard-container{
+    margin: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
