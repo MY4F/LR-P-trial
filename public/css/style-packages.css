@@ -6,18 +6,198 @@
 .hide{
   display: none;
 }
-.header-img-desktop{
-  width: 100%;
-  height:580px;
-  background-image: url("../images/img-package.jpg");
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center;
-  background-attachment: fixed;
+.header{
+  height: 550px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header>span{
+  margin: 30px 20px 100px 20px;
+  font-family: Mon-Med;
+  color: #003366;
+  font-size: 70px;
+  border-bottom: 6px solid rgb(226,70,70);
+  border-radius: 5px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image{
+  border-radius: 0.8rem;
+  width: 35%;
+  transform: rotate(-15deg);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.first-image{
+  margin-left:60px;
+}
+.second-image{
+  position: relative;
+  left: -3%;
+  top: 6px;
+  z-index: 1;
+}
+.third-image{
+  position: relative;
+  left: -8%;
+  top: 6px;
+  z-index: 2;
+}
+.fa-angle-double-down{
+  color: #e24646;
+  transition: color 0.5s , font-size 0.5s;
+}
+.fa-angle-double-down:hover{
+  font-size: 120px;
+  color: #003366;
+}
+.standard-container{
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 700px;
+  grid-template-areas:"img info" ;
+}
+.standard-container>.part1{
+  grid-area: img;
+}
+.standard-container>.part2{
+  grid-area: info;
+}
+.part1{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.image-2{
+  border-radius: 0.8rem;
+  width: 70%;
+  transform: rotate(-15deg);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.second-image-2{
+  position: relative;
+  left: 20%;
+  top: -150px;
+  z-index: -1;
+}
+.part2{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.part2>span{
+  font-size: 40px;
+  font-family: Mon-Med;
+  color: #003366;
+  font-weight: 900;
+}
+.part2>.pros{
+  width:65%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  list-style: none;
+  text-align: justify;
+}
+.part2>.pros>li{
+  font-family: Mon-Med;
+  color: #003366;
+  width: 50%;
+  gap: 5px;
+  text-align: left;
+  margin:10px auto;
+}
+.container2 {
+  color: #003366;
+  font-family: Mon-Med;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.5s;
+}
+
+/* Hide the browser's default radio button */
+.container2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+/* On mouse-over, add a grey background color */
+.container2:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container2 input:checked ~ .checkmark {
+  background-color: black;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container2 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container2 .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.card-number-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.price{
+  color: #003366;
+  font-family: Mon-Med;
+  font-weight: bolder;
+  margin: 20px;
+  font-size: 35px;
+  text-align: center;
+  width: 100%;
 }
 .header-img-mobile{
   display: none;
@@ -91,20 +271,14 @@
   width: 40%;
   font-size: 20px;
 }
-.price{
-  text-align: center;
-  font-size: 25px;
-  font-weight: bolder;
-}
 .package-request{
-  width: 100%;
+  width: 50%;
   text-decoration: none;
   background-color: #1cd777;
   color:white;
   text-align: center;
   padding: 15px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 50px;
 }
 .product-container{
   background-color: #E4F7FF;
@@ -202,7 +376,7 @@ button{
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.5s;
   font-size: 20px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -234,18 +408,50 @@ input[type=email]{
   .header-img-desktop{
     display: none;
   }
-  .header-img-mobile{
-    display: flex;
+  .header{
+    height: auto;
     width: 100%;
-    height:580px;
-    background-image: url("../images/img-package.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header>span{
+    font-size: 50px;
+    margin-bottom: 70px;
+  }
+  .wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .image{
+    width:50%;
+  }
+  .first-image{
+    margin-left:20px;
+  }
+  .second-image{
+    left: -2%;
+    top: -15px;
+  }
+  .third-image{
+    left:-7%;
+    top:-20px;
+  }
+  .standard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-2{
+    margin-top: 120px;
+    margin-right: 70px;
+  }
+  .part2>.pros{
+    width:80%;
   }
   .packages-poster-holder{
     display: flex;
@@ -321,13 +527,6 @@ input[type=email]{
   }
   .package-request{
     width: 92%;
-    text-decoration: none;
-    background-color: #1cd777;
-    color:white;
-    text-align: center;
-    padding: 15px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
   }
   .product-container{
     background-color: #E4F7FF;
@@ -349,7 +548,7 @@ input[type=email]{
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.5s;
     font-size: 20px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -362,6 +561,6 @@ input[type=email]{
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 33px;
-    transition: 1s;
+    transition: 0.5s;
   }
 }

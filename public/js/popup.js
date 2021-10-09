@@ -15,10 +15,6 @@ purchaseBut[2].addEventListener('click',()=>{
   popupPurchase.style.display='block';
   requestedText.value="Business";
 })
-purchaseBut[3].addEventListener('click',()=>{
-  popupPurchase.style.display='block';
-  requestedText.value="Custom";
-})
 closeSpan.addEventListener('click',()=>{
   popupPurchase.style.display = "none";
 })

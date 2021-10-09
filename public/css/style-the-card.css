@@ -242,10 +242,6 @@
   .block1>.text1>p{
     padding: 20px;
   }
-  .block1>.img1{
-    margin:auto 0;
-    width: 50%;
-  }
   .block1>.img1>img{
     max-width: 100%;
   }
@@ -281,6 +277,7 @@
       right: 0px;
     }
   }
+
   .img-con{
     margin: 15px;
     font-size: 15px;
@@ -305,11 +302,11 @@
   }
   .img1{
     position: relative;
-    animation: sfl 3s ease-in-out ;
+    animation: sfl 2s ease-in-out ;
   }
   .text1{
     position: relative;
-    animation: sfr 3s ease-in-out;
+    animation: sfr 2s ease-in-out;
   }
   .ul-text{
     width: 100%;
