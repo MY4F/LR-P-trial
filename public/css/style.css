@@ -375,6 +375,20 @@ li{
     margin-bottom: 0;
     text-align: center;
   }
+  .text>.header{
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+    font-size: 20px;
+  }
+  .all-your-links>.text{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+  }
+  .all-your-links>.image{
+    width: 80%;
+  }
   .header-img-mobile>h3{
     border:2px solid #F0F8FF;
     padding: 20px;
