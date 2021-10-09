@@ -160,6 +160,7 @@ body{
         display: none;
     }
     .nav-burger{
+        z-index: 3;
         width: 100%;
         display:flex;
         position: fixed;
