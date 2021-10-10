@@ -76,11 +76,28 @@ router.get('/forget', (req, res) => {
 router.post('/packEmails',(req,res)=>{
     let mailOptions = {
         from:'cardtap406@gmail.com',
-        to:req.body.email,
+        to:'momoteka6089@gmail.com',
         subject:'Order',
-        text:`Sir name: ${req.body.name}, type of order :${req.body.message}, Phone number: ${req.body.number}`
+        text:`Sir name: ${req.body.name},
+          email : ${req.body.email},
+          type of order :${req.body.message},
+          Phone number: ${req.body.number},
+          Quantity : ${req.body.quantity}`
     }
     mail.sendMail(mailOptions,(error,info)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+    let mailOptions2 = {
+        from:'cardtap406@gmail.com',
+        to:req.body.email,
+        subject:'Order Confirmation',
+        text:`Sir name: ${req.body.name}, you have ordered ${req.body.message}.
+        hang tight and we will reach back as soon as possible.
+        Thank you from ordering from cardtap.`
+    }
+    mail.sendMail(mailOptions2,(error,info)=>{
         if(error){
             console.log(error);
         }
