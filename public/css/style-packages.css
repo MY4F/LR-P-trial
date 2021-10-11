@@ -613,10 +613,10 @@ input[type=email]{
   }
   .purchase-content{
     width: 95%;
+    overflow: auto;
     flex-direction: column;
   }
   .image-order{
-    margin: 0;
     width: 60%;
   }
   .secondHalf{

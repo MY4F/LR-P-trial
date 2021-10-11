@@ -312,6 +312,36 @@ li{
   margin: 70px;
   background-color: #f9f4e6;
 }
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+.fade-in.appear {
+  opacity: 1;
+}
+.from-left {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.from-right {
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+  transition: opacity 0.5s ease-in, -webkit-transform 0.7s ease-in;
+  transition: opacity 0.5s ease-in, transform 0.7s ease-in;
+  transition: opacity 0.5s ease-in, transform 0.7s ease-in,
+  -webkit-transform 0.7s ease-in;
+  opacity: 0;
+}
+.from-left.appear, .from-right.appear {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
 @media screen and (max-width: 750px) {
   body{
     top: 0;
