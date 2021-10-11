@@ -72,18 +72,6 @@ listItems[2].addEventListener('click',()=>{
     list.style.display='';
   }
 });
-if(window.innerWidth<751){
-  imgClick[1].addEventListener('click',()=>{
-    window.scrollTo(0,670);
-  });
-}
-window.addEventListener('resize',()=>{
-  if(window.innerWidth<751){
-    imgClick[1].addEventListener('click',()=>{
-      window.scrollTo(0,670);
-    });
-  }
-})
 rdStandard[0].addEventListener('click',()=>{
   standardPrice[0].childNodes[0].textContent='200 EGP ';
   standardPrice[0].childNodes[1].textContent='/card';
@@ -139,4 +127,16 @@ rdElite[3].addEventListener('click',()=>{
   elitePrice[0].childNodes[0].textContent='Custom price';
   elitePrice[0].childNodes[1].textContent='';
   requestedText.value='25+';
+})
+if(window.innerWidth<751){
+  imgClick[1].addEventListener('click',()=>{
+    window.scrollTo(0,670);
+  });
+}
+window.addEventListener('resize',()=>{
+  if(window.innerWidth<751){
+    imgClick[1].addEventListener('click',()=>{
+      window.scrollTo(0,670);
+    });
+  }
 })
