@@ -381,6 +381,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 .image-order{
   margin-top: 160px;
@@ -401,7 +403,7 @@ input{
   width: 55%;
   height: 30px;
   background-color:white;
-  margin: 15px;
+  margin: 5px;
   outline: none;
 }
 label{
@@ -613,7 +615,8 @@ input[type=email]{
     flex-direction: column;
   }
   .image-order{
-    width: 60%;
+    width: 50%;
+    margin-top: 100px;
   }
   .secondHalf{
     margin-top: -50px;
