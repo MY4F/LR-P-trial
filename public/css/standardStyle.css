@@ -118,7 +118,7 @@ body{
     display: none;
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 850px){
     html{
         scroll-behavior: smooth;
     }

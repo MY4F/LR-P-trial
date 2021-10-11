@@ -453,7 +453,7 @@ input[type=email]{
   border-bottom: 2px solid rgba(226,70,71,0.7);
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .header-img-desktop{
     display: none;
   }
