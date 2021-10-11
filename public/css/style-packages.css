@@ -328,8 +328,6 @@
 }
 .popup-purchase{
   display: none;
-  flex-direction: column;
-  align-items: center;
   position: fixed;
   z-index: 6;
   padding-top: 100px;
