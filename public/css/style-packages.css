@@ -631,4 +631,7 @@ input[type=email]{
   .popup-purchase{
     padding-top: 0;
   }
+  .second-image-2{
+    top: -80px;
+  }
 }
