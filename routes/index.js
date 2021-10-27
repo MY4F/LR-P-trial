@@ -159,7 +159,9 @@ router.post('/linksUpdate', async(req, res) => {
     }
     else if (req.body.link2 ==="") {
         newA2 = newA2.replace(scType, ' ');
-        await cloudinary.uploader.destroy(req.body.linkName);
+        if(req.body.linkName !== ""){
+          await cloudinary.uploader.destroy(req.body.linkName);
+        }
         req.user.update({ links: newA2 }, (error, res) => {
             if (error) throw error;
 

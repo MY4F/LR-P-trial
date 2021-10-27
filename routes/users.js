@@ -224,8 +224,8 @@ router.get('/HussainAyman', (req, res) => {
 });
 
 //Karim Mohi's page
-router.get('/KarimMohi', (req, res) => {
-    User.findOne({ name: 'Karim Mohi' }).then(user => {
+router.get('/FredrickStewart', (req, res) => {
+    User.findOne({ name: 'Fredrick Stewart' }).then(user => {
         res.render(dir + '/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
