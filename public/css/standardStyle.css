@@ -117,7 +117,10 @@ body{
 .nav-burger, .sign-mob{
     display: none;
 }
-
+.nav-image{
+    margin: 23px 10px 10px 10px;
+    width: 17%;
+}
 @media screen and (max-width: 850px){
     html{
         scroll-behavior: smooth;
@@ -200,10 +203,10 @@ body{
     .header1 {
         width: 95.5%;
     }
-}
-.nav-image{
-    margin: 23px 10px 10px 10px;
-    width: 17%;
+    .nav-image{
+       margin: 23px 10px 10px 10px;
+       width: 7%;
+   }
 }
 footer {
     background-color: #003366;
