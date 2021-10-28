@@ -176,7 +176,7 @@ router.get('/MohamedYasser', (req, res) => {
 //Mostafa Mutaz's page
 router.get('/MostafaMutaz', (req, res) => {
     User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
-            res.render(dir +'/views/ClientProfilePre.ejs', {
+            res.render(dir +'/views/ClientProfile.ejs', {
               bio: user.bio,
               icons: user.icons,
               links: user.links,
