@@ -16,7 +16,7 @@ let errors=[];
 let errors2=[];
 //welcome page
 router.get('/', (req, res) => {
-    res.sendFile('/app/views/index.html');
+    res.sendFile('/app/views/Home.html');
 });
 // dashboards
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
