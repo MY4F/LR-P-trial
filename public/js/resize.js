@@ -5,7 +5,7 @@ const desktopContainer=document.querySelector('.desktop-container');
 const bodyy=document.querySelector('body');
 navButtton.addEventListener('click',()=>{
     if(list.style.top==='-560px' && window.innerWidth<751|| list.style.top==='-560px'  && window.innerWidth<751 ){
-        list.style.top = '68px';
+        list.style.top = '61px';
         setTimeout(()=>{
             document.querySelector('.container').style.top = "0px";
         },0);
@@ -43,15 +43,18 @@ listItems[2].addEventListener('click',()=>{
 window.addEventListener('resize',()=>{
     if(window.innerWidth<751){
         desktopContainer.classList.remove("desktop-container");
-
+        desktopContainer.classList.add("mobile-user");
     }
     else{
         desktopContainer.classList.add("desktop-container");
+        desktopContainer.classList.remove("mobile-user");
     }
 });
 if(window.innerWidth<751){
     desktopContainer.classList.remove("desktop-container");
+    desktopContainer.classList.add("mobile-user");
 }
-else {
+else{
     desktopContainer.classList.add("desktop-container");
+    desktopContainer.classList.remove("mobile-user");
 }

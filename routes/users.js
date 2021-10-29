@@ -17,9 +17,9 @@ let mail = nodemailer.createTransport({
     }
 });
 
-router.get('/index', (req, res) => {
+router.get('/Home', (req, res) => {
   console.log(__dirname);
-    res.sendFile(dir + '/views/index.html');
+    res.sendFile(dir + '/views/Home.html');
 });
 
 // Login page
@@ -37,13 +37,13 @@ router.get('/index3', (req, res) => {
 });
 
 //Package page
-router.get('/index5', (req, res) => {
-    res.sendFile(dir +'/views/index5.html');
+router.get('/Packages', (req, res) => {
+    res.sendFile(dir +'/views/Packages.html');
 });
 
 //About page
-router.get('/index6', (req, res) => {
-    res.sendFile(dir +'/views/index6.html');
+router.get('/About', (req, res) => {
+    res.sendFile(dir +'/views/About.html');
 });
 
 //home page
@@ -93,9 +93,8 @@ router.post('/packEmails',(req,res)=>{
         from:'cardtap406@gmail.com',
         to:req.body.email,
         subject:'Order Confirmation',
-        text:`Sir name: ${req.body.name}, you have ordered ${req.body.message}.
-        hang tight and we will reach back as soon as possible.
-        Thank you from ordering from cardtap.`
+        text:`Hello, ${req.body.name}, you have ordered ${req.body.message}. hang tight and we will reach back as soon as possible.
+        Thank you for ordering from cardtap.`
     }
     mail.sendMail(mailOptions2,(error,info)=>{
         if(error){

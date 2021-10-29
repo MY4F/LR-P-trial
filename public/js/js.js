@@ -43,15 +43,18 @@ listItems[2].addEventListener('click',()=>{
 window.addEventListener('resize',()=>{
   if(window.innerWidth<751){
     desktopContainer.classList.remove("desktop-container-user");
-
+    desktopContainer.classList.add("mobile-user");
   }
   else{
     desktopContainer.classList.add("desktop-container-user");
+    desktopContainer.classList.remove("mobile-user");
   }
 });
 if(window.innerWidth<751){
   desktopContainer.classList.remove("desktop-container-user");
+  desktopContainer.classList.add("mobile-user");
 }
-else {
+else{
   desktopContainer.classList.add("desktop-container-user");
+  desktopContainer.classList.remove("mobile-user");
 }

@@ -274,6 +274,10 @@
     cursor: pointer;
     outline: none;
 }
+.contact-btn-save:hover{
+    color: rgb(253,97,47);
+    background: rgba(253,97,47,0.25);
+}
 .contact-edit{
     display: flex;
     flex-direction: column;
@@ -295,7 +299,6 @@
     display: none;
 }
 @media screen and (max-width: 750px) {
-  
     .card-holder {
         background-color: #0e1527;
         display: flex;

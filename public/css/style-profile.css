@@ -365,7 +365,9 @@ body {
         align-items: center;
         color: white;
     }
-
+    .mobile-user{
+        width: 100%;
+    }
     .card-holder-2 {
         margin: 20px;
         width: 200px;

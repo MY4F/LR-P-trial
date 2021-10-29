@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style-about.css">
+    <link rel="stylesheet" href="/css/standardStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cfd0db899c.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>cardtap</title>
+  </head>
+  <body>
+  <div class="container">
+    <nav class="nav-bar">
+      <div class="header1">
+        <a href="/"> <img class="nav-image" src="/images/ct2.png" alt=""></a>
+      </div>
+      <span class="nav-button"> <i class="fas fa-bars" style="color:white;" ></i> </span>
+      <ul class="desk-burger">
+        <li class="li-desktop"> <a href="/users/Home">Home</a> </li>
+        <li class="li-desktop"> <a href="/users/Packages">Packages</a> </li>
+        <li class="li-desktop active"> <a href="/users/About">About Us</a> </li>
+      </ul>
+    </nav>
+    <div class="sign">
+      <ul>
+        <li class="log-desktop"> <a href="/users/login">Login  <i class="fas fa-users"></i></a> </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="nav-burger" style="top: -560px">
+    <li class="li-desktop"> <a href="/users/Home">Home</a> </li>
+    <li class="li-desktop"> <a href="/users/Packages">Packages</a> </li>
+    <li class="li-desktop active"> <a href="/users/About">About Us</a> </li>
+    <li class="li-desktop"> <a href="/users/login"><i class="fas fa-users"></i>Login</a> </li>
+  </ul>
+
+    <div class="our-logo">
+      <img class="fade-in" src="/images/ct.png" alt="">
+      <h1 class="name fade-in">cardtap</h1>
+    </div>
+    <div class="about-heading">
+      <h4 class="fade-in">The Future of Networking</h4>
+      <p class="fade-in">Our mission is to take networking to a new level. By replacing the traditional business card with
+        a digital business card, we can add new useful elements to your networking experience.
+        We are always looking for new ways to fine-tune CardTap and make our service as efficient as possible.
+        At CardTap, we help all companies, big or small, expand their professional network through a fun and easy user experience.</p>
+    </div>
+  <h2 class="faq">Frequently Asked Questions</h2>
+  <div class="faq-box">
+    <div class="question-holder fade-in">
+      <span class="question">How this card working?</span>
+      <span class="answer">It's NFC, cardtap has an NFC ship inside that sends wirelessly your
+      information. Tap your card on your phone, a link will pop up on your screen
+      click, and here your one step right away from your next deal.</span>
+    </div>
+    <div class="question-holder fade-in">
+      <span class="question">What are the compatible phones?</span>
+      <span class="answer"> Most of phones nowadays have NFC, therefore the upcoming generations. Here is an updated link to
+      <a class="nfc-link" href="https://en.wikipedia.org/wiki/List_of_NFC-enabled_mobile_devices" target="_blank">compatible mobiles</a>. </span>
+    </div>
+    <div class="question-holder fade-in">
+      <span class="question">How/Where do I add my details?</span>
+      <span class="answer"> Once purchase is done you will receive an email with your login credentials to your
+      profile, where you can add all of your contact information, social media referrals and etc. </span>
+    </div>
+    <div class="question-holder fade-in">
+      <span class="question">Is cardtap secured?</span>
+      <span class="answer"> Here at cardtap we genuinely care about our customers information, it's safe and secured as any
+        new technology. The NFC functionality works within an inch of a compatible device. Moreover, it doesn't hold any
+      financial details. The information in your profile is as your information on your traditional business card.</span>
+    </div>
+    <div class="question-holder fade-in">
+      <span class="question">What to do if my card isn't working?</span>
+      <span class="answer"> Maybe the NFC isn't activated on your device, so activate it! If the card doesn't
+      work or has any observed damage, you are an email away to contact us and we will be pleased to help.</span>
+    </div>
+    <div class="question-holder fade-in">
+      <span class="question">How long my order will take to ship?</span>
+      <span class="answer"> Depends on your location, but most likely form 3 to 7 days.</span>
+    </div>
+  </div>
+    <div class="contactUs-background">
+      <div class="about-img-mob">
+        <img src="/images/contact.png" alt="">
+      </div>
+      <div class="form-holder">
+      <div class="firstHalf">
+        <h5>Contact Us</h5>
+        <p>Feel free to ask about anything!</p>
+      </div>
+        <form name="contact" class="secondHalf"   action="/users/helpEmails" method="POST">
+
+          <label for="">Full Name: </label>
+          <input type="text" name="name" value="" placeholder="Enter your name">
+
+          <label for=""> Email: </label>
+          <input type="email" name="email" value="" placeholder="Enter your email">
+
+          <label for=""> Phone: </label>
+          <input type="text" name="number" value="" placeholder="Enter your phone number">
+
+          <label for=""> Message: </label>
+          <textarea name="message" rows="8" cols="200" placeholder="Your message......."></textarea>
+
+            <button class="form-submit" type="submit" name="button"> Submit</button>
+        </form>
+      </div>
+      <div class="about-img-desktop">
+        <img src="/images/contact.png" alt="">
+      </div>
+    </div>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://www.instagram.com/cardtap_/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/CardTap-346108156529686" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:mmalatawy6@gmail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+      </div>
+      <div class="other-links">
+        <a href="/users/Home">Home</a>
+        <span class="horizontal-space"></span>
+        <a href="/users/Packages">Packages</a>
+        <span class="horizontal-space"></span>
+        <a href="/users/About">About Us</a>
+      </div>
+      <div class="rights">
+        © 2021 CardTap
+      </div>
+
+    </footer>
+
+
+
+
+
+      <script src="/js/submit.js"></script>
+      <script src="/js/js2.js"></script>
+      <script src="/js/nav.js"></script>
+  </body>
+</html>
