@@ -38,7 +38,7 @@ sliders.forEach(slide=>{
 })
 navButtton.addEventListener('click',()=>{
   if(list.style.top==='-560px' && window.innerWidth<751|| list.style.top==='-560px'  && window.innerWidth<751 ){
-    list.style.top = '68px';
+    list.style.top = '65px';
     setTimeout(()=>{
       document.querySelector('.container').style.top = "0px";
     },0);
