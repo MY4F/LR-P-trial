@@ -318,6 +318,20 @@ button:after{
     transition: 0.3s;
   }
   .our-logo>img{
-    width: 100%;
+    width: 20%;
+  }
+  .about-heading{
+    margin-top: 0px;
+    height: 500px;
+  }
+  .faq{
+    text-align: center;
+  }
+  .faq-box{
+    flex-direction: column;
+    height: auto;
+  }
+  .question-holder{
+    width: 80%;
   }
 }
