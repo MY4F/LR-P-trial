@@ -161,7 +161,7 @@ button:after{
   color: #d4b982;
 }
 .faq-box{
-  height: 1200px;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

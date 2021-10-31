@@ -74,7 +74,7 @@ body{
 .sign > ul > li {
     display: inline;
     font-size: 1.2vw;
-    padding-bottom: 25px;
+    padding-bottom: 18%;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 33px;
@@ -105,7 +105,7 @@ body{
 .desk-burger>.li-desktop{
     display: inline;
     font-size: 1.2vw;
-    padding-bottom: 25px;
+    padding-bottom: 6%;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 33px;
@@ -152,7 +152,7 @@ body{
         justify-content: flex-start;
         flex-wrap: wrap;
         width: 90%;
-        transition: background-color 0.5s;
+        transition: background-color 1s;
     }
     .sign {
         display: none;
@@ -180,7 +180,7 @@ body{
         background-color: #003366;
         flex-wrap: wrap;
         text-align: center;
-        transition: all 0.5s;
+        transition: all 0.7s;
     }
     .nav-burger>li{
         width: 100%;
