@@ -102,6 +102,11 @@ li{
   margin: 30px;
   height:320px;
 }
+.gif{
+  width: 80%;
+  margin: 50px;
+  border-radius: 10px;
+}
 .text{
   line-height: 1.2cm;
   font-family: Mon-Med;
