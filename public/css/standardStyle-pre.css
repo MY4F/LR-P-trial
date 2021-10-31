@@ -140,7 +140,7 @@ body{
         background-color: #0e1527;
         flex-wrap: wrap;
         text-align: center;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     .nav-burger>li{
         width: 100%;

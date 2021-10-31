@@ -58,47 +58,47 @@ const UserSchema = new mongoose.Schema({
     },
     firstName: {
         type: String,
-        required: false
+        default: false
     },
     lastName: {
         type: String,
-        required: false
+        default: false
     },
     organization: {
         type: String,
-        required: false
+        default: false
     },
     workPhone: {
         type: String,
-        required: false
+        default: false
     },
     email2: {
         type: String,
-        required: false
+        default: false
     },
     title: {
         type: String,
-        required: false
+        default: false
     },
     public_id_con: {
         type: String,
-        required: false
+        default: false
     },
     contact_link: {
         type: String,
-        required: false
+        default: false
     },
     address1: {
         type: String,
-        required: false
+        default: false
     },
     address2: {
         type: String,
-        required: false
+        default: false
     },
     card_type: {
         type: String,
-        required: false
+        default: false
     }
 });
 
