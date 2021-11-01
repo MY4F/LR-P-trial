@@ -104,8 +104,13 @@ li{
 }
 .gif{
   width: 80%;
-  margin: 50px;
   border-radius: 10px;
+}
+.img-holder{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .text{
   line-height: 1.2cm;
