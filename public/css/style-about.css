@@ -33,7 +33,7 @@
 }
 .about-heading>h4{
   text-align: center;
-  color: #e24646;
+  color: #003366;
   font-size: 45px;
   margin-top: 60px;
   margin-bottom: 10px;
@@ -322,7 +322,7 @@ button:after{
   }
   .about-heading{
     margin-top: 0px;
-    height: 500px;
+    height: 600px;
   }
   .faq{
     text-align: center;
