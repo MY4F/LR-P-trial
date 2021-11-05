@@ -159,6 +159,8 @@ button:after{
   font-family: walkwayBlack;
   letter-spacing: 2px;
   color: #d4b982;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .faq-box{
   height: auto;
