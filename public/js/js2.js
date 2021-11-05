@@ -74,20 +74,20 @@ listItems[2].addEventListener('click',()=>{
   }
 });
 rdStandard[0].addEventListener('click',()=>{
-  standardPrice[0].childNodes[0].textContent='170 EGP ';
+  standardPrice[0].childNodes[0].textContent='200 EGP ';
   standardPrice[0].childNodes[1].textContent='/card';
   requestedText.value='1-10';
   quantityInput[0].placeholder="How many cards you need: 1-10";
   console.log(quantityInput.placeholder);
 })
 rdStandard[1].addEventListener('click',()=>{
-  standardPrice[0].childNodes[0].textContent='155 EGP ';
+  standardPrice[0].childNodes[0].textContent='175 EGP ';
   standardPrice[0].childNodes[1].textContent='/card';
   quantityInput[0].placeholder="How many cards you need: 11-20";
   requestedText.value='11-20';
 })
 rdStandard[2].addEventListener('click',()=>{
-  standardPrice[0].childNodes[0].textContent='140 EGP ';
+  standardPrice[0].childNodes[0].textContent='160 EGP ';
   standardPrice[0].childNodes[1].textContent='/card';
   quantityInput[0].placeholder="How many cards you need: 21-30";
   requestedText.value='21-30';
@@ -100,19 +100,19 @@ rdStandard[3].addEventListener('click',()=>{
 })
 
 rdPremium[0].addEventListener('click',()=>{
-  premiumPrice[0].childNodes[0].textContent='220 EGP ';
+  premiumPrice[0].childNodes[0].textContent='245 EGP ';
   premiumPrice[0].childNodes[1].textContent='/card';
   quantityInput[0].placeholder="How many cards you need: 1-10";
   requestedText.value='1-10';
 })
 rdPremium[1].addEventListener('click',()=>{
-  premiumPrice[0].childNodes[0].textContent='200 EGP ';
+  premiumPrice[0].childNodes[0].textContent='220 EGP ';
   premiumPrice[0].childNodes[1].textContent='/card';
   quantityInput[0].placeholder="How many cards you need: 11-20";
   requestedText.value='11-20';
 })
 rdPremium[2].addEventListener('click',()=>{
-  premiumPrice[0].childNodes[0].textContent='180 EGP ';
+  premiumPrice[0].childNodes[0].textContent='190 EGP ';
   premiumPrice[0].childNodes[1].textContent='/card';
   quantityInput[0].placeholder="How many cards you need: 21-30";
   requestedText.value='21-30';
