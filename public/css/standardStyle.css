@@ -16,7 +16,7 @@
 }
 @font-face {
     font-family: walkway2;
-    src: url('../fonts/Walkway UltraBold.ttf');
+    src: url('../fonts/Walkway SemiBold.ttf');
 }
 html{
     scroll-behavior: smooth;
