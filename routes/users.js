@@ -669,7 +669,7 @@ router.get('/MahmoudAladin', (req, res) => {
 });
 
 //Momen Maher's page
-router.get('/MoamenMaher', (req, res) => {
+router.get('/MomenMaher', (req, res) => {
     User.findOne({ name: 'Moamen Maher' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
