@@ -669,8 +669,8 @@ router.get('/MahmoudAladin', (req, res) => {
 });
 
 //Momen Maher's page
-router.get('/MomenMaher', (req, res) => {
-    User.findOne({ name: 'Momen Maher' }).then(user => {
+router.get('/MoamenMaher', (req, res) => {
+    User.findOne({ name: 'Moamen Maher' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
@@ -694,7 +694,7 @@ router.get('/MomenMaher', (req, res) => {
 });
 
 //Fady Hany's page
-router.get('/MahmoudAladin', (req, res) => {
+router.get('/FadyHany', (req, res) => {
     User.findOne({ name: 'Fady Hany' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
