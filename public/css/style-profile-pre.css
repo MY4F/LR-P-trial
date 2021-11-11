@@ -47,6 +47,7 @@
     display: none;
 }
 .desktop-container-user {
+  width: 100%;
     display: grid;
     grid-template-columns: 30% 35% 35%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -540,6 +541,9 @@
     }
     .name{
         width: 100%;
+    }
+    .mobile-user{
+      width: 100%;
     }
 }
 
