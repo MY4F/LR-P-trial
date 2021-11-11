@@ -643,6 +643,80 @@ router.get('/FredrickStewart', (req, res) => {
     })
 });
 
+//Mahmoud Aladin's page
+router.get('/MahmoudAladin', (req, res) => {
+    User.findOne({ name: 'Mahmoud Aladin' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2
+        })
+    })
+});
+
+//Momen Maher's page
+router.get('/MomenMaher', (req, res) => {
+    User.findOne({ name: 'Momen Maher' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2
+        })
+    })
+});
+
+//Fady Hany's page
+router.get('/MahmoudAladin', (req, res) => {
+    User.findOne({ name: 'Fady Hany' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2
+        })
+    })
+});
 
 //register handle
 router.post('/register', (req, res) => {
