@@ -919,7 +919,7 @@ router.get('/SeifTarek', (req, res) => {
 });
 
 //Rabie Al-Alfy's page
-router.get('/RabieAl-Alfy', (req, res) => {
+router.get('/RabieAlAlfy', (req, res) => {
     User.findOne({ name: 'Rabie Al-Alfy' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
