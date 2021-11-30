@@ -1048,7 +1048,7 @@ router.get('/MohamedElBanna', (req, res) => {
 //Ali Agina's page
 router.get('/AliAgina', (req, res) => {
     User.findOne({ name: 'Ali Agina' }).then(user => {
-        res.render(dir + '/views/ClientProfilePre.ejs', {
+        res.render(dir + '/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,
