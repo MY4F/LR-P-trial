@@ -44,6 +44,8 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
         title:req.user.title,
         address1:req.user.address1,
         address2:req.user.address2,
+        email3:req.user.email3,
+        homePhone:req.user.homePhone,
         errors,
         errors2
 
@@ -58,7 +60,9 @@ router.post('/contactUpdate',async (req,res)=>{
        vCard.lastName = req.body.lastName;
        vCard.organization = req.body.org;
        vCard.workPhone = req.body.work;
+       vCard.homePhone = req.body.home1;
        vCard.email = req.body.email;
+       vCard.workEmail = req.body.email3;
        vCard.title = req.body.title;
        vCard.homeAddress.street = req.body.address1;
        vCard.workAddress.street = req.body.address2;
@@ -84,7 +88,9 @@ router.post('/contactUpdate',async (req,res)=>{
            public_id_con:result.public_id,
            contact_link:result.url,
            address1:req.body.address1,
-           address2:req.body.address2
+           address2:req.body.address2,
+           email3:req.body.email3,
+           homePhone:req.body.home1
        }, (error, res) => {
            if (error) throw error;
        })

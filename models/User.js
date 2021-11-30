@@ -99,6 +99,14 @@ const UserSchema = new mongoose.Schema({
     card_type: {
         type: String,
         default: false
+    },
+    homePhone: {
+        type: String,
+        default: false
+    },
+    email3: {
+        type: String,
+        default: false
     }
 });
 

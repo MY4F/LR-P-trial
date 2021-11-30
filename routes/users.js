@@ -537,7 +537,9 @@ router.get('/MohamedElMalatawy', (req, res) => {
            email2:user.email2,
            title:user.title,
            address1:user.address1,
-           address2:user.address2
+           address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -563,7 +565,9 @@ router.get('/MohamedYasser', (req, res) => {
              email2:user.email2,
              title:user.title,
              address1:user.address1,
-             address2:user.address2
+             address2:user.address2,
+             email3:user.email3,
+             homePhone:user.homePhone
         })
     })
 });
@@ -588,7 +592,9 @@ router.get('/MostafaMutaz', (req, res) => {
               email2:user.email2,
               title:user.title,
               address1:user.address1,
-              address2:user.address2
+              address2:user.address2,
+              email3:user.email3,
+              homePhone:user.homePhone
         })
     })
 });
@@ -613,7 +619,9 @@ router.get('/HussainAyman', (req, res) => {
               email2:user.email2,
               title:user.title,
               address1:user.address1,
-              address2:user.address2
+              address2:user.address2,
+              email3:user.email3,
+              homePhone:user.homePhone
         })
     })
 });
@@ -638,7 +646,9 @@ router.get('/FredrickStewart', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -663,7 +673,9 @@ router.get('/MahmoudAladin', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -688,7 +700,9 @@ router.get('/MomenMaher', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -713,7 +727,9 @@ router.get('/FadyHany', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -738,7 +754,9 @@ router.get('/MostafaSayed', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -763,7 +781,9 @@ router.get('/BelalYasser', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -788,7 +808,9 @@ router.get('/YasmineAfify', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -813,7 +835,9 @@ router.get('/YoussefSabbour', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -838,7 +862,9 @@ router.get('/FaridaFahmy', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -863,7 +889,9 @@ router.get('/LailaGomaa', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -888,7 +916,9 @@ router.get('/SaidAbdulAziem', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -913,7 +943,9 @@ router.get('/SeifTarek', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -938,7 +970,9 @@ router.get('/RabieAlAlfy', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -963,7 +997,9 @@ router.get('/OmarAbdulRahman', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -988,7 +1024,9 @@ router.get('/MohamedElShaarawy', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1013,7 +1051,9 @@ router.get('/MohamedYasinFata', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1039,7 +1079,9 @@ router.get('/MohamedElBanna', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1065,7 +1107,9 @@ router.get('/AliAgina', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1092,7 +1136,9 @@ router.get('/YoumnaGalal', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1117,7 +1163,9 @@ router.get('/KarimGad', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1142,7 +1190,9 @@ router.get('/MohamedTawfik', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1167,7 +1217,9 @@ router.get('/SherifRefaat', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1192,7 +1244,9 @@ router.get('/SeifShaarawy', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1217,7 +1271,9 @@ router.get('/AmrEzz', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
@@ -1242,7 +1298,9 @@ router.get('/KarimFakhoury', (req, res) => {
             email2:user.email2,
             title:user.title,
             address1:user.address1,
-            address2:user.address2
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
         })
     })
 });
