@@ -1359,8 +1359,8 @@ router.get('/AliMutaz', (req, res) => {
 });
 
 //Mohamed EL Gammal's page
-router.get('/MohamedELGammal', (req, res) => {
-    User.findOne({ name: 'Mohamed EL Gammal' }).then(user => {
+router.get('/MohamedElGammal', (req, res) => {
+    User.findOne({ name: 'Mohamed El Gammal' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
