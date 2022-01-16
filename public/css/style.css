@@ -384,7 +384,7 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/header-home.png");
+    background-image: url("../images/home-header.png");
     background-color: rgba(251,227,117,255);
     background-size: cover;
     background-position-x: center;
