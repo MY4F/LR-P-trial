@@ -572,8 +572,62 @@ router.get('/MohamedYasser', (req, res) => {
     })
 });
 
+//Mohamed Yasser' Standard page
+router.get('/MohamedYasserStandard', (req, res) => {
+    User.findOne({ name: 'Mohamed Yasser' }).then(user => {
+        res.render(dir +'/views/ClientProfile.ejs', {
+          bio: user.bio,
+             icons: user.icons,
+             links: user.links,
+             job: user.job,
+             name: user.name,
+             vcf:user.vcf,
+             image1: user.image1,
+             image2: user.image2,
+             contact_link:user.contact_link,
+             firstName:user.firstName,
+             lastName:user.lastName,
+             organization:user.organization,
+             workPhone:user.workPhone,
+             email2:user.email2,
+             title:user.title,
+             address1:user.address1,
+             address2:user.address2,
+             email3:user.email3,
+             homePhone:user.homePhone
+        })
+    })
+});
+
 //Mostafa Mutaz's page
 router.get('/MostafaMutaz', (req, res) => {
+    User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
+            res.render(dir +'/views/ClientProfilePre.ejs', {
+              bio: user.bio,
+              icons: user.icons,
+              links: user.links,
+              job: user.job,
+              name: user.name,
+              vcf:user.vcf,
+              image1: user.image1,
+              image2: user.image2,
+              contact_link:user.contact_link,
+              firstName:user.firstName,
+              lastName:user.lastName,
+              organization:user.organization,
+              workPhone:user.workPhone,
+              email2:user.email2,
+              title:user.title,
+              address1:user.address1,
+              address2:user.address2,
+              email3:user.email3,
+              homePhone:user.homePhone
+        })
+    })
+});
+
+//Mostafa Mutaz's Standard page
+router.get('/MostafaMutazStandard', (req, res) => {
     User.findOne({ name: 'Mostafa Mutaz Bellah' }).then(user => {
             res.render(dir +'/views/ClientProfile.ejs', {
               bio: user.bio,
@@ -598,6 +652,7 @@ router.get('/MostafaMutaz', (req, res) => {
         })
     })
 });
+
 
 //Hussain Ayman's page
 router.get('/HussainAyman', (req, res) => {
