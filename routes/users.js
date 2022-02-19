@@ -1522,6 +1522,12 @@ router.get('/AmrSami', (req, res) => {
 });
 
 
+router.get('/Agenda',(req,res)=>{
+    res.json("hello there");
+})
+
+
+
 //register handle
 router.post('/register', (req, res) => {
   const { name, email, password, passwordConfirm } = req.body;
