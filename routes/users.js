@@ -1523,9 +1523,8 @@ router.get('/AmrSami', (req, res) => {
 
 
 router.get('/Agenda',(req,res)=>{
-    res.json("hello there");
+    res.sendFile(dir + '/views/tedx.html');
 })
-
 
 
 //register handle
