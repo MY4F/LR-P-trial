@@ -1521,6 +1521,113 @@ router.get('/AmrSami', (req, res) => {
     })
 });
 
+//Hanien Gaballah's page
+router.get('/HanienGaballah', (req, res) => {
+    User.findOne({ name: 'Hanien Gaballah' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
+        })
+    })
+});
+
+//Gamal Gaballah's page
+router.get('/GamalGaballah', (req, res) => {
+    User.findOne({ name: 'Gamal Gaballah' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
+        })
+    })
+});
+
+//Toka Hesham's page
+router.get('/TokaHesham', (req, res) => {
+    User.findOne({ name: 'Toka Hesham' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
+        })
+    })
+});
+
+//Abdelrahman Zahran's page
+router.get('/AbdelrahmanZahran', (req, res) => {
+    User.findOne({ name: 'Abdelrahman Zahran' }).then(user => {
+        res.render(dir + '/views/ClientProfilePre.ejs', {
+            bio: user.bio,
+            icons: user.icons,
+            links: user.links,
+            job: user.job,
+            name: user.name,
+            vcf:user.vcf,
+            image1: user.image1,
+            image2: user.image2,
+            contact_link:user.contact_link,
+            firstName:user.firstName,
+            lastName:user.lastName,
+            organization:user.organization,
+            workPhone:user.workPhone,
+            email2:user.email2,
+            title:user.title,
+            address1:user.address1,
+            address2:user.address2,
+            email3:user.email3,
+            homePhone:user.homePhone
+        })
+    })
+});
 
 router.get('/Agenda',(req,res)=>{
     res.sendFile(dir + '/views/tedx.html');
