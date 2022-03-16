@@ -171,6 +171,11 @@
     <form name="contact" class="secondHalf"  action="/users/packEmails" method="POST">
       <textarea class="requested-type" name="message" rows="8" cols="200" placeholder="Your message......."></textarea>
       <span class="pack-type-order"></span>
+      <div class="promo-container">
+          <label for="">Promo Code</label>
+          <input class="code" type="text" name="promocode" value="" placeholder="Enter Promo code" required>
+          <span class="promo-validation">Apply</span>
+      </div>
       <label for="">Full Name: </label>
       <input class="check" type="text" name="name" value="" placeholder="Enter your name" required>
 
@@ -182,6 +187,18 @@
 
       <label for=""> Quantity: </label>
       <input class="check" type="text" name="quantity" value="" placeholder=" " class="order-quality-input" required>
+
+      <label class="no-stan" for=""> Shipping Address: </label>
+      <input class="no-stan" type="text" name="Address" value="" placeholder="Shipping Address......" class="" required>
+
+      <label class="no-stan" for=""> Name in card: </label>
+      <input class="no-stan" type="text" name="nameInCard" value="" placeholder="Name shown in card" class="" required>
+
+      <label class="no-stan" for=""> Job in card: </label>
+      <input class="no-stan" type="text" name="JobInCard" value="" placeholder="Job shown in card" class="" required>
+
+      <label class="no-stan" for="img">Select image:</label>
+      <input type="file" class="no-stan"  id="img" name="img2">
 
       <button class="form-submit" type="submit" name="button"> Order <i class="fas fa-shipping-fast"></i></button>
     </form>
