@@ -19,8 +19,6 @@
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
-    "file-stream": "0.0.0",
-    "file-system": "^2.2.2",
     "formidable": "^1.2.2",
     "fs": "0.0.1-security",
     "joi": "^17.4.2",

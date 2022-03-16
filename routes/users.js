@@ -8,21 +8,6 @@ const nodemailer = require('nodemailer');
 const User = require('../models/User');
 let dir = __dirname.replace('routes','');
 const { ensureAuthenticated } = require('../config/auth');
-const multer = require("multer");
-const fs = require('fs');
-const path = require('path');
-
-const storage  = multer.diskStorage({
-    destination:(req,file,cb) =>{
-        cb(null,__dirname);
-    },
-    filename:(req,file,cb)=>{
-        //console.log(file);
-        cb(null,Date.now() + path.extname(file.originalname));
-    }
-})
-const upload = multer({storage:storage})
-
 
 let mail = nodemailer.createTransport({
     service:'gmail',
@@ -89,26 +74,16 @@ router.get('/forget', (req, res) => {
 
 //orders emails
 router.post('/packEmails',(req,res)=>{
-  let mailOptions = {
-      from:'cardtapcommunity@gmail.com',
-      to:'momoteka6089@gmail.com',
-      subject:'Order',
-      text:`Sir name: ${req.body.name},
-        email : ${req.body.email},
-
-        type of order :${req.body.message},
-        Phone number: ${req.body.number},
-        Quantity : ${req.body.quantity},
-        Shipping Address: ${req.body.Address},
-        Name in card : ${req.body.nameInCard},
-        Job in card : ${req.body.JobInCard}`,
-      attachments:[
-          {
-              filename: 'logo.jpg',
-              path: req.file.path
-          }
-      ]
-  }
+    let mailOptions = {
+        from:'cardtapcommunity@gmail.com',
+        to:'momoteka6089@gmail.com',
+        subject:'Order',
+        text:`Sir name: ${req.body.name},
+          email : ${req.body.email},
+          type of order :${req.body.message},
+          Phone number: ${req.body.number},
+          Quantity : ${req.body.quantity}`
+    }
     mail.sendMail(mailOptions,(error,info)=>{
         if(error){
             console.log(error);

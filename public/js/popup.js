@@ -8,11 +8,6 @@ purchaseBut[0].addEventListener('click',()=>{
     alert("Choose the quantity you desire to reveal the price, and to be able to order.");
     return;
   }
-  const noStan = document.querySelectorAll('.no-stan');
-  console.log(noStan)
-  for(let i = 0;i<noStan.length;i++){
-    noStan[i].classList.add('hide2');
-  }
   orderType.textContent='Standard Package';
   img[0].src='/images/standard-card2.jpg';
   img[1].src='/images/standard-back-card.jpg';
@@ -25,11 +20,6 @@ purchaseBut[1].addEventListener('click',()=>{
     alert("Choose the quantity you desire to reveal the price, and to be able to order.");
     return;
   }
-  const noStan = document.querySelectorAll('.no-stan');
-  console.log(noStan)
-  for(let i = 0;i<noStan.length;i++){
-    noStan[i].classList.remove('hide2');
-  }
   orderType.textContent='Premium Package';
   img[0].src='/images/prem-card2.jpg';
   img[1].src='/images/prem-card-back.jpg';
@@ -41,11 +31,6 @@ purchaseBut[2].addEventListener('click',()=>{
   if(!rdElite[0].checked && !rdElite[1].checked && !rdElite[2].checked && !rdElite[3].checked){
     alert("Choose the quantity you desire to reveal the price, and to be able to order.");
     return;
-  }
-  const noStan = document.querySelectorAll('.no-stan');
-  console.log(noStan)
-  for(let i = 0;i<noStan.length;i++){
-    noStan[i].classList.remove('hide2');
   }
   orderType.textContent='Elite Package';
   img[0].src='/images/elite-card2.jpg';
