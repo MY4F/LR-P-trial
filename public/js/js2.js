@@ -16,7 +16,7 @@ const rdElite = document.querySelectorAll('.rdElite');
 const elitePrice = document.querySelectorAll('.elitePrice');
 const requestedText=document.querySelector('.requested-type');
 const quantityInput = document.querySelectorAll('.order-quality-input');
-+const promo = document.querySelector('.promo-validation');
+const promo = document.querySelector('.promo-validation');
 promo.addEventListener('click',()=>{
   let code = document.querySelector('.code').value;
   if(code.toLowerCase()==="tedxmfis20"){
