@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+
 }
 p{
     font-size: 70px;
