@@ -1823,7 +1823,7 @@ router.get('/Coltene', (req, res) => {
 //Abdurahman Massoud's page
 router.get('/MostafaGamal', (req, res) => {
     User.findOne({ name: 'Mostafa Gamal' }).then(user => {
-        res.render(dir + '/views/ClientProfilePre.ejs', {
+        res.render(dir + '/views/ClientProfile.ejs', {
             bio: user.bio,
             icons: user.icons,
             links: user.links,
