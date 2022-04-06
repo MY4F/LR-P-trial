@@ -2135,7 +2135,7 @@ router.get('/KareemWaleedElFahla', (req, res) => {
 });
 
 router.get('/AhmedElBatrawy', (req, res) => {
-    User.findOne({ name: 'AhmedElBatrawy' }).then(user => {
+    User.findOne({ name: 'Ahmed El Batrawy' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
