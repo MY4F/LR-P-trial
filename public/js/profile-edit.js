@@ -200,9 +200,9 @@ wp = () => {
   sclBtnSave.name='whatsapp'
   linkInputScl.style.display='flex';
   contentScl.style.display='none';
-    sclBtnSave.style.display = 'block';
-    scTypeInput.value = 'whatsapp';
-
+  sclBtnSave.style.display = 'block';
+  scTypeInput.value = 'whatsapp';
+  linkInputScl.placeholder='Enter your number without +20'
 }
 tw = () => {
   sclBtnSave.name='twitter'
@@ -246,6 +246,16 @@ pin = () => {
     sclBtnSave.style.display = 'block';
     scTypeInput.value = 'pinterest';
 }
+wc = () => {
+  sclBtnSave.name='wechat'
+  linkInputScl.style.display='flex';
+  contentScl.style.display='none';
+  sclBtnSave.style.display = 'block';
+  scTypeInput.value = 'weixin';
+  linkInputScl.placeholder='Enter your WeChat ID'
+}
+
+
 
 
 

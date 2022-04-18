@@ -139,6 +139,8 @@ router.post('/iconsUpdate', (req, res) => {
         else if (!newA.includes(duplicate)) {
             if(scType==='whatsapp')
                 newA += `<a href="//wa.me/+2${req.body.link}/?text=Hello My Greetings" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>`;
+            else if (scType==='weixin')
+                newA += `<a href="weixin://dl/chat?${req.body.link}" target="_blank"><i class="fab fa-${scType} fa-2x" aria-hidden="true"></i></a>`;
             else
                 newA += `<a href="${req.body.link}" target="_blank"><i class="fab fa-${scType}-square fa-2x" aria-hidden="true"></i></a>  `;
 
