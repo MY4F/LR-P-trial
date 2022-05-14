@@ -2370,7 +2370,7 @@ router.get('/AnnaYud', (req, res) => {
     })
 });
 
-router.get('/AbedMahmoud', (req, res) => {
+router.get('/AbedMahmoudAntar', (req, res) => {
     User.findOne({ name: 'Abed Mahmoud Antar' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
