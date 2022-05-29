@@ -224,7 +224,7 @@ router.post('/single',upload.single("image"),async (req,res)=>{
         })
         res.redirect('/dashboard');
     }
-    catch(err){ throw err;}
+    catch(err){  res.redirect('/dashboard');}
 })
 
 

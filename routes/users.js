@@ -2712,7 +2712,7 @@ router.get('/DanielHanna', (req, res) => {
 });
 
 router.get('/OsamaHaitham', (req, res) => {
-    User.findOne({ name: 'Osama Haitham' }).then(user => {
+    User.findOne({ email: 'osamahhaitham@gmail.com' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
