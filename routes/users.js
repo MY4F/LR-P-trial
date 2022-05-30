@@ -2450,7 +2450,7 @@ router.get('/MahmoudAntar', (req, res) => {
 
 
 router.get('/Antarvie', (req, res) => {
-    User.findOne({ name: 'Antarvie' }).then(user => {
+    User.findOne({ email: 'Info@antarmode.net' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
