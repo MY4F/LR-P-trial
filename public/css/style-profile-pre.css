@@ -211,6 +211,7 @@
     padding: 15px;
 }
 .bio-words{
+    white-space: pre-line;
     font-size: 20px;
     margin: 10px;
     text-align: center;
@@ -385,6 +386,7 @@
         text-align: center;
     }
     .bio-words {
+        white-space: pre-line;
         margin: 10px;
         text-align: center;
     }
