@@ -2739,7 +2739,7 @@ router.get('/OsamaHaitham', (req, res) => {
 
 
 router.get('/MohamedHassan', (req, res) => {
-    User.findOne({ email: 'Mohamed Hassan' }).then(user => {
+    User.findOne({ name: 'Mohamed Hassan' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
@@ -2765,7 +2765,7 @@ router.get('/MohamedHassan', (req, res) => {
 });
 
 router.get('/MohamedShakerElSherif', (req, res) => {
-    User.findOne({ email: 'Mohamed Shaker El Sherif' }).then(user => {
+    User.findOne({ name: 'Mohamed Shaker El Sherif' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
             icons: user.icons,
