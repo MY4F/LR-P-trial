@@ -2846,7 +2846,7 @@ router.get('/KholoudZein', (req, res) => {
 });
 
 
-router.get('/DoaaAlaaEldein ', (req, res) => {
+router.get('/DoaaAlaaEldein', (req, res) => {
     User.findOne({ name: 'Doaa Alaa Eldein' }).then(user => {
         res.render(dir + '/views/ClientProfilePre.ejs', {
             bio: user.bio,
